@@ -1,0 +1,198 @@
+<!--加粗--><strong><!--加粗-->
+<!--字体大小--><span style="font-size: 18px;"><!--字体大小-->
+
+<!--无下划线开始--><head>
+<style type="text/css">
+A{TEXT-DECORATION: none}
+</style><!--无下划线开始-->
+
+            <!--图标--><link rel="Shortcut Icon" href="./favicon.ico" type="image/x-icon" />
+            <!--大图标--><link rel="apple-touch-icon-precomposed" href="./favicon.ico"><!--图标-->
+
+            <!--手机版本代码--><meta name="viewport" content="width=device-width,  user-scalable=yes" /><!--手机版本代码-->
+
+            <!--网页乱码修复--><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--网页乱码修复-->
+
+            <!--国家地区--><meta http-equiv='content-language' content='zh-cn'>
+
+
+
+<!--主题-->                              <h1>秒表</h1>
+                                      <title>秒表,网名张先生</title><!--标题-->
+<!--关键词--> <meta name="keywords" content="秒表,网名张先生,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,张先生,公平村,铆钉,生产,铁铆钉,不锈钢铆钉,铝铆钉,黄铜铆钉,紫铜铆钉" /><!--关键词-->
+<!--描述--><meta name="description" content="秒表,网名张先生" />
+
+<!--分界线--><hr color=0000ff> <!--分界线-->
+
+<!--内容开始-->
+
+
+
+
+
+<!--居中--><center><!--居中-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>00:00:00:00</div>
+    <button >开始</button>
+    <button disabled>暂停</button>
+    <button disabled>继续</button>
+    <button disabled>重置</button>
+    <script>
+        // 秒表功能分析
+        // 核心思路:
+        //   定义一个变量,根据定时器,每秒执行一次,每次执行++自增操作
+        //               变量存储的数值,就会每秒+1
+        //   现在需要的记录效果,是每0.01秒,也就是10毫秒执行一次
+        //   根据累计的数值,执行进位 ms 如果达到 100,就是1秒
+        //   如果 秒 达到 60 就是 1分钟
+        //   如果 分钟 达到 60 就是 1小时
+
+
+        // 获取按钮的标签对象
+        var oBtnStart = document.querySelectorAll('button')[0];
+        var oBtnPause = document.querySelectorAll('button')[1];
+        var oBtnContinue = document.querySelectorAll('button')[2];
+        var oBtnReset = document.querySelectorAll('button')[3];
+        var hour = minutes = seconds = millisecond = 0;
+
+        // 定义存储 时 分 秒 毫秒 字符串的变量
+        // 如果直接在 millisecond seconds minutes hour 变量上进行 拼接操作,会影响 ++操作的执行
+        // 单独的建立变量,来存储累加时间的执行结果
+        var ms = '';
+        var s = '';
+        var m = '';
+        var h = '';
+
+        // 因为定时器,是定义在函数内部,
+        // 必须定义一个全局变量,来存储定时器
+        // 在函数外部可以调用,终止定时器
+        var time = 0;
+        
+        // 获取div标签对象
+        var oDiv = document.querySelector('div');
+
+
+        //  开始按钮
+        oBtnStart.onclick = function(){
+            // 点击开始按钮,执行函数,执行秒表计时
+            timer();
+            oBtnStart.disabled = true;
+            oBtnPause.disabled = false;
+            oBtnContinue.disabled = true;
+            oBtnReset.disabled = true;
+        }
+        //  暂停按钮
+        oBtnPause.onclick = function(){
+            // 点击暂停按钮,清除定时器,终止秒表执行
+            clearInterval(time);
+            oBtnStart.disabled = true;
+            oBtnPause.disabled = true;
+            oBtnContinue.disabled = false;
+            oBtnReset.disabled = false;
+        }
+        //  继续按钮
+        oBtnContinue.onclick = function(){
+            // 点击继续按钮,继续执行定时器
+            timer();
+            oBtnStart.disabled = true;
+            oBtnPause.disabled = false;
+            oBtnContinue.disabled = true;
+            oBtnReset.disabled = true;
+
+        }
+        //  重置按钮
+        oBtnReset.onclick = function(){
+            // 点击重置按钮,将所有的数据,都恢复到0的状态
+            // 所有变量存储的数据都是 0 , div中的内容,也恢复到0
+            hour = minutes = seconds = millisecond = 0;
+            oDiv.innerHTML = '00:00:00:00'
+            oBtnStart.disabled = false;
+            oBtnPause.disabled = true;
+            oBtnContinue.disabled = true;
+            oBtnReset.disabled = true;
+        }
+
+        //  计时函数
+        function timer(){
+            // 赋值操作,将定时器,存储在全局作用域变量中
+            time = setInterval(function(){
+                millisecond++;
+                if( millisecond == 100){
+                    seconds++;
+                    millisecond = 0;
+                }
+                if( seconds == 60 ){
+                    minutes++;
+                    seconds = 0;
+                }
+                if( minutes == 60 ){
+                    hour++;
+                    minutes = 0;
+                }
+
+            //  补零操作
+            // 如果记录的时间小于0,要做补零操作
+                if( millisecond < 10 ){
+                    ms = '0' + millisecond; 
+                }else{
+                    ms = millisecond; 
+                }
+                if( seconds < 10 ){
+                    s = '0' + seconds; 
+                }else{
+                    s = seconds; 
+                }
+                if( minutes < 10 ){
+                    m = '0' + minutes; 
+                }else{
+                    m = minutes; 
+                }
+                if( hour < 10 ){
+                    h = '0' + hour; 
+                }else{
+                    h = hour; 
+                }
+                // 每次执行,返回一个记录时间的字符串
+                // 将这个字符串,写入到div中
+                oDiv.innerHTML = ` ${h}:${m}:${s}:${ms} `
+            },10);
+        }
+
+    </script>
+</body>
+</html>
+
+
+<hr/>
+
+日期:2023年5月7日
+
+<hr/><textarea cols="40%" rows="1%" id="biao1">网名张先生,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,张先生,公平村,铆钉,生产,铁铆钉,不锈钢铆钉,铝铆钉,黄铜铆钉,紫铜铆钉</textarea>
+
+<!--居中--><center> <!--居中-->
+<!--内容结束-->
+<!--分界线--><hr color=0000ff> <!--分界线-->
+   <hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
+<a href="./101.html">1</a>&nbsp; &nbsp;
+<a href="./102.html">2</a>&nbsp; &nbsp;
+<a href="./103.html">3</a>&nbsp; &nbsp;
+<a href="./104.html">4</a>&nbsp; &nbsp;
+<a href="./105.html">5</a>&nbsp; &nbsp;
+<a href="./106.html">6</a>&nbsp; &nbsp;
+<a href="./107.html">7</a>&nbsp; &nbsp;
+<a href="./108.html">8</a>&nbsp; &nbsp;
+<a href="/">下一页</a>
+<hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
+<!--居中--></center><!--居中-->
+<!--无下划线结束--><head><!--无下划线-->
+<!--加粗--></strong><!--加粗-->
+<!--字体大小--></span><!--字体大小-->
