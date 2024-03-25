@@ -15,22 +15,96 @@ A{TEXT-DECORATION: none}
 
             <!--国家地区--><meta http-equiv='content-language' content='zh-cn'>
 
-
-
-<!--主题-->                              <h1>Piwigo相册xiangce添加链接</h1>
-                                      <title>Piwigo相册xiangce添加链接,网名张先生</title><!--标题-->
-<!--关键词--> <meta name="keywords" content="Piwigo相册xiangce添加链接,网名张先生,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,123,234,0123456789" /><!--关键词-->
-<!--描述--><meta name="description" content="Piwigo相册xiangce添加链接,网名张先生" />
+<!--居中--><center><!--居中-->
+<!--主题-->                              <h1>铆钉报价计算器</h1>
+                                      <title>铆钉报价计算器</title><!--标题-->
+<!--关键词--> <meta name="keywords" content="铆钉报价计算器网名张先生,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,网民张先生,123,234,0123456789" /><!--关键词-->
+<!--描述--><meta name="description" content="铆钉报价计算器网名张先生铆钉厂家铁黄铜紫铜不锈钢304316铝合金网名公平村客家人0123456789" />
 
 <!--分界线--><hr color=0000ff> <!--分界线-->
 
 <!--内容开始-->
 
 
+<style>
+    /* 样式代码 */  
+  </style>
+</head>
+<body>
+ 
+  <form>
+
+    <!-- 输入单重 -->
+    <label for="weight">单重：</label>
+    <input type="number" id="weight" step="0.00000000001" required>
+    克<br><br>
+  
+    <!-- 输入数量 -->
+    <label for="quantity">数量：</label>
+    <input type="number" id="quantity" required>
+    个<br><br>
+ 
+    <!-- 输入原材料价格 -->
+    <label for="material">原材料价格：</label>
+    <input type="number" id="material" step="0.00000000001" required>
+    元/公斤<br><br>
+ 
+    <!-- 输入加工费 -->
+    <label for="processing">总加工费：</label>
+    <input type="number" id="processing" step="0.00000000001" required>
+    元<br><br>
+    
+    <!-- 提交按钮 -->
+    <input type="submit" value="计算">
+&nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; 
 
 
 
-<!--居中--><center><!--居中-->
+<button onclick="resetInput()">重置</button>
+
+
+  </form>
+ 
+  <div id="result">
+    <!-- 显示计算结果 -->
+  </div>
+ 
+    <script>
+
+document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault(); // 阻止表单的默认提交行为
+ 
+  // 获取用户输入的值
+  var weight = parseFloat(document.getElementById("weight").value);
+  var quantity = parseInt(document.getElementById("quantity").value);
+  var materialPrice = parseFloat(document.getElementById("material").value);
+  var processingFee = parseFloat(document.getElementById("processing").value);
+ 
+  // 计算单价和总价格
+  var unitPrice = ((weight * quantity) / 1000 * materialPrice + processingFee) / quantity;
+  var totalPrice = weight * quantity / 1000 * materialPrice + processingFee;
+ 
+  // 显示计算结果
+  document.getElementById("result").innerHTML = `
+    <p>单价：${unitPrice}元</p>
+    <p>总价格：${totalPrice}元</p>
+  `;
+});
+
+function resetInput() {
+  document.getElementById("weight").value = "";
+  document.getElementById("quantity").value = "";
+  document.getElementById("material").value = "";
+  document.getElementById("processing").value = "";
+
+}
+
+
+
+</script>
+
+</body>
 
 
 
@@ -39,25 +113,7 @@ A{TEXT-DECORATION: none}
 
 
 
-<textarea cols="45%" rows="80%" id="biao1">
-Piwigo相册xiangce添加链接
-在你的网站的论坛根目录下
-/index.php
 
-用记事本打开这个index.php
-拉到最下面
-找到这个?>
-改成这样
-
-<center>
-<a href="./102.html" target="_blank">爱淘宝手机版</a>
-<a href="./101.html" target="_blank">爱淘宝电脑版</a>
-<a href="https://cn.bing.com/search?q=网名张先生" target="_blank">网名张先生</a>
- </center>';
-?>
-
-
-</textarea>
 
 
 
@@ -67,7 +123,12 @@ Piwigo相册xiangce添加链接
 
 <hr/>
 <!--居中--><center> <!--居中-->
-<hr/><textarea cols="40%" rows="1%" id="biao1">网名张先生,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,123,234,0123456789</textarea>
+<hr/><textarea cols="40%" rows="1%" id="biao1">网名张先生,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,123,234,0123456789
+檀越剑指大厂 
+https://ask.csdn.net/questions/8077672
+
+网名张先生一铆钉厂家公平村客家人艺名网民
+</textarea>
 <!--内容结束-->
 <!--分界线--><hr color=0000ff> <!--分界线-->
    <hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
