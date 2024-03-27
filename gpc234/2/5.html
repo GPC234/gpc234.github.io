@@ -109,12 +109,89 @@ A{TEXT-DECORATION: none}
 <!--内容开始-->
 
 
+<!--搜索-->
+<hr color=0000ff>
 
-<br/><textarea cols="20%" rows="1" id="biao1"  style="font-size: 25px;color: rgb(250, 0, 0);  ">搜索↓↓↓</textarea><br/>
+搜索<br/><textarea  type="text" name="q" placeholder="输入要搜索的内容后点击搜索" cols="30%" rows="3" id="searchInput"  style="font-size: 12px;color: rgb(250, 0, 0);  "></textarea>
+
+
+<br/>
+
+<button id="gpc234-8" value="baidu">百度搜索</button>
+<button id="gpc234-9" value="bing">必应搜索</button>
+<button id="gpc234-1" value="bing">今日头条搜索</button>
+<button id="gpc234-2" value="bing">搜狗微信搜索</button>
+<button id="gpc234-3" value="bing">360搜索</button>
+<button id="gpc234-4" value="bing">抖音搜索</button>
+<button id="gpc234-5" value="bing">无追搜索</button>
+<button id="gpc234-6" value="bing">搜狗搜索</button>
+<button id="gpc234-7" value="bing">F搜索</button>
+
+
+
+
+
+<script>
+document.getElementById("gpc234-8").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-9").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.bing.com/search?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+
+document.getElementById("gpc234-1").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://so.toutiao.com/search?dvpf=pc&source=input&keyword=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-2").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://weixin.sogou.com/weixin?type=2&s_from=input&query=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+
+document.getElementById("gpc234-3").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.so.com/s?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-4").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.douyin.com/search/" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-5").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.wuzhuiso.com/s?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-6").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.sogou.com/web?query=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-7").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://fsoufsou.com/search?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+</script>
 
 <hr/>
-
-
+<!--搜索-->
 
 
 
