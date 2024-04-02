@@ -70,63 +70,54 @@ A{TEXT-DECORATION: none}
 <!--居中--><center><!--居中-->
 
 
-
-
-
-<hr/>
-
-
-
-<button>	<span style="font-size: 30px;">	<a href="https://www.toutiao.com/" target="_blank"><img src="https://sf3-cdn-tos.douyinstatic.com/obj/eden-cn/uhbfnupkbps/216.png" alt="铆钉厂张东良" width="60 " height=" " title="" align="" /></a> <br/><a href="https://www.toutiao.com/" target="_blank">头条</a>	</span>	</button>	
-
-
-
-<button>	<span style="font-size: 30px;">	<a href="https://cn.bing.com/" target="_blank"><img src="https://cn.bing.com/sa/simg/favicon-trans-bg-blue-mg-png.png" alt="铆钉厂张东良" width="60 " height=" " title="" align="" /> <br/>必应</a>	</span>	</button>	
-
-
-
-<button>	<span style="font-size: 30px;">	<a href="https://www.baidu.com/" target="_blank"><img src="https://psstatic.cdn.bcebos.com/video/wiseindex/aa6eef91f8b5b1a33b454c401_1660835115000.png" alt="铆钉厂张东良" width="60 " height=" " title="" align="" /></a> <br/><a href="https://www.baidu.com/" target="_blank">百度</a>	</span>	</button>	
-
-
-
-
-
-
-
-
-
-<hr/>
-
-
-
-
-
-
-
-
-
-
 <!--内容开始-->
 
 
 <!--搜索-->
 <hr color=0000ff>
 
-搜索<br/><textarea  type="text" name="q" placeholder="输入要搜索的内容后点击搜索" cols="30%" rows="3" id="searchInput"  style="font-size: 12px;color: rgb(250, 0, 0);  "></textarea>
 
 
-<br/>
 
-<button id="gpc234-8" value="baidu">百度搜索</button>
-<button id="gpc234-9" value="bing">必应搜索</button>
-<button id="gpc234-1" value="bing">今日头条搜索</button><br/>
-<button id="gpc234-2" value="bing">搜狗微信搜索</button>
-<button id="gpc234-3" value="bing">360搜索</button>
-<button id="gpc234-4" value="bing">抖音搜索</button><br/>
-<button id="gpc234-5" value="bing">无追搜索</button>
-<button id="gpc234-6" value="bing">搜狗搜索</button>
-<button id="gpc234-7" value="bing">F搜索</button><br/>
 
+
+
+<!--搜索--><hr color=0000ff>
+
+<style>
+ #searchInput{width:80%;height:50px;}
+</style>
+<script>
+function handleKeyUp(event) {
+  if (event.keyCode === 13) {
+    // 在此处编写必应搜索的逻辑代码
+    window.location.href = 'https://www.bing.com/?q=' + document.getElementById('searchInput').value;
+  }
+}
+</script>
+
+<body>
+搜索:<input type="text" style="font-size: 20px;color: rgb(250, 0, 0);  "  name="q" placeholder="输入内容后按下方的搜索(前往)"   id="searchInput" onkeyup="handleKeyUp(event) ">
+</body>
+</html>
+
+<!--搜索-->
+<hr color=0000ff>
+<button id="gpc234-10"style="font-size: 25px;"  value="bing">前往</button>
+<button id="gpc234-8"style="font-size: 25px;" value="baidu">百度搜索</button>
+<button id="gpc234-9"style="font-size: 25px;"  value="bing">必应搜索</button>
+<button id="gpc234-1"style="font-size: 25px;"  value="bing">今日头条搜索</button>
+<button id="gpc234-2"style="font-size: 25px;"  value="bing">搜狗微信搜索</button>
+<button id="gpc234-3"style="font-size: 25px;"  value="bing">360搜索</button>
+<button id="gpc234-4"style="font-size: 25px;"  value="bing">抖音搜索</button>
+<button id="gpc234-5"style="font-size: 25px;"  value="bing">无追搜索</button>
+<button id="gpc234-6"style="font-size: 25px;"  value="bing">搜狗搜索</button>
+<button id="gpc234-7"style="font-size: 25px;"  value="bing">F搜索</button>
+
+<hr color=0000ff>
+
+
+<hr color=0000ff>
 
 
 
@@ -144,6 +135,11 @@ document.getElementById("gpc234-9").addEventListener("click", function() {
   window.open(searchUrl);
 });
 
+document.getElementById("gpc234-10").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.bing.com/search?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
 
 document.getElementById("gpc234-1").addEventListener("click", function() {
   var keyword = document.getElementById("searchInput").value;
