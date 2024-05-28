@@ -74,9 +74,19 @@ function multiply() {
   var num3 = parseFloat(document.getElementById("num3").value);
 
 
+
+  var product3 =num1/2*num1/2*num2*3.14;// 帽经
+  var product4 =product3*num2;// 帽经x帽厚
+  var product5 =num3/2*num3/2*num2*3.14;// 原材料
+  var product6 =product4/product5;// 材料长度
   var product2 =(num1/2*num1/2*num2*3.14)/(num3/2*num3/2*num2*3.14);// 公斤
 
-  document.getElementById("nums").value = product2;
+
+
+
+
+
+  document.getElementById("nums").value = product6;
 
 }
 
@@ -95,7 +105,7 @@ document.getElementById("nums").value = "";
 
 
 
-
+更新:2024年5月28日
 
 
 
