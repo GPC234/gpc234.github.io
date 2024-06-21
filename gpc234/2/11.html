@@ -34,21 +34,51 @@ A{TEXT-DECORATION: none}
 
 <hr/>
 
-<input type="button" onClick="copyUrl2()" value="一键复制" />
+  <!--一键复制代码备注--><script>
+        function copyText(buttonId) {
+            // 获取对应按钮下方的内容区域
+            var contentId = buttonId + '-content';
+            var content = document.getElementById(contentId);
 
-<hr/>
-<script type="text/javascript">
-function copyUrl2()
-{
-var Url2=document.getElementById("biao1");
-Url2.select(); // 选择对象
-document.execCommand("Copy"); // 执行浏览器复制命令
-alert("已复制好,去打开淘宝,等待弹出");
-}
-</script>
-<textarea cols="40%" rows="3" id="biao1">830991899 ￥ CA6496 MypOWG984Er￥ https://m.tb.cn/h.gcuC2jf  淘口令    </textarea>
+            // 创建临时textarea元素，并将内容复制到其中
+            var tempTextarea = document.createElement('textarea');
+            tempTextarea.value = content.innerText;
+            document.body.appendChild(tempTextarea);
 
-<br/><input type="button" onClick="copyUrl2()" value="一键复制" />
+            // 选中临时textarea中的内容并执行复制命令
+            tempTextarea.select();
+            document.execCommand('copy');
+
+            // 移除临时textarea元素
+            document.body.removeChild(tempTextarea);
+
+            // 提示复制成功
+            alert('已复制内容：' + content.innerText);
+        }
+    </script>
+</head>  <!--一键复制代码备注-->
+
+
+<!--表格代码</th>--><table border="1px" cellspacing="0px" width="300px">
+
+<!--表格代码--><tr><td rowspan="1" colspan="3">复制后打开手机淘宝</td></tr><div><tr><th>口令</th><th><div id="gpc234-6-content">07￥ CA6496 Q6pMWBKajLc￥ https://m.tb.cn/h.g5ujt5q  淘口令  </div></th><th><button id="gpc234-6"onclick="copyText('gpc234-6')">复制</button></th></tr></div><!--空格--><tr><td rowspan="1" colspan="3"></td></tr>
+<!--表格代码--><tr><td rowspan="1" colspan="3">复制后打开快手极速版</td></tr><div><tr><th>邀请码</th><th><div id="gpc234-1-content">938410598</div></th><th><button id="gpc234-1"onclick="copyText('gpc234-1')">复制</button></th></tr></div><!--空格--><tr><td rowspan="1" colspan="3"></td></tr>
+<!--表格代码--><tr><td rowspan="1" colspan="3">复制后打开快手</td></tr><div><tr><th>邀请码</th><th><div id="gpc234-2-content">3940702415</div></th><th><button id="gpc234-2"onclick="copyText('gpc234-2')">复制</button></th></tr></div><!--空格--><tr><td rowspan="1" colspan="3"></td></tr>
+<!--表格代码--><tr><td rowspan="1" colspan="3">复制后打开抖音极速版</td></tr><div><tr><th>邀请码</th><th><div id="gpc234-3-content">AF39733898</div></th><th><button id="gpc234-3"onclick="copyText('gpc234-3')">复制</button></th></tr></div><!--空格--><tr><td rowspan="1" colspan="3"></td></tr>
+<!--表格代码--><tr><td rowspan="1" colspan="3">复制后打开抖音</td></tr><div><tr><th>邀请码</th><th><div id="gpc234-4-content">AF39733898</div></th><th><button id="gpc234-4"onclick="copyText('gpc234-4')">复制</button></th></tr></div><!--空格--><tr><td rowspan="1" colspan="3"></td></tr>
+<!--表格代码--><tr><td rowspan="1" colspan="3">复制后打开头条搜索</td></tr><div><tr><th>邀请码</th><th><div id="gpc234-5-content">Q7557471</div></th><th><button id="gpc234-5"onclick="copyText('gpc234-5')">复制</button></th></tr></div><!--空格--><tr><td rowspan="1" colspan="3"></td></tr>
+
+
+
+
+
+
+   </table>  <!--一键复制代码备注-->
+
+
+
+
+
 
 <hr/>(广告)<a href="https://qr.alipay.com/11w16584ylc5gvt6diook91" target="_blank">去支付宝搜索红包码(领红包):</a>830991899<hr/>
 
