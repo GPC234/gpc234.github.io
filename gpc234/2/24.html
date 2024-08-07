@@ -73,8 +73,7 @@ A{TEXT-DECORATION: none}
 <button id="gpc234-2"style="font-size: 25px;" value="bing">搜狗微信搜索</button>
 <button id="gpc234-3"style="font-size: 25px;" value="bing">360搜索</button>
 <button id="gpc234-4"style="font-size: 25px;" value="bing">抖音搜索</button>
-<button id="gpc234-5"style="font-size: 25px;" value="bing">无追搜索</button>
-<button id="gpc234-6"style="font-size: 25px;" value="bing">搜狗搜索</button>
+<button id="gpc234-5"style="font-size: 25px;" value="bing">搜狗搜索</button>
 
 
 
@@ -122,13 +121,9 @@ document.getElementById("gpc234-4").addEventListener("click", function() {
   window.open(searchUrl);
 });
 
-document.getElementById("gpc234-5").addEventListener("click", function() {
-  var keyword = document.getElementById("searchInput").value;
-  var searchUrl = "https://www.wuzhuiso.com/s?q=" + encodeURIComponent(keyword);
-  window.open(searchUrl);
-});
 
-document.getElementById("gpc234-6").addEventListener("click", function() {
+
+document.getElementById("gpc234-5").addEventListener("click", function() {
   var keyword = document.getElementById("searchInput").value;
   var searchUrl = "https://www.sogou.com/web?query=" + encodeURIComponent(keyword);
   window.open(searchUrl);
