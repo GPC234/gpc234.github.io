@@ -205,7 +205,7 @@ document.getElementById("gpc234-5").addEventListener("click", function() {
 	 <th><a href="https://www.so.com/" target="_blank">360搜索</a></th>
 </tr>
 <tr>
-	 <th><a href="http://lib.3dsource.cn/" target="_blank">3DSource零件库</a></th>
+	 <th><a href="http://lib.3dsource.cn/" target="_blank">3DSource<br/>零件库</a></th>
 	 <th><a href="https://www.sogou.com/" target="_blank">搜狗搜索</a></th>
 
 </tr>
@@ -529,4 +529,20 @@ document.getElementById("gpc234-5").addEventListener("click", function() {
 
 
 
+
+
+
+
+
+  <script>
+    function redirectBasedOnScreenSize() {
+      if (window.innerWidth >= 768) {
+        // 电脑屏幕尺寸，跳转到另一个网页
+        window.location.href = "./6.html";
+      }
+    }
+
+    window.addEventListener('load', redirectBasedOnScreenSize);
+    window.addEventListener('resize', redirectBasedOnScreenSize);
+  </script>
 
