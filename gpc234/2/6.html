@@ -191,9 +191,12 @@ A{TEXT-DECORATION: none}
 <button id="gpc234-4"style="font-size: 25px;" value="bing">抖音搜索</button>
 <button id="gpc234-5"style="font-size: 25px;" value="bing">搜狗搜索</button>
 <button id="gpc234-6"style="font-size: 25px;" value="bing">3DSource零件库</button>
-<hr color=0000ff>
-
-
+<hr/>
+图片搜索:
+<button id="gpc234-7"style="font-size: 25px;" value="bing">必应图片</button>
+<button id="gpc234-11"style="font-size: 25px;" value="bing">百度图片</button>
+<button id="gpc234-12"style="font-size: 25px;" value="bing">搜狗图片</button>
+<button id="gpc234-13"style="font-size: 25px;" value="bing">360图片</button>
 <hr color=0000ff>
 
 
@@ -258,8 +261,29 @@ document.getElementById("gpc234-10").addEventListener("click", function() {
   window.open(searchUrl);
 });
 
+document.getElementById("gpc234-7").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://cn.bing.com/images/search?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
 
+document.getElementById("gpc234-11").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&dyTabStr=MCwzLDEsMiwsNyw2LDUsMTIsOQ%3D%3D&word=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
 
+document.getElementById("gpc234-12").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://pic.sogou.com/pics?ie=utf8&p=40230504&query=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-13").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://image.so.com/i?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
 
 </script>
 
@@ -268,21 +292,6 @@ document.getElementById("gpc234-10").addEventListener("click", function() {
 
 <hr/>
 <!--搜索-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!--表格开始--><table style="width:80%;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
