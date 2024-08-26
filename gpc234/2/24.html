@@ -34,10 +34,7 @@ A{TEXT-DECORATION: none}
 
 
 
-
-
-
-
+<!--搜索--><hr color=0000ff>
 
  <body>
 
@@ -54,7 +51,7 @@ A{TEXT-DECORATION: none}
     });
   </script>
 <style>
- #searchInput{width:100%;height:80px;}
+ #searchInput{width:60%;height:80px;}
 </style>
 
 
@@ -63,9 +60,11 @@ A{TEXT-DECORATION: none}
 </body>
 </html>
 
+
+
+
 <!--搜索-->
 <hr color=0000ff>
-
 <button id="gpc234-9"style="font-size: 25px;" value="bing">前往</button>
 <button id="gpc234-8"style="font-size: 25px;" value="baidu">百度搜索</button>
 <button id="gpc234-10"style="font-size: 25px;" value="bing">必应搜索</button>
@@ -74,27 +73,17 @@ A{TEXT-DECORATION: none}
 <button id="gpc234-3"style="font-size: 25px;" value="bing">360搜索</button>
 <button id="gpc234-4"style="font-size: 25px;" value="bing">抖音搜索</button>
 <button id="gpc234-5"style="font-size: 25px;" value="bing">搜狗搜索</button>
-
+<button id="gpc234-6"style="font-size: 25px;" value="bing">3DSource零件库</button>
+<hr/>
+图片搜索:
+<button id="gpc234-7"style="font-size: 25px;" value="bing">必应图片</button>
+<button id="gpc234-11"style="font-size: 25px;" value="bing">百度图片</button>
+<button id="gpc234-12"style="font-size: 25px;" value="bing">搜狗图片</button>
+<button id="gpc234-13"style="font-size: 25px;" value="bing">360图片</button>
+<hr color=0000ff>
 
 
 <script>
-document.getElementById("gpc234-8").addEventListener("click", function() {
-  var keyword = document.getElementById("searchInput").value;
-  var searchUrl = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
-  window.open(searchUrl);
-});
-
-document.getElementById("gpc234-9").addEventListener("click", function() {
-  var keyword = document.getElementById("searchInput").value;
-  var searchUrl = "https://www.bing.com/search?q=" + encodeURIComponent(keyword);
-  window.open(searchUrl);
-});
-
-document.getElementById("gpc234-10").addEventListener("click", function() {
-  var keyword = document.getElementById("searchInput").value;
-  var searchUrl = "https://www.bing.com/search?q=" + encodeURIComponent(keyword);
-  window.open(searchUrl);
-});
 
 document.getElementById("gpc234-1").addEventListener("click", function() {
   var keyword = document.getElementById("searchInput").value;
@@ -129,14 +118,104 @@ document.getElementById("gpc234-5").addEventListener("click", function() {
   window.open(searchUrl);
 });
 
+document.getElementById("gpc234-6").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "http://lib.3dsource.cn/#/searchResult?searchKeyword=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
 
+
+
+document.getElementById("gpc234-8").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-9").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.bing.com/search?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-10").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://www.bing.com/search?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-7").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://cn.bing.com/images/search?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-11").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&dyTabStr=MCwzLDEsMiwsNyw2LDUsMTIsOQ%3D%3D&word=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-12").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://pic.sogou.com/pics?ie=utf8&p=40230504&query=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+document.getElementById("gpc234-13").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://image.so.com/i?q=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
 
 </script>
 
 <!--搜索-->
 
 
-<!--搜索-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
