@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="viewport" content="width=device-width,  user-scalable=yes" /><!--手机版本代码-->
+<meta charset="utf-8"><!--网页乱码修复-->
+<meta http-equiv='content-language' content='zh-cn'><!--国家地区-->
+<link  href="./favicon.ico" alt="网名张先生"  rel="shortcut icon" type="image/x-icon" /><!--图标-->
+
+<title>一网名张先生</title>
+<meta name="keywords" content=",网名张先生,网名张先生的个人主页,网名张先生的个人首页,网名张先生的个人空间,网名张先生的个人中心,网名张先生的个人档案,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,网号张先生" /><!--关键词-->
+<meta name="description" content="一网名张先生,网名张先生的个人主页,网名张先生的个人首页,网名张先生的个人空间,网名张先生的个人中心,网名张先生的个人档案,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,网号张先生" />
+
+
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        #marquee {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+            color: white;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="marquee"></div>
+
+    <script>
+        // 获取输入的弹幕内容
+        const input = prompt('请输入弹幕内容：');
+        document.getElementById('marquee').textContent = input;
+
+        // 设置滚动速度
+        let x = 0;
+        const speed = 2;
+
+        function scrollMarquee() {
+            x -= speed;
+            document.getElementById('marquee').style.transform = `translateX(${x}px)`;
+            if (x < -document.getElementById('marquee').offsetWidth) {
+                x = window.innerWidth;
+            }
+            requestAnimationFrame(scrollMarquee);
+        }
+
+        scrollMarquee();
+    </script>
+</body>
+
+
+
+
+<!--内容结束-->
+
+</body><!--内容结束-->
+</center><!--居中-->
+<head><!--无下划线-->
+</strong><!--加粗-->
+</span><!--字体大小-->
+</html><!--结束-->
+
+
+
+
+
+
+
+
+
+
+
