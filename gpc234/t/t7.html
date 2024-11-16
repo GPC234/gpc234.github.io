@@ -1,1 +1,17 @@
-<script>window.location.href='https://temai.m.taobao.com/search.htm?pid=mm_5518923388_3058500304_115604700063&union_lens=lensId%3APUB%401705892295%40210489c7_1031_18d2f1ab2a2_04bc%4001';</script>
+搜索:<a href="/" target="_blank">网名张先生</a>
+查找淘宝优惠券,查找天猫优惠券,搜索淘宝的优惠券,搜索天猫的优惠券<hr/>
+<body>
+  <script>
+    function detectDevice() {
+      const userAgent = navigator.userAgent;
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
+        // 手机端，重定向到手机页面
+        window.location.href = 'https://temai.m.taobao.com/search.htm?pid=mm_5518923388_3058500304_115604700063&union_lens=lensId%3APUB%401731717792%400bbb326a_14cd_193326c816e_345c%4001';
+      } else {
+        // 电脑端，重定向到电脑页面
+        window.location.href = './13.html';
+      }
+    }
+    detectDevice();
+  </script>
+</body>
