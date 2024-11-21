@@ -6,8 +6,8 @@
 <meta http-equiv='content-language' content='zh-cn'><!--国家地区-->
  <link  href="./2.ico"  rel="shortcut icon" type="image/x-icon" /><!--图标-->
  <title>浏览器主页</title><!--标题-->
-<!--关键词--> <meta name="keywords" content="网名张先生,浏览器主页,网名张先生浏览器主页,公平村浏览器首页,公平村浏览器主页,公平村网址导航,平村网站导航,gpc234浏览器首页,网名张先生浏览器首页,6浏览器首页,6浏览器主页,6主页,6首页" /><!--关键词-->
-<!--描述--><meta name="description" content="网名张先生,浏览器主页,网名张先生浏览器主页,公平村浏览器首页,公平村浏览器主页,公平村网址导航,平村网站导航,gpc234浏览器首页,网名张先生浏览器首页,6浏览器首页,6浏览器主页,6主页,6首页" />
+<!--关键词--> <meta name="keywords" content="网名张先生,浏览器主页,网名张先生浏览器主页,公平村浏览器首页,公平村浏览器主页,公平村网址导航,平村网站导航,gpc234浏览器首页,网名张先生浏览器首页,6浏览器首页,6浏览器主页,6主页,6首页,公平村" /><!--关键词-->
+<!--描述--><meta name="description" content="网名张先生,浏览器主页,网名张先生浏览器主页,公平村浏览器首页,公平村浏览器主页,公平村网址导航,平村网站导航,gpc234浏览器首页,网名张先生浏览器首页,6浏览器首页,6浏览器主页,6主页,6首页,公平村" />
 
 </head>
 <html lang="en">
@@ -91,6 +91,7 @@
 <button id="gpc234-4"style="font-size: 25px;" value="bing">抖音搜索</button>
 <button id="gpc234-5"style="font-size: 25px;" value="bing">搜狗搜索</button>
 <br/>
+<button id="gpc234-14"style="font-size: 25px;" value="bing">Yandex</button>
 <button id="gpc234-6"style="font-size: 25px;" value="bing">3DSource零件库</button>
 <br/>
 图片搜索:<br/><br/>
@@ -185,6 +186,14 @@ document.getElementById("gpc234-13").addEventListener("click", function() {
   var searchUrl = "https://image.so.com/i?q=" + encodeURIComponent(keyword);
   window.open(searchUrl);
 });
+
+document.getElementById("gpc234-14").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://yandex.com/search/?text=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
+
+
 
 </script>
 
