@@ -40,14 +40,14 @@
         function increaseFontSize() {
             var textarea = document.getElementById('myInput');
             var currentSize = parseInt(window.getComputedStyle(textarea).fontSize);
-            textarea.style.fontSize = (currentSize + 2) + 'px';
+            textarea.style.fontSize = (currentSize + 20) + 'px';
         }
 
         function decreaseFontSize() {
             var textarea = document.getElementById('myInput');
             var currentSize = parseInt(window.getComputedStyle(textarea).fontSize);
             if (currentSize > 2) {
-                textarea.style.fontSize = (currentSize - 2) + 'px';
+                textarea.style.fontSize = (currentSize - 20) + 'px';
             }
         }
     </script>
