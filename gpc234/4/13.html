@@ -11,8 +11,8 @@
 
 </head>
 
-
-搜索淘宝的优惠券一搜索天猫的优惠券一搜索优惠券一查找淘宝优惠券一查找天猫优惠券一<hr/>
+<h1>搜索淘宝的优惠券一搜索天猫的优惠券一搜索优惠券一查找淘宝优惠券一查找天猫优惠券</h1>
+一
 搜索:<a href="/" target="_blank">网名张先生</a>
 <body>
   <script>
@@ -30,5 +30,24 @@
   </script>
 </body>
 
+
+<hr color=0066FF>
+<p id="currentDateTime"></p>
+    <script>
+        const currentDateTimeElement = document.getElementById('currentDateTime');
+        const now = new Date();
+
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1;
+        const day = now.getDate();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const formattedDateTime = `日期:${year}年${month}月${day}日${hours}:${minutes}:${seconds}`;
+
+        currentDateTimeElement.textContent = formattedDateTime;
+    </script>
+<hr color=0066FF>
 
 
