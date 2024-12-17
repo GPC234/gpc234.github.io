@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html><html lang="zh-cn">
 
 <head>
 <meta name="viewport" content="width=device-width,  user-scalable=yes" /><!--手机版本代码-->
 <meta charset="utf-8"><!--网页乱码修复-->
 <meta http-equiv='content-language' content='zh-cn'><!--国家地区-->
- <link  href="./2.ico" alt="公平村浏览器主页6首页网站网址导航网名张先生" rel="shortcut icon" type="image/x-icon" /><!--图标-->
+<link rel="shortcut icon" href="./2.ico" alt="网名张先生" type="image/x-icon"><!--图标-->
+<link rel="icon" sizes="any" mask href="./2.ico"alt="网名张先生">
+<link rel="apple-touch-icon-precomposed" href="./2.ico"alt="网名张先生">
+<link rel="apple-touch-icon" href="./2.ico"alt="网名张先生">
+
 
 <title>浏览器主页</title>
 <meta name="keywords" content="网名张先生,浏览器主页,网名张先生浏览器主页,公平村浏览器首页,公平村浏览器主页,公平村网址导航,平村网站导航,gpc234浏览器首页,网名张先生浏览器首页,6浏览器首页,6浏览器主页,6主页,6首页" /><!--关键词-->
@@ -38,6 +40,60 @@
 
 
 <input type="text" style="font-size: 40px;color: rgb(250, 0, 0);  "  name="q" placeholder="输入要搜索的内容后按回车键或者点击下方的搜索"   id="searchInput" onkeyup="handleKeyUp(event) ">
+
+<!--转换大写--> <style>
+        /* 为显示结果的div元素添加样式，设置字体大小等 */
+        #result {
+            font-size: 40px; /* 这里可以根据需要调整字体大小的值 */
+            color: black; /* 也可以设置字体颜色等其他样式属性 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="result"></div>
+    <script>
+        const chineseNumber = ["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
+        const chineseUnit = ["", "拾", "佰", "仟", "万", "拾", "佰", "仟", "亿", "拾", "佰", "仟"];
+
+        function convertToChinese(num) {
+            let numStr = num.toString();
+            let result = "";
+            for (let i = 0; i < numStr.length; i++) {
+                let digit = parseInt(numStr[i]);
+                if (digit!== 0) {
+                    result += chineseNumber[digit] + chineseUnit[numStr.length - 1 - i];
+                } else {
+                    if (i > 0 && parseInt(numStr[i - 1])!== 0) {
+                        result += chineseNumber[digit];
+                    }
+                }
+            }
+            return result;
+        }
+
+        function handleKeyUp(event) {
+            let inputValue = document.getElementById("searchInput").value;
+            // 判断输入值是否为数字
+            if (!isNaN(inputValue) && inputValue!== "") {
+                let convertedValue = convertToChinese(inputValue);
+                document.getElementById("result").innerHTML = convertedValue + "元整";
+            } else {
+                document.getElementById("result").innerHTML = "";
+            }
+        }
+    </script>
+</body><!--转换大写--> 
+
+
+
+
+
+
+
+
+
 
 <script>
     document.getElementById("searchInput").addEventListener("keyup", function (event) {

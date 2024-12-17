@@ -31,6 +31,65 @@
 
 <input type="text" style="font-size: 12px;color: rgb(250, 0, 0);  "  name="q" placeholder="输入要搜索的内容后按回车键或者点击下方的搜索"   id="searchInput" onkeyup="handleKeyUp(event) ">
 
+<!--转换大写--> <style>
+        /* 为显示结果的div元素添加样式，设置字体大小等 */
+        #result {
+            font-size: 16px; /* 这里可以根据需要调整字体大小的值 */
+            color: black; /* 也可以设置字体颜色等其他样式属性 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="result"></div>
+    <script>
+        const chineseNumber = ["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
+        const chineseUnit = ["", "拾", "佰", "仟", "万", "拾", "佰", "仟", "亿", "拾", "佰", "仟"];
+
+        function convertToChinese(num) {
+            let numStr = num.toString();
+            let result = "";
+            for (let i = 0; i < numStr.length; i++) {
+                let digit = parseInt(numStr[i]);
+                if (digit!== 0) {
+                    result += chineseNumber[digit] + chineseUnit[numStr.length - 1 - i];
+                } else {
+                    if (i > 0 && parseInt(numStr[i - 1])!== 0) {
+                        result += chineseNumber[digit];
+                    }
+                }
+            }
+            return result;
+        }
+
+        function handleKeyUp(event) {
+            let inputValue = document.getElementById("searchInput").value;
+            // 判断输入值是否为数字
+            if (!isNaN(inputValue) && inputValue!== "") {
+                let convertedValue = convertToChinese(inputValue);
+                document.getElementById("result").innerHTML = convertedValue + "元整";
+            } else {
+                document.getElementById("result").innerHTML = "";
+            }
+        }
+    </script>
+</body><!--转换大写--> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
     document.getElementById("searchInput").addEventListener("keyup", function (event) {
       if (event.keyCode === 13) {
