@@ -1,109 +1,122 @@
 <!DOCTYPE html>
-<html>
-
-
+<html lang="zh-CN">
 <head>
 <meta name="viewport" content="width=device-width,  user-scalable=yes" /><!--手机版本代码-->
 <meta charset="utf-8"><!--网页乱码修复-->
 <meta http-equiv='content-language' content='zh-cn'><!--国家地区-->
-<link  href="../jpg/1.ico" alt="网名张先生一铆钉计算器" rel="shortcut icon" type="image/x-icon" /><!--图标-->
+<link  href="./favicon.ico" alt="网名张先生"  rel="shortcut icon" type="image/x-icon" /><!--图标-->
+
+<title>房贷等额本息计算器一网名张先生</title>
+<meta name="keywords" content="房贷等额本息计算器,网名张先生,张先生,公平村,网名张先生的图片,网名张先生的个人主页,网名张先生的个人首页,网名张先生的个人中心,网名张先生的档案,公平村张先生,艺名张先生,网名张先生,网民张先生,网号张先生,用户名张先生,账号张先生,客家人张先生" /><!--关键词-->
+<meta name="description" content="房贷等额本息计算器一搜索:网名张先生,公平村," />
+
+</head>
+
 <style type="text/css">A{TEXT-DECORATION: none}</style><!--无下划线开始-->
 <span style="font-size: 18px;"><!--字体大小-->
-
-<!--居中--><center><!--居中-->
-
+<strong><!--加粗-->
 
 
-<!--主题-->                              <h1>商品打折计算器</h1>
-                                      <title>商品打折计算器一网名张先生</title><!--标题-->
-<!--关键词--> <meta name="keywords" content="商品打折计算器,网名张先生,张先生,公平村,网名张先生的图片,网名张先生的个人主页,网名张先生的个人首页,网名张先生的个人中心,网名张先生的档案,公平村张先生,艺名张先生,网名张先生,网民张先生,网号张先生,用户名张先生,账号张先生,客家人张先生" /><!--关键词-->
-<!--描述--><meta name="description" content="商品打折计算器一搜索:网名张先生,公平村," />
+<style>
+a#gpc234{ background-color: #0066FF; /*蓝色 */
+    border: none;
+    color: white;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+box-shadow: 10px 10px 5px #888888;/*灰色 */
+}
+</style><!--css标题2024年7月16日-->
 
-<!--分界线--><hr color=0000ff> <!--分界线-->
 
-<!--内容开始-->
+<h1><a id="gpc234" href="./h1.html" target="_blank">网名张先生</a></h1>
+
+<hr color=0066FF> <!--分界线-->
+
+<center><!--居中-->
+<body><!--内容开始body-->
 
 
 
-
-
-<!--居中--><center><!--居中-->
-
-<!--商品打折计算器-->
-
- <style>
+<h3><a id="gpc234" href="https://cn.bing.com/search?q=房贷等额本息计算器一网名张先生" target="_blank">房贷等额本息计算器</a></h3>
+<hr color=0066FF>
+<!--文档内容......-->
+<style>
     body {
       font-family: Arial, sans-serif;
     }
-    
-    .container {
-      margin: 20px auto;
-      width: 300px;
+
+  .container {
+      max-width: 400px;
+      margin: 0 auto;
       padding: 20px;
-      border: 1px solid #ccc;
-      text-align: center;
     }
-    
-    input[type="number"] {
-      width: 100px;
+
+    label {
+      display: block;
       margin-bottom: 10px;
     }
-    
-    input[type="submit"] {
-    width: 200px; /* 计算的大小 */
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+
+    button {
       background-color: #4CAF50;
       color: white;
-      padding: 10px;
+      padding: 10px 15px;
       border: none;
       cursor: pointer;
     }
+
+   .result {
+      margin-top: 20px;
+      font-size: 16px;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <h2>商品打折计算器</h2>
-    <form id="discountForm">
-      <label for="originalPrice">商品原价:</label>
-      <input type="number" id="originalPrice" name="originalPrice" min="0"  placeholder="输入原价"required> 元<br>
- 
-      <label for="discountRate">打&nbsp; 几&nbsp; 折:</label>
-      <input type="number" id="discountRate" name="discountRate" min="0" max="100" placeholder="输入几折" required> 折<br>
- 
-      <input type="submit" value="计算">
-    </form>
- 
-    <div id="result" style="display: none;">
-      <p>节省: <span id="savings"></span> 元</p>
-      <p>打折后价格: <span id="discountedPrice"></span> 元</p>
-    </div>
+    <h2>房贷等额本息计算器</h2>
+    <label for="loanAmount">贷款金额（元）：</label>
+    <input type="number" id="loanAmount">
+    <label for="interestRate">年利率（%）：</label>
+    <input type="number" id="interestRate">
+    <label for="loanTerm">贷款期限（年）：</label>
+    <input type="number" id="loanTerm">
+    <button onclick="calculateMortgage()">计算</button>
+    <div class="result" id="monthlyPaymentResult"></div>
   </div>
 
-
-
-
   <script>
-    var form = document.getElementById("discountForm");
-    form.addEventListener("submit", calculateDiscount);
- 
-    function calculateDiscount(e) {
-      e.preventDefault();
-      
-      var originalPrice = parseFloat(document.getElementById("originalPrice").value);
-      var discountRate = parseFloat(document.getElementById("discountRate").value);
-      
-      var savings = (originalPrice * discountRate) / 10;
-      var discountedPrice = originalPrice - savings;
- 
-      document.getElementById("savings").textContent = savings.toFixed(2);
-      document.getElementById("discountedPrice").textContent = discountedPrice.toFixed(2);
- 
-      document.getElementById("result").style.display = "block";
+    function calculateMortgage() {
+      const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+      const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+      const loanTerm = parseFloat(document.getElementById('loanTerm').value) * 12;
+
+      if (isNaN(loanAmount) || loanAmount <= 0 || isNaN(interestRate) || interestRate < 0 || isNaN(loanTerm) || loanTerm <= 0) {
+        document.getElementById('monthlyPaymentResult').innerHTML = '请输入有效的数值。';
+        return;
+      }
+
+      const monthlyPayment = (loanAmount * interestRate * Math.pow(1 + interestRate, loanTerm)) / (Math.pow(1 + interestRate, loanTerm) - 1);
+
+      const totalPayment = monthlyPayment * loanTerm;
+      const totalInterest = totalPayment - loanAmount;
+
+      document.getElementById('monthlyPaymentResult').innerHTML = `每月还款金额：${monthlyPayment.toFixed(2)} 元<br>总还款金额：${totalPayment.toFixed(2)} 元<br>支付利息总额：${totalInterest.toFixed(2)} 元`;
     }
   </script>
 
 
 
-<hr/>
 <hr color=0066FF>
 <a href="#top" target="_self">返回顶部</a>
 <hr color=0066FF>
