@@ -139,30 +139,11 @@
 <button id="gpc234-13"style="font-size: 20px;" value="bing">360图片</button>
 <br/>
 翻译:<br/>
-<button id="gpc234-15"style="font-size: 20px;" value="bing">百度翻译</button>
 <button id="gpc234-16"style="font-size: 20px;" value="bing">搜狗翻译</button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
+
+
 
 document.getElementById("gpc234-1").addEventListener("click", function() {
   var keyword = document.getElementById("searchInput").value;
@@ -253,11 +234,7 @@ document.getElementById("gpc234-14").addEventListener("click", function() {
   window.open(searchUrl);
 });
 
-document.getElementById("gpc234-15").addEventListener("click", function() {
-  var keyword = document.getElementById("searchInput").value;
-  var searchUrl = "https://fanyi.baidu.com/mtpe-individual/multimodal?query=" + encodeURIComponent(keyword);
-  window.open(searchUrl);
-});
+
 
 document.getElementById("gpc234-16").addEventListener("click", function() {
   var keyword = document.getElementById("searchInput").value;
