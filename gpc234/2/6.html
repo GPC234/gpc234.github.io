@@ -264,7 +264,10 @@ td a {
 <button id="gpc234-11"style="font-size: 25px;" value="bing">百度图片</button>
 <button id="gpc234-12"style="font-size: 25px;" value="bing">搜狗图片</button>
 <button id="gpc234-13"style="font-size: 25px;" value="bing">360图片</button>
-
+<br/><br/>
+翻译:
+<button id="gpc234-15"style="font-size: 25px;" value="bing">百度翻译</button>
+<button id="gpc234-16"style="font-size: 25px;" value="bing">搜狗翻译</button>
 
 
 <script>
@@ -358,7 +361,17 @@ document.getElementById("gpc234-14").addEventListener("click", function() {
   window.open(searchUrl);
 });
 
+document.getElementById("gpc234-15").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://fanyi.baidu.com/mtpe-individual/multimodal?query=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
 
+document.getElementById("gpc234-16").addEventListener("click", function() {
+  var keyword = document.getElementById("searchInput").value;
+  var searchUrl = "https://fanyi.sogou.com/text?keyword=" + encodeURIComponent(keyword);
+  window.open(searchUrl);
+});
 
 
 </script>
