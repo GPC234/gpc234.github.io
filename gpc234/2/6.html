@@ -119,7 +119,34 @@ td a {
 <!--表格-->
 <hr color=0066ff>
 
-<br/><br/>
+<br/><!--日期-->
+
+<body>
+    <div id="datetime"></div>
+    <script>
+        // 获取页面上用于显示日期时间的元素
+        const datetimeElement = document.getElementById('datetime');
+        // 创建一个函数用于更新显示的日期时间
+        function updateDateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const datetime = `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`;
+            datetimeElement.textContent = datetime;
+        }
+        // 首次加载页面时更新日期时间
+        updateDateTime();
+        // 每隔1秒（1000毫秒）更新一次日期时间，以实现动态效果
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+
+<!--日期-->
+
 
 
 <!--搜索-->
