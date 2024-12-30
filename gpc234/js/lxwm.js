@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const displayDiv10 = document.getElementById('displayDiv10');
-    displayDiv10.textContent = "网名张先生的邮箱:zdL0753@163.com";
+    displayDiv10.textContent = "网名张先生的邮箱:gpczxs@163.com";
 });
 
 
