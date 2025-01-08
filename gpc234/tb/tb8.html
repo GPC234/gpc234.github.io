@@ -64,26 +64,23 @@ button { width: 100%;    }/*口令的大小 */
 
 
 ↓在浏览器点击打开↓<br/>
-  <a href="https://s.click.taobao.com/t?union_lens=lensId%3AOPT%401736235023%402146b32f_0e1a_1943fabfbcb_2c1e%4001%40eyJmbG9vcklkIjozODg1Mn0ie%3BeventPageId%3A20150318020019027&e=m%3D2%26s%3D1IspuLAoWnVw4vFB6t2Z2iperVdZeJviAMbqNcPEYg43iuePFa5VYDLxqsKAeUFqqnwzfhuk%2FhgWpIFXOotQw4ZClVyFWzafU%2BW9UtHfNscwOO8kozEH2uS04QVkalnneSYwDP0G%2FandMskBjy%2F8CJLL0QPsyT77slidLc%2FfR2bfW12dRBt0XJ7LmQijlljrM7kxpdONUAKgtf8I59Gmj7WOELdnGdZV3eHn14rW1PAC97nSgK2fxMkGmNeMVhTvLrSh%2BIyvzG1r4XI%2BrQcntumpGG0lKYYb2Tk3l6P3rWfzM2ygk%2F4Uu2NLqJXdeE2VavwAWG4%2Fsctk2uZ9CoEz0cEgOHRfL8HsLSt5RaXKSt%2BIYSPJh4OOzrut1Tbp4R8KcQaPKxSNC1%2FElylsCuhRdLUXUiHeXY7QZ3NEK3xpqJanB2hZwzJYfb3DqeelhOIrJ%2FSGjmJVFJD4vtIACraanhalieQQ%2FDDPzHOclJdhnECbssTFNPRif9Cebu2ee8mMfBNl%2BSbzDmPGDmntuH4VtA%3D%3D" target="_blank"style="font-size: 32px;">幸运赢免单</a>
-<button onclick="copyLink(this.previousElementSibling)"style="font-size: 32px;">复制链接去浏览器打开<hr color=0066ff>复制后去淘宝搜索</button>
+  <a id="gpczxs1"href="https://s.click.taobao.com/t?union_lens=lensId%3AOPT%401736235023%402146b32f_0e1a_1943fabfbcb_2c1e%4001%40eyJmbG9vcklkIjozODg1Mn0ie%3BeventPageId%3A20150318020019027&e=m%3D2%26s%3D1IspuLAoWnVw4vFB6t2Z2iperVdZeJviAMbqNcPEYg43iuePFa5VYDLxqsKAeUFqqnwzfhuk%2FhgWpIFXOotQw4ZClVyFWzafU%2BW9UtHfNscwOO8kozEH2uS04QVkalnneSYwDP0G%2FandMskBjy%2F8CJLL0QPsyT77slidLc%2FfR2bfW12dRBt0XJ7LmQijlljrM7kxpdONUAKgtf8I59Gmj7WOELdnGdZV3eHn14rW1PAC97nSgK2fxMkGmNeMVhTvLrSh%2BIyvzG1r4XI%2BrQcntumpGG0lKYYb2Tk3l6P3rWfzM2ygk%2F4Uu2NLqJXdeE2VavwAWG4%2Fsctk2uZ9CoEz0cEgOHRfL8HsLSt5RaXKSt%2BIYSPJh4OOzrut1Tbp4R8KcQaPKxSNC1%2FElylsCuhRdLUXUiHeXY7QZ3NEK3xpqJanB2hZwzJYfb3DqeelhOIrJ%2FSGjmJVFJD4vtIACraanhalieQQ%2FDDPzHOclJdhnECbssTFNPRif9Cebu2ee8mMfBNl%2BSbzDmPGDmntuH4VtA%3D%3D" target="_blank"style="font-size: 32px;">幸运赢免单</a>
+    <button onclick="copyLink('gpczxs20')" style="font-size: 32px;">↑在浏览器中打开↑</button>
+    <hr color="0066ff">
 
-<hr color=0066ff>
-
-
-
-<script>
-    function copyLink(link) {
-      var href = link.href;
-      navigator.clipboard.writeText(href).then(function () {
-        // 使用alert弹出框提示复制成功
-        alert('复制成功');
-      }, function (err) {
-        console.error('复制失败: ', err);
-        // 也可以在这里添加更友好的提示，比如弹出框提示用户复制失败
-        alert('复制失败，请稍后再试');
-      });
-    }
-  </script>
+    <script>
+        function copyLink(linkId) {
+            const linkElement = document.getElementById(linkId);
+            const linkUrl = linkElement.href;
+            const tempInput = document.createElement('input');
+            tempInput.value = linkUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('已成功复制链接地址！');
+        }
+    </script>
 </body>
 
 

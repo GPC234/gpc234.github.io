@@ -64,26 +64,24 @@ button { width: 100%;    }/*口令的大小 */
 
 
 ↓在浏览器点击打开↓<br/>
-  <a href="https://s.click.taobao.com/t?union_lens=lensId%3AOPT%401736235632%402135f679_0e26_1943fb54832_6fdc%4001%40eyJmbG9vcklkIjozODg1Mn0ie%3BeventPageId%3A20150318020021572&e=m%3D2%26s%3DVu2Q6JywYbpw4vFB6t2Z2iperVdZeJviU%2F9%2F0taeK29yINtkUhsv0PDF6RM6507tr8RXgByLRTUda0RK5MzbAzdV0iCa2GqoU0qgcPNIeXRxSa5Z04gYUOcX6%2FIvhSD5AGIx0oe2X2hZfJ7ZQxC1%2FWBiH6buM6UDEBnEBk3xaGylLmcSHKfaX1CIFRJhZoJ2keMqUwSQcLQmkqLAwFV6f52mKRQSHwv9HnwLHhiT%2BLwpYNDbakBoZ3FCuPcQF4jJKA%2FuFM967qrnM3K%2BuL8Oz5NK%2BfUS%2FT9xzv3HA02PupqKdyWHQssJch4zjGDdNi2tr7N4Kp4dn7klope7GdjotFx20dE3NFcsHeSZsKLr2kkl9JQkhVTmcGV7GcyJHxldeSyMLXok73DQYhZmnV8oxQz7tdk4Ep22bX4w261Uyx0K4kRdW1uFnk2lMs7CayEYBxzkosvEt%2BKNm%2FxHC1XfVl%2BZlSqdxmq9e6wJFFyP0BQAi2hcXJ0%2Fq%2F1hW1LIzD97xgxdTc00KD8%3D" target="_blank"style="font-size: 32px;">年货节-直播间同款</a>
-<button onclick="copyLink(this.previousElementSibling)"style="font-size: 32px;">复制链接去浏览器打开<hr color=0066ff>复制后去淘宝搜索</button>
+  <a id="gpczxs1"href="https://s.click.taobao.com/t?union_lens=lensId%3AOPT%401736235632%402135f679_0e26_1943fb54832_6fdc%4001%40eyJmbG9vcklkIjozODg1Mn0ie%3BeventPageId%3A20150318020021572&e=m%3D2%26s%3DVu2Q6JywYbpw4vFB6t2Z2iperVdZeJviU%2F9%2F0taeK29yINtkUhsv0PDF6RM6507tr8RXgByLRTUda0RK5MzbAzdV0iCa2GqoU0qgcPNIeXRxSa5Z04gYUOcX6%2FIvhSD5AGIx0oe2X2hZfJ7ZQxC1%2FWBiH6buM6UDEBnEBk3xaGylLmcSHKfaX1CIFRJhZoJ2keMqUwSQcLQmkqLAwFV6f52mKRQSHwv9HnwLHhiT%2BLwpYNDbakBoZ3FCuPcQF4jJKA%2FuFM967qrnM3K%2BuL8Oz5NK%2BfUS%2FT9xzv3HA02PupqKdyWHQssJch4zjGDdNi2tr7N4Kp4dn7klope7GdjotFx20dE3NFcsHeSZsKLr2kkl9JQkhVTmcGV7GcyJHxldeSyMLXok73DQYhZmnV8oxQz7tdk4Ep22bX4w261Uyx0K4kRdW1uFnk2lMs7CayEYBxzkosvEt%2BKNm%2FxHC1XfVl%2BZlSqdxmq9e6wJFFyP0BQAi2hcXJ0%2Fq%2F1hW1LIzD97xgxdTc00KD8%3D" target="_blank"style="font-size: 32px;">年货节-直播间同款</a>
+    <button onclick="copyLink('gpczxs20')" style="font-size: 32px;">↑在浏览器中打开↑</button>
+    <hr color="0066ff">
 
-<hr color=0066ff>
+    <script>
+        function copyLink(linkId) {
+            const linkElement = document.getElementById(linkId);
+            const linkUrl = linkElement.href;
+            const tempInput = document.createElement('input');
+            tempInput.value = linkUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('已成功复制链接地址！');
+        }
+    </script>
 
-
-
-<script>
-    function copyLink(link) {
-      var href = link.href;
-      navigator.clipboard.writeText(href).then(function () {
-        // 使用alert弹出框提示复制成功
-        alert('复制成功');
-      }, function (err) {
-        console.error('复制失败: ', err);
-        // 也可以在这里添加更友好的提示，比如弹出框提示用户复制失败
-        alert('复制失败，请稍后再试');
-      });
-    }
-  </script>
 </body>
 
 

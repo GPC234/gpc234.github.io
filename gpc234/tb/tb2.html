@@ -63,25 +63,24 @@ button { width: 100%;    }/*口令的大小 */
 
 
 ↓在浏览器点击打开↓<br/>
-  <a href="https://temai.m.taobao.com/index.htm?pid=mm_5518923388_3058500304_115604700063&union_lens=lensId%3APUB%401736230114%40215015a3_1515_1943f61132c_050c%4001" target="_blank" style="font-size: 32px;">淘宝特卖优惠券</a>
+  <a id="gpczxs1"href="https://temai.m.taobao.com/index.htm?pid=mm_5518923388_3058500304_115604700063&union_lens=lensId%3APUB%401736230114%40215015a3_1515_1943f61132c_050c%4001" target="_blank" style="font-size: 32px;">淘宝特卖优惠券</a>
 
-<button onclick="copyLink(this.previousElementSibling)"style="font-size: 32px;">复制链接去浏览器打开<hr color=0066ff>复制后去淘宝搜索</button>
+    <button onclick="copyLink('gpczxs20')" style="font-size: 32px;">↑在浏览器中打开↑</button>
+    <hr color="0066ff">
 
-<hr color=0066ff>
-
-<script>
-    function copyLink(link) {
-      var href = link.href;
-      navigator.clipboard.writeText(href).then(function () {
-        // 使用alert弹出框提示复制成功
-        alert('复制成功');
-      }, function (err) {
-        console.error('复制失败: ', err);
-        // 也可以在这里添加更友好的提示，比如弹出框提示用户复制失败
-        alert('复制失败，请稍后再试');
-      });
-    }
-  </script>
+    <script>
+        function copyLink(linkId) {
+            const linkElement = document.getElementById(linkId);
+            const linkUrl = linkElement.href;
+            const tempInput = document.createElement('input');
+            tempInput.value = linkUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('已成功复制链接地址！');
+        }
+    </script>
 </body>
 
 
