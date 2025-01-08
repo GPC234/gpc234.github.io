@@ -37,6 +37,33 @@
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
+<br/><!--日期-->
+
+<body>
+    <div id="datetime"></div>
+    <script>
+        // 获取页面上用于显示日期时间的元素
+        const datetimeElement = document.getElementById('datetime');
+        // 创建一个函数用于更新显示的日期时间
+        function updateDateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const datetime = `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`;
+            datetimeElement.textContent = datetime;
+        }
+        // 首次加载页面时更新日期时间
+        updateDateTime();
+        // 每隔1秒（1000毫秒）更新一次日期时间，以实现动态效果
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+
+<!--日期-->
 
 
 <input type="text" style="font-size: 40px;color: rgb(250, 0, 0);  "  name="q" placeholder="输入要搜索的内容后按回车键或者点击下方的搜索"   id="searchInput" onkeyup="handleKeyUp(event) ">
@@ -264,33 +291,4 @@ document.getElementById("gpc234-13").addEventListener("click", function() {
 
 
 
-<!--移动端调转代码-->
-<SCRIPT LANGUAGE = "JavaScript" >
-function mobile_device_detect(url) {
-var thisOS = navigator.platform;
-var os = new Array("iPhone", "iPod", "iPad", "android", "Nokia", "SymbianOS", "Symbian", "Windows Phone", "Phone", "Linux armv71", "MAUI", "UNTRUSTED/1.0", "Windows CE", "BlackBerry", "IEMobile");
-for (var i = 0; i < os.length; i++) {
-if (thisOS.match(os[i])) {
-window.location = url;
-}
-}
-if (navigator.platform.indexOf('iPad') != -1) {
-window.location = url;
-}
-var check = navigator.appVersion;
-if (check.match(/linux/i)) {
-if (check.match(/mobile/i) || check.match(/X11/i)) {
-window.location = url;
-}
-}
-//类in_array函数
-Array.prototype.in_array = function(e) {
-for (i = 0; i < this.length; i++) {
-if (this[i] == e) return true;
-}
-return false;
-}
-}
-mobile_device_detect("./25.html");
-</SCRIPT>
-<!--移动端调转代码-->
+
