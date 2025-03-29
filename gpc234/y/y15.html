@@ -371,7 +371,7 @@
             var pageNumber = parseInt(currentPage.replace(/\D/g, ''));
             // 假设页面命名规律是数字递增
             var nextPageNumber = pageNumber + 1;
-            var nextPage = './' + nextPageNumber + '.html';
+            var nextPage = './y' + nextPageNumber + '.html';
             window.location.href = nextPage;
         }
 
@@ -381,7 +381,7 @@
             var pageNumber = parseInt(currentPage.replace(/\D/g, ''));
             // 假设页面命名规律是数字递增
             var previousPageNumber = pageNumber - 1;
-            var previousPage = './' + previousPageNumber + '.html';
+            var previousPage = './y' + previousPageNumber + '.html';
             window.location.href = previousPage;
         }
     </script>
