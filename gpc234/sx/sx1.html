@@ -41,6 +41,58 @@ box-shadow: 10px 10px 5px #888888;/*灰色 */
 <center><!--居中-->
 <body><!--内容开始body-->
 
+<!--十二生肖--> <div id="result"></div>
+    <script>
+        // 定义十二生肖数组
+        const zodiacs = ["鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"];
+
+        // 获取当前日期的时间戳（精确到天）
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const todayTimestamp = today.getTime();
+
+        // 生成固定的随机数种子，这里以当天时间戳作为种子
+        const seed = todayTimestamp;
+        let randomIndex1, randomIndex2, randomIndex3;
+
+        // 使用线性同余法生成伪随机数
+        function linearCongruentialGenerator(seed) {
+            const a = 1103515245;
+            const c = 12345;
+            const m = Math.pow(2, 31);
+            return (a * seed + c) % m;
+        }
+
+        // 生成第一个随机索引
+        randomIndex1 = linearCongruentialGenerator(seed) % zodiacs.length;
+
+        // 生成第二个随机索引，确保不与第一个重复
+        let newSeed = linearCongruentialGenerator(seed);
+        randomIndex2 = linearCongruentialGenerator(newSeed) % zodiacs.length;
+        while (randomIndex2 === randomIndex1) {
+            newSeed = linearCongruentialGenerator(newSeed);
+            randomIndex2 = linearCongruentialGenerator(newSeed) % zodiacs.length;
+        }
+
+        // 生成第三个随机索引，确保不与前两个重复
+        newSeed = linearCongruentialGenerator(newSeed);
+        randomIndex3 = linearCongruentialGenerator(newSeed) % zodiacs.length;
+        while (randomIndex3 === randomIndex1 || randomIndex3 === randomIndex2) {
+            newSeed = linearCongruentialGenerator(newSeed);
+            randomIndex3 = linearCongruentialGenerator(newSeed) % zodiacs.length;
+        }
+
+        // 获取对应的三个生肖
+        const selectedZodiacs = [zodiacs[randomIndex1], zodiacs[randomIndex2], zodiacs[randomIndex3]];
+
+        // 在页面上展示结果
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `${selectedZodiacs.join('，')}["鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"]`;
+    </script><!--十二生肖-->
+
+<hr color=0066FF>
+
+
 
 
 <h1><a id="gpc234"  href="https://cn.bing.com/search?q=岁数属相对照表一网上用户" target="_blank">岁数属相对照表一网上用户</a></h1>
