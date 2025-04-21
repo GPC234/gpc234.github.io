@@ -43,7 +43,7 @@
 
 
 <!--自动图片-->
-<img id="gpczxs" src="" width="330" height="" title="" align="" alt="搜索:网上用户图片一分享一照片一相册一jpg一png一公平村一网络居民一网名张先生一公平村张先生,GPC234,GPCZXS">
+<img id="gpczxs" src="" width="330" height="" title="" align="" alt="搜索:网上用户图片一分享一照片一相册一jpg一png一公平村一上网用户一网名张先生一公平村张先生,GPC234,GPCZXS">
 <script>
     // 获取当前页面URL
     var currenrrrl = window.location.href;
@@ -63,6 +63,38 @@
 </script><!--自动图片-->
 
 <p>搜索:网上用户图片</p>
+
+
+<hr color=0066ff>
+<center><!--居中-->
+<a href="/gpc234/y/9.html" target="_blank">
+      <img id="randomJpg1" src="" alt="搜索:网上用户图片一分享一照片一相册一jpg一png一公平村一上网用户一网名张先生一公平村张先生,GPC234,GPCZXS" class="w-full h-auto rounded-md" width="" height="330" title="" align="" />
+     <img id="randomPng" src="" alt="搜索:网上用户图片一分享一照片一相册一jpg一png一公平村一上网用户一网名张先生一公平村张先生,GPC234,GPCZXS" class="w-full h-auto rounded-md" width="" height="330" title="" align="" />
+     <img id="randomJpg2" src="" alt="搜索:网上用户图片一分享一照片一相册一jpg一png一公平村一上网用户一网名张先生一公平村张先生,GPC234,GPCZXS" class="w-full h-auto rounded-md width="" height="330" title="" align="" /">
+</a>
+
+    <script>
+        // 生成指定范围的随机数
+        const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+        // 随机显示第一张 JPG 图片（1 - 10.jpg）
+        const randomJpgNumber1 = getRandomNumber(1, 10);
+        document.getElementById('randomJpg1').src = `../jpg/${randomJpgNumber1}.jpg`;
+
+        // 随机显示 PNG 图片（1 - 10.png）
+        const randomPngNumber = getRandomNumber(1, 300);
+        document.getElementById('randomPng').src = `../jpg/${randomPngNumber}.png`;
+
+        // 随机显示第二张 JPG 图片（1 - 300.jpg）
+        const randomJpgNumber2 = getRandomNumber(1, 300);
+        document.getElementById('randomJpg2').src = `../jpg/${randomJpgNumber2}.jpg`;
+    </script>
+</body>
+
+
+<hr color=0066FF>
+
+
 
 
 
