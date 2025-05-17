@@ -106,7 +106,6 @@ color: #ffffff;
 【 <a href="http://www.soso.com/" target="_blank">搜搜</a>】
 【<a href="https://weixin.sogou.com/" target="_blank">搜狗微信</a>】
 【<a href="https://quark.sm.cn/?tomode=" target="_blank">神马</a>】
-【<a href="http://page.yicha.cn/tp/i.y" target="_blank">易查</a>】
 【<a href="https://www.chinaso.com/" target="_blank">中国</a>】
 【<a href="https://www.164580.com/biaozhun/list_72_73_244.html" target="_blank">铆钉国标</a>】
 【<a href="https://n.cn" target="_blank">纳米搜索</a>】
@@ -309,13 +308,33 @@ document.getElementById("gpc234-16").addEventListener("click", function() {
 
 <!--搜索-->
 
+<hr color=0066ff>
+ <!--日期--><div id="date-time"></div>
+
+      <script>
+        function updateDateTime() {
+          var now = new Date();
+          var year = now.getFullYear();
+          var month = now.getMonth() + 1;
+          var day = now.getDate();
+          var hours = now.getHours();
+          var minutes = now.getMinutes();
+          var seconds = now.getSeconds();
+          var days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+          var dayOfWeek = days[now.getDay()];
+
+          // 修复：将date - time改为date-time，移除了错误的空格
+          var dateTimeString = year + '年' + month + '月' + day + '日 ' + hours + '时' + minutes + '分' + seconds + '秒 ' + dayOfWeek;
+          document.getElementById('date-time').innerHTML = dateTimeString;
+        }
+
+        // 初始调用一次，避免等待1秒
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+      </script><!--日期-->
 
 
 
-
-<!--搜索-->
-
-<br/>
 
 <hr color=0066ff>
 <!--定位--><div id="content">
@@ -1271,7 +1290,7 @@ document.write(gpc234+ "<br>");
 <hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
 <a href="https://cn.bing.com/search?q=%E5%85%AC%E5%B9%B3%E6%9D%91%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%BB%E9%A1%B5&form=QBLH&sp=-1&lq=0&pq=%E5%85%AC%E5%B9%B3%E6%9D%91%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%BB%E9%A1%B5&sc=12-8&qs=n&sk=&cvid=8AF3D0B2E50640AE98169AE0DB785404&ghsh=0&ghacc=0&ghpl=" target="_blank"style="color: #D6D6D6;">公平村浏览器主页</a>
 
-版本号:2025年4月11日09:35:14
+版本号:2025年5月16日17:35:55
 <hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
 
 </body><!--内容结束-->

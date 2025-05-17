@@ -168,7 +168,6 @@ color: #ffffff;
 【 <a href="http://www.soso.com/" target="_blank">搜搜</a>】
 【<a href="https://weixin.sogou.com/" target="_blank">搜狗微信</a>】
 【<a href="https://quark.sm.cn/?tomode=" target="_blank">神马</a>】
-【<a href="http://page.yicha.cn/tp/i.y" target="_blank">易查</a>】
 【<a href="https://www.chinaso.com/" target="_blank">中国</a>】
 【<a href="https://www.164580.com/biaozhun/list_72_73_244.html" target="_blank">铆钉国标</a>】
 【<a href="https://n.cn" target="_blank">纳米搜索</a>】
@@ -183,33 +182,31 @@ color: #ffffff;
 
 <hr color=0066ff>
 
-<br/><!--日期-->
+<!--日期-->
 
-<body>
-    <div id="datetime"></div>
-    <script>
-        // 获取页面上用于显示日期时间的元素
-        const datetimeElement = document.getElementById('datetime');
-        // 创建一个函数用于更新显示的日期时间
+ <div id="date-time"></div>
+
+      <script>
         function updateDateTime() {
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const day = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const datetime = `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`;
-            datetimeElement.textContent = datetime;
-        }
-        // 首次加载页面时更新日期时间
-        updateDateTime();
-        // 每隔1秒（1000毫秒）更新一次日期时间，以实现动态效果
-        setInterval(updateDateTime, 1000);
-    </script>
+          var now = new Date();
+          var year = now.getFullYear();
+          var month = now.getMonth() + 1;
+          var day = now.getDate();
+          var hours = now.getHours();
+          var minutes = now.getMinutes();
+          var seconds = now.getSeconds();
+          var days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+          var dayOfWeek = days[now.getDay()];
 
-   
-</body>
+          // 修复：将date - time改为date-time，移除了错误的空格
+          var dateTimeString = year + '年' + month + '月' + day + '日 ' + hours + '时' + minutes + '分' + seconds + '秒 ' + dayOfWeek;
+          document.getElementById('date-time').innerHTML = dateTimeString;
+        }
+
+        // 初始调用一次，避免等待1秒
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+      </script>
 
 <!--日期-->
 
@@ -1331,7 +1328,7 @@ document.write(gpc234+ "<br>");
 
 <a href="https://cn.bing.com/search?q=%e7%bd%91%e4%b8%8a%e7%94%a8%e6%88%b7&sp=-1&lq=0&pq=%e7%bd%91%e4%b8%8a%e7%94%a8%e6%88%b7&sc=12-4&qs=n&sk=&cvid=57945F9EB2CB48BE82EF9C05009DEB0A&ghsh=0&ghacc=0&ghpl=&FPIG=AD85C2C3F9F748549F8C3E94CD1554E5&first=10&FORM=PERE" target="_blank">网上用户</a>
 
-版本号:2025年4月11日09:35:00
+版本号:版本号:2025年5月16日17:35:55
 
 <hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
 
