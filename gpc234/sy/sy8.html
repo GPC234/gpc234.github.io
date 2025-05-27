@@ -83,6 +83,37 @@
 <hr color=0066FF> <!--分界线-->
 <center><!--居中-->
 
+<!-- 图片链接和图片元素 -->
+    <a id="imageLink" href="../tu/tu1.html" target="_blank"> <!-- 修改为 .html 格式 -->
+        <img id="randomImage" src="../jpg/1.jpg" alt="网上用户" width="380"> <!-- src 路径保留不变 -->
+    </a>
+
+    <!-- JavaScript代码 -->
+    <script>
+        function showRandomImage() {
+            const min = 1;
+            const max = 103;
+            const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+            
+            // <a> 标签的 href 路径格式为 ../tu/tu{数字}.html
+            const linkPath = `../tu/tu${randomNum}.html`;
+            // <img> 标签的 src 路径保持原格式 ../jpg/{数字}.jpg
+            const imgPath = `../jpg/${randomNum}.jpg`;
+
+            const link = document.getElementById("imageLink");
+            const img = document.getElementById("randomImage");
+            link.href = linkPath; // 更新 <a> 的链接路径为 .html
+            img.src = imgPath; // 若需固定图片路径，删除此行
+        }
+
+        window.onload = showRandomImage;
+    </script>
+
+    <!-- 图片链接和图片元素 -->
+
+
+
+
       <img id="randomJpg1" src=""  alt="搜索:网上用户"  width="380" height="" title="" align="" /">
      <img id="randomPng" src=""  alt="搜索:网上用户"  width="380" height="" title="" align="" /">
      <img id="randomJpg2" src=""  alt="搜索:网上用户"  width="380" height="" title="" align="" /">
@@ -95,15 +126,15 @@
 
         // 随机显示第一张 JPG 图片（1 - 10.jpg）
         const randomJpgNumber1 = getRandomNumber(1, 12);
-        document.getElementById('randomJpg1').src = `http://www.wendasz.com/gpc234/jpg/${randomJpgNumber1}.jpg`;
+        document.getElementById('randomJpg1').src = `/gpc234/jpg/${randomJpgNumber1}.jpg`;
 
         // 随机显示 PNG 图片（1 - 10.png）
         const randomPngNumber = getRandomNumber(1, 12);
-        document.getElementById('randomPng').src = `http://www.wendasz.com/gpc234/jpg/${randomPngNumber}.png`;
+        document.getElementById('randomPng').src = `/gpc234/jpg/${randomPngNumber}.png`;
 
         // 随机显示第二张 JPG 图片（1 - 200.jpg）
         const randomJpgNumber2 = getRandomNumber(1, 103);
-        document.getElementById('randomJpg2').src = `http://www.wendasz.com/gpc234/jpg/${randomJpgNumber2}.jpg`;
+        document.getElementById('randomJpg2').src = `/gpc234/jpg/${randomJpgNumber2}.jpg`;
 
      // 随机显示第二张 JPG 图片（1 - 100.jpg）
         const gpczxs1 = getRandomNumber(1, 103);
@@ -332,6 +363,27 @@
 <a href="../../gpczxs/x/x8.html" target="_blank">	x8</a>
 <a href="../../gpczxs/x/x9.html" target="_blank">	x9</a>
 <a href="../../gpczxs/x/x10.html" target="_blank">	x10</a>
+<hr color=0066FF>
+<a href="../../gpc234/sy/sy1.html" target="_blank">	sy1</a>
+<a href="../../gpc234/sy/sy2.html" target="_blank">	sy2</a>
+<a href="../../gpc234/sy/sy3.html" target="_blank">	sy3</a>
+<a href="../../gpc234/sy/sy4.html" target="_blank">	sy4</a>
+<a href="../../gpc234/sy/sy5.html" target="_blank">	sy5</a>
+<a href="../../gpc234/sy/sy6.html" target="_blank">	sy6</a>
+<a href="../../gpc234/sy/sy7.html" target="_blank">	sy7</a>
+<a href="../../gpc234/sy/sy8.html" target="_blank">	sy8</a>
+<a href="../../gpc234/sy/sy9.html" target="_blank">	sy9</a>
+<a href="../../gpc234/sy/sy10.html" target="_blank">	sy10</a>
+<a href="../../gpc234/sy/sy11.html" target="_blank">	sy11</a>
+<a href="../../gpc234/sy/sy12.html" target="_blank">	sy12</a>
+<a href="../../gpc234/sy/sy13.html" target="_blank">	sy13</a>
+<a href="../../gpc234/sy/sy14.html" target="_blank">	sy14</a>
+<a href="../../gpc234/sy/sy15.html" target="_blank">	sy15</a>
+<a href="../../gpc234/sy/sy16.html" target="_blank">	sy16</a>
+<a href="../../gpc234/sy/sy17.html" target="_blank">	sy17</a>
+<a href="../../gpc234/sy/sy18.html" target="_blank">	sy18</a>
+<a href="../../gpc234/sy/sy19.html" target="_blank">	sy19</a>
+<a href="../../gpc234/sy/sy20.html" target="_blank">	sy20</a>
 <hr color=0066FF>
 
 

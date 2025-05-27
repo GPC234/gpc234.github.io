@@ -47,11 +47,40 @@
 <strong><!--加粗-->
 
 
-<!--左上角-->&nbsp; &nbsp; <a href="/gpc234/jpg/h1.jpg" target="_blank">
-<img src="/gpc234/jpg/h1.jpg" alt="网上用户" width="" height="35" title="" align="" /></a>
-<a id="gpc234" href="/gpc234/y/h1.html" target="_blank"><img src="/gpc234/jpg/h2.jpg" alt="搜索:网上用户" width="" height="35" title="" align="" /></a><!--左上角-->
+<!--左上角-->&nbsp; &nbsp; 
 
-<hr color=0066ff>
+  <!-- 图片链接和图片元素 -->
+    <a id="imageLink" href="../jpg/1.jpg" target="_blank">
+        <img id="randomImage" src="../jpg/1.jpg" alt="网上用户" width=""height="35">
+    </a>
+
+    <!-- JavaScript代码 -->
+    <script>
+        // 生成随机数并更新图片路径
+        function showRandomImage() {
+            const min = 1;
+            const max = 100;
+            const randomNum = Math.floor(Math.random() * (max - min + 1)) + min; // 生成1-300的随机数
+            const imagePath = `../jpg/${randomNum}.jpg`; // 拼接路径
+
+            // 更新链接和图片的src属性
+            const link = document.getElementById("imageLink");
+            const img = document.getElementById("randomImage");
+            link.href = imagePath;
+            img.src = imagePath;
+        }
+
+        // 页面加载时立即显示随机图片（仅执行一次）
+        window.onload = showRandomImage;
+    </script>
+
+
+
+<a href="../jpg/h1.jpg" target="_blank">
+<img src="../jpg/h1.jpg" alt="网上用户" width="" height="35" title="" align="" /></a>
+<a id="gpc234" href="../y/h1.html" target="_blank"><img src="../jpg/h2.jpg" alt="搜索:网上用户" width="" height="35" title="" align="" /></a><!--左上角-->
+
+<hr color=0066FF> <!--分界线-->
 <center><!--居中-->
 
 <!-- 图片链接和图片元素 -->
