@@ -128,6 +128,35 @@ color: #ffffff;
 
 &nbsp; &nbsp; 
 <a href="/" target="_blank"><img src="/favicon.ico"  alt="浏览器主页" width="32 " height=" " title="" align="" /></a>
+
+    <!-- 图片链接和图片元素 -->
+    <a id="imageLink" href="../jpg/1.jpg" target="_blank">
+        <img id="randomImage" src="../jpg/1.jpg" alt="网上用户" width=""height="32 " >
+    </a>
+
+    <!-- JavaScript代码 -->
+    <script>
+        // 生成随机数并更新图片路径
+        function showRandomImage() {
+            const min = 1;
+            const max = 100;
+            const randomNum = Math.floor(Math.random() * (max - min + 1)) + min; // 生成1-300的随机数
+            const imagePath = `../jpg/${randomNum}.jpg`; // 拼接路径
+
+            // 更新链接和图片的src属性
+            const link = document.getElementById("imageLink");
+            const img = document.getElementById("randomImage");
+            link.href = imagePath;
+            img.src = imagePath;
+        }
+
+        // 页面加载时立即显示随机图片（仅执行一次）
+        window.onload = showRandomImage;
+    </script>
+    <!-- 图片链接和图片元素 -->
+
+
+
 &nbsp; &nbsp; &nbsp; 
 
 <a href="https://cn.bing.com/search?q=%E5%85%AC%E5%B9%B3%E6%9D%91%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%BB%E9%A1%B5&form=QBLH&sp=-1&lq=0&pq=%E5%85%AC%E5%B9%B3%E6%9D%91%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%BB%E9%A1%B5&sc=12-8&qs=n&sk=&cvid=8AF3D0B2E50640AE98169AE0DB785404&ghsh=0&ghacc=0&ghpl=" target="_blank"style="color: #D6D6D6;">公平村浏览器主页</a>
