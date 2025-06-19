@@ -69,12 +69,54 @@
 <hr color=0066FF>
 <a href="../j/j57.html" target="_blank">工资实时收入计算器</a>
 <hr color=0066FF>
+<a href="../j/j4.html" target="_blank">铆钉帽子线长计算器</a>
+<hr color=0066FF>
+<a href="../tjdsgz/tjdsgz1.html" target="_blank">统计多少个字</a>
+<hr color=0066FF>
+<a href="../j/j58.html" target="_blank">存储单位自动换算</a>
+<hr color=0066FF>
+<a href="../j/j59.html" target="_blank">重量单位自动换算</a>
+<hr color=0066FF>
+<a href="../j/j61.html" target="_blank">长度单位自动换算</a>
+<hr color=0066FF>
+<a href="../j/j64.html" target="_blank">时间单位自动换算</a>
+<hr color=0066FF>
+<a href="../j/j65.html" target="_blank">面积单位自动换算</a>
+<hr color=0066FF>
+<a href="/" target="_blank"></a>
+<hr color=0066FF>
+<a href="/" target="_blank"></a>
+<hr color=0066FF>
 <a href="/" target="_blank"></a>
 <hr color=0066FF>
 <a href="/" target="_blank"></a>
 <hr color=0066FF>
 <a href="/" target="_blank"></a>
 <hr color=0066FF>
+<a href="/" target="_blank"></a>
+<hr color=0066FF>
+<a href="/" target="_blank"></a>
+<hr color=0066FF>
+<a href="/" target="_blank"></a>
+<hr color=0066FF>
+<a href="/" target="_blank"></a>
+<hr color=0066FF>
+<a href="/" target="_blank"></a>
+<hr color=0066FF>
+<a href="/" target="_blank"></a>
+<hr color=0066FF>
+<a href="/" target="_blank"></a>
+<hr color=0066FF>
+
+
+
+
+
+
+
+
+
+
 
 
 <!--合并--><details><summary>友情链接</summary>
@@ -780,5 +822,42 @@ wsyh
 </strong><!--加粗-->
 </span><!--字体大小-->
 </html><!--结束-->
+
+
+
+
+
+
+<!--上下页-->
+<script>
+        function goToNextPage() {
+            // 获取当前页面的文件名
+            var currentPage = window.location.pathname.split('/').pop();
+            var pageNumber = parseInt(currentPage.replace(/\D/g, ''));
+            // 假设页面命名规律是数字递增
+            var nextPageNumber = pageNumber + 1;
+            var nextPage = './sy' + nextPageNumber + '.html';
+            window.location.href = nextPage;
+        }
+
+        function goToPreviousPage() {
+            // 获取当前页面的文件名
+            var currentPage = window.location.pathname.split('/').pop();
+            var pageNumber = parseInt(currentPage.replace(/\D/g, ''));
+            // 假设页面命名规律是数字递增
+            var previousPageNumber = pageNumber - 1;
+            var previousPage = './sy' + previousPageNumber + '.html';
+            window.location.href = previousPage;
+        }
+    </script>
+</head>
+<body> 
+    <button onclick="goToPreviousPage()">上一页</button>
+    <button onclick="goToNextPage()">下一页</button>
+   </body><!--上下页-->
+
+
+
+
 
 
