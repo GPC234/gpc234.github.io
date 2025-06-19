@@ -25,164 +25,104 @@
     TEXT-DECORATION: none;
     /* 为 a 标签设置粗体样式 */
     font-weight: bold;
+font-size: 32px;    /* 为 a 标签设置字体大小 */
   }</style><!-- css样式定义部分结束 --> 
 
 
  <title>含税计算器一搜索:网上用户</title>
-<meta name="keywords" content="含税计算器,搜索:网上用户,网上用户,上网用户,公平村,张先生,网名张先生,公平村张先生,网上用户的图片,网上用户的个人主页,网上用户的个人首页,网上用户的个人中心,网上用户的档案,公平村张先生,艺名张先生,网民张先生,网号张先生,用户名张先生,账号张先生,客家人张先生,网名张先生,GPC234,GPCZXS" /><!--关键词-->
+<meta name="keywords" content="替换,搜索:网上用户,网上用户,上网用户,公平村,张先生,网名张先生,公平村张先生,网上用户的图片,网上用户的个人主页,网上用户的个人首页,网上用户的个人中心,网上用户的档案,公平村张先生,艺名张先生,网民张先生,网号张先生,用户名张先生,账号张先生,客家人张先生,网名张先生,GPC234,GPCZXS,上网用户," /><!--关键词-->
 <meta name="description" content="" />
 </head> <!-- 文档头部结束 -->
 
-
-<body>
 <span style="font-size: 18px;"><!--字体大小-->
 <strong><!--加粗-->
-
 
 <!--左上角-->&nbsp; &nbsp; <a href="../jpg/h1.jpg" target="_blank">
 <img src="../jpg/h1.jpg" alt="网上用户" width="" height="35" title="" align="" /></a>
 <a id="gpc234" href="../y/h1.html" target="_blank"><img src="../jpg/h2.jpg" alt="搜索:网上用户" width="" height="35" title="" align="" /></a><!--左上角-->
 
+<hr color=0066FF> <!--分界线-->
 
+<center><!--居中-->
+<body><!--内容开始body-->
+  <style>
+    table {
+      width: 400px;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
 
+    table,
+    th,
+    td {
+      border: 1px solid #000;
+    }
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    th,
+    td {
+      padding: 8px;
+      text-align: center;
+    }
 
-        .container {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        h1 {
-            font-size: 1.875rem;
-            line-height: 2.25rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-            margin-bottom: 0.25rem;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: 1px solid #d1d5db;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        select {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: 1px solid #d1d5db;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        button {
-            width: 100%;
-            background-color: #3b82f6;
-            color: #fff;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #2563eb;
-        }
-
-        #result {
-            margin-top: 1.5rem;
-            text-align: center;
-            font-size: 1.125rem;
-            line-height: 1.75rem;
-        }
-    </style>
+    /* 新增样式，设置含税相关结果为红色 */
+    .tax-included {
+      color: red;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>含税计算器</h1>
-        <label for="amount">金额:</label>
-        <input type="number" id="amount" placeholder="请输入金额" required>
-        <label for="taxRate">税率 (%):</label>
-        <input type="number" id="taxRate" placeholder="请输入税率" required>
-        <label for="calculationType">计算类型:</label>
-        <select id="calculationType">
-            <option value="taxInclusive">含税价格</option>
-            <option value="taxExclusive">不含税价格</option>
-        </select>
-        <button onclick="calculate()">计算(Entmr回车键)</button>
-        <div id="result"></div>
-    </div>
-    <script>
-        function calculate() {
-            const amount = parseFloat(document.getElementById('amount').value);
-            const taxRate = parseFloat(document.getElementById('taxRate').value);
-            const calculationType = document.getElementById('calculationType').value;
-            let taxAmount = amount * (taxRate / 100);
-            let taxInclusive = amount + taxAmount;
-            let resultText = '';
+  <table>
+    <tr>
+      <th>项目</th>
+      <th>值</th>
+    </tr>
+    <tr>
+      <td>金额<br/>（含税/不含税）</td>
+      <td><input type="number" id="amount" value="" oninput="calculate()"></td>
+    </tr>
+    <tr>
+      <td>税率(%)</td>
+      <td><input type="number" id="taxRate" value="13" oninput="calculate()"></td>
+    </tr>
+    <tr>
+      <td>不含税价格</td>
+      <td><input type="number" id="taxExcludedPrice" readonly></td>
+    </tr>
+    <tr>
+      <td>不含税税额</td>
+      <td><input type="number" id="taxExcludedTax" readonly></td>
+    </tr>
+    <tr>
+      <td>含税价格</td>
+      <td><input type="number" id="taxIncludedPrice" readonly class="tax-included"></td>
+    </tr>
+    <tr>
+      <td>含税税额</td>
+      <td><input type="number" id="taxIncludedTax" readonly class="tax-included"></td>
+    </tr>
+  </table>
 
-            if (calculationType === 'taxInclusive') {
-                resultText = `税额: ${taxAmount.toFixed(2)}<br>含税价格: ${taxInclusive.toFixed(2)}`;
-            } else if (calculationType === 'taxExclusive') {
-                let taxExclusive = amount / (1 + (taxRate / 100));
-                taxAmount = amount - taxExclusive;
-                resultText = `税额: ${taxAmount.toFixed(2)}<br>含税价格: ${amount.toFixed(2)}`;
-            }
+  <script>
+    function calculate() {
+      let amount = parseFloat(document.getElementById('amount').value);
+      let taxRate = parseFloat(document.getElementById('taxRate').value) / 100;
+      if (isNaN(amount) || isNaN(taxRate)) return;
 
-            document.getElementById('result').innerHTML = resultText;
-        }
+      // 计算不含税相关
+      let taxExcludedPrice = amount / (1 + taxRate);
+      let taxExcludedTax = amount - taxExcludedPrice;
+      document.getElementById('taxExcludedPrice').value = taxExcludedPrice.toFixed(2);
+      document.getElementById('taxExcludedTax').value = taxExcludedTax.toFixed(2);
 
-        // 为输入框添加键盘事件监听
-        const amountInput = document.getElementById('amount');
-        const taxRateInput = document.getElementById('taxRate');
-        amountInput.addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                calculate();
-            }
-        });
-        taxRateInput.addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                calculate();
-            }
-        });
-    </script>
+      // 计算含税相关
+      let taxIncludedPrice = amount * (1 + taxRate);
+      let taxIncludedTax = amount * taxRate;
+      document.getElementById('taxIncludedPrice').value = taxIncludedPrice.toFixed(2);
+      document.getElementById('taxIncludedTax').value = taxIncludedTax.toFixed(2);
+    }
+    window.onload = calculate;
+  </script>
 </body>
 
-    
-
-
-
-
-
-
-
-</strong><!--加粗-->
-</span><!--字体大小-->
-
-</html> 
+</html>
