@@ -7,16 +7,16 @@ User-Agent: *
 Disallow: 
 
 # 指定网站地图
- Sitemap: /gpc234/wangshangyonghu/txt/txt.txt
- Sitemap: /sitemap.xml
- Sitemap: /gpc234/wangshangyonghu/txt/sitemap.xml
- Sitemap: /gpc234/wangshangyonghu/txt/txt1.txt
- Sitemap: /gpc234/wangshangyonghu/txt/txt2.txt
- Sitemap: /gpc234/wangshangyonghu/txt/txt3.txt
- Sitemap: /gpc234/wangshangyonghu/txt/txt4.txt
- Sitemap: /gpc234/wangshangyonghu/txt/txt5.txt
- Sitemap: /gpc234/wangshangyonghu/txt/txt6.txt
- Sitemap: /gpc234/wangshangyonghu/txt/txt7.txt
- Sitemap: /gpc234/wangshangyonghu/txt/txt8.txt
- Sitemap: /gpc234/wangshangyonghu/txt/txt9.txt
- Sitemap: /gpc234/wangshangyonghu/txt/txt10.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt.txt
+# Sitemap: /# Sitemap.xml
+# Sitemap: /gpc234/wangshangyonghu/txt/# Sitemap.xml
+# Sitemap: /gpc234/wangshangyonghu/txt/txt1.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt2.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt3.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt4.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt5.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt6.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt7.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt8.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt9.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt10.txt
