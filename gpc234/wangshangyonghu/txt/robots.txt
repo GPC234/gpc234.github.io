@@ -20,3 +20,13 @@ Disallow:
 # Sitemap: /gpc234/wangshangyonghu/txt/txt8.txt
 # Sitemap: /gpc234/wangshangyonghu/txt/txt9.txt
 # Sitemap: /gpc234/wangshangyonghu/txt/txt10.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt11.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt12.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt13.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt14.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt15.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt16.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt17.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt18.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt19.txt
+# Sitemap: /gpc234/wangshangyonghu/txt/txt20.txt
