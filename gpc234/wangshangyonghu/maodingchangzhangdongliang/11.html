@@ -1,0 +1,21 @@
+<!-- 通用自动跳转代码，所有tu*.html文件均可使用 -->
+<script>
+    // 1. 获取当前页面完整路径（如 "/oldpath/tu1.html"）
+    const currentPath = window.location.pathname;
+    // 2. 提取文件名（如 "tu1.html"）
+    const fileName = currentPath.split('/').pop(); // split分割路径，pop取最后一段（文件名）
+    
+    // 3. 定义固定路径前缀（根据你的目标路径修改）
+    const basePath = '/gpc234/wangshangyonghu/y/';
+    
+    // 4. （可选）如果目标文件扩展名需要统一修改（如 .html 改为 .htm）
+    // 例如：将 "tu2.html" 改为 "tu2.htm"，则取消下面注释并执行替换
+    // const modifiedFileName = fileName.replace('.html', '.htm');
+    
+    // 5. 拼接完整目标路径（如果不需要修改扩展名，直接用fileName即可）
+    const targetUrl = basePath + fileName; 
+    // 若需要修改扩展名，则用：const targetUrl = basePath + modifiedFileName;
+    
+    // 6. 执行跳转
+    window.location.href = targetUrl;
+</script>
