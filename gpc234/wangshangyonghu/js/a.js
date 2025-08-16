@@ -38,6 +38,23 @@ document.addEventListener('DOMContentLoaded', function() {
     separator2.textContent = '丨';
     separator2.className = 'text-gray-400 mx-2';
     
+
+    // 创建第三个链接
+    const link3 = document.createElement('a');
+    link3.href = '../js/jsa3.html';
+    link3.target = '_blank';
+    link3.textContent = '联系我们';
+    // 明确设置灰色字体，无下划线
+    link3.className = 'text-gray-500 hover:text-gray-700';
+    link3.style.textDecoration = 'none';
+
+    // 链接3后的竖线
+    const separator3 = document.createElement('span');
+    separator3.textContent = '丨';
+    separator3.className = 'text-gray-400 mx-2';
+
+
+
     // 创建返回顶部链接
     const backToTop = document.createElement('a');
     backToTop.href = '#top';
@@ -48,16 +65,23 @@ document.addEventListener('DOMContentLoaded', function() {
     backToTop.style.textDecoration = 'none';
     
     // 返回顶部后的竖线
-    const separator3 = document.createElement('span');
-    separator3.textContent = '丨';
-    separator3.className = 'text-gray-400 ml-2';
+    const separator4 = document.createElement('span');
+    separator4.textContent = '丨';
+    separator4.className = 'text-gray-400 ml-2';
+
+
+
+
     
     // 添加元素到容器
     gpczxs.appendChild(link1);
     gpczxs.appendChild(separator1);
     gpczxs.appendChild(link2);
     gpczxs.appendChild(separator2);
+    gpczxs.appendChild(link3);
+   gpczxs.appendChild(separator3);
     gpczxs.appendChild(backToTop);
-    gpczxs.appendChild(separator3);
+   gpczxs.appendChild(separator4);
+ 
 });
     
