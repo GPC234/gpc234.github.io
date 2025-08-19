@@ -7,9 +7,9 @@ User-Agent: *
 Disallow: 
 
 # 指定网站地图
+# Sitemap:  /gpc234/wangshangyonghu/txt/sitemap.xml
 # Sitemap: /gpc234/wangshangyonghu/txt/txt.txt
-# Sitemap: /# Sitemap.xml
-# Sitemap: /gpc234/wangshangyonghu/txt/# Sitemap.xml
+# Sitemap: /Sitemap.xml
 # Sitemap: /gpc234/wangshangyonghu/txt/txt1.txt
 # Sitemap: /gpc234/wangshangyonghu/txt/txt2.txt
 # Sitemap: /gpc234/wangshangyonghu/txt/txt3.txt
