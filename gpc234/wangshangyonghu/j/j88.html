@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>分数化简</title>
+    <meta name="keywords" content="分数化简,搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" /><!--关键词-->
+
+    <style>
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            box-shadow: 0 0 10px #ccc;
+            border-radius: 8px;
+        }
+        h3 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .input-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .fraction-input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+        }
+        .fraction-input {
+            text-align: center;
+            padding: 8px;
+            font-size: 16px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .fraction-line {
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            margin: 5px 0;
+        }
+        .result-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            min-height: 80px;
+            flex-wrap: wrap;
+        }
+        .fraction-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+        }
+        .numerator, .denominator {
+            text-align: center;
+            font-size: 18px;
+        }
+        .equal-sign {
+            font-size: 24px;
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+        }
+        .mixed-container {
+            display: flex;
+            align-items: center;
+        }
+        .integer-part {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        .integer-result {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .calculate-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .calculate-btn:hover {
+            background-color: #45a049;
+        }
+        .clear-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .clear-btn:hover {
+            background-color: #d32f2f;
+        }
+        .steps {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            display: none;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .steps p {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .steps-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .error {
+            color: #ff0000;
+            text-align: center;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>分数化简</h3>
+        
+        <!-- 输入区域 -->
+        <div class="input-section">
+            <div class="fraction-input-container">
+                <input type="number" id="numerator" class="fraction-input" value="51" min="1">
+                <div class="fraction-line"></div>
+                <input type="number" id="denominator" class="fraction-input" value="17" min="1">
+            </div>
+        </div>
+        
+        <!-- 结果显示 -->
+        <div class="result-display">
+            <div class="fraction-display">
+                <span class="numerator" id="display-numerator">51</span>
+                <div class="fraction-line"></div>
+                <span class="denominator" id="display-denominator">17</span>
+            </div>
+            
+            <span class="equal-sign">=</span>
+            
+            <div class="fraction-display" id="simplified-fraction">
+                <span class="numerator" id="simplified-numerator">3</span>
+                <div class="fraction-line"></div>
+                <span class="denominator" id="simplified-denominator">1</span>
+            </div>
+            
+            <span class="equal-sign">=</span>
+            
+            <div class="mixed-container" id="mixed-container">
+                <span class="integer-part" id="integer-part">3</span>
+                <div class="fraction-display" id="mixed-fraction-part">
+                    <span class="numerator" id="mixed-numerator">0</span>
+                    <div class="fraction-line"></div>
+                    <span class="denominator" id="mixed-denominator">1</span>
+                </div>
+            </div>
+            
+            <div id="integer-result-display" class="integer-result" style="display: none;"></div>
+        </div>
+        
+        <div class="button-group">
+            <button onclick="calculateAndShowSteps()" class="calculate-btn">显示详细的计算步骤</button>
+            <button onclick="clearAll()" class="clear-btn">清除</button>
+        </div>
+        
+        <div id="error-message" class="error"></div>
+        
+        <div class="steps" id="steps">
+            <p class="steps-title">计算步骤：</p>
+            <p id="step-original"></p>
+            <p id="step-method"></p>
+            <div id="steps-list"></div>
+            <p id="step-gcd"></p>
+            <p id="step-simplify-title"></p>
+            <p id="step-simplify-desc"></p>
+            <p id="step-simplified"></p>
+            <p id="step-integer-result" style="display: none;"></p>
+            <p id="step-mixed-title"></p>
+            <p id="step-mixed-desc"></p>
+        </div>
+    </div>
+
+    <script>
+        // 计算最大公约数并获取步骤（使用减法实现辗转相除）
+        function gcdWithSteps(a, b) {
+            let steps = [];
+            let stepCount = 1;
+            
+            // 确保a是较大的数
+            if (a < b) {
+                [a, b] = [b, a];
+                steps.push(`步骤${stepCount++}：交换数值使较大数在前，得到 ${a} 和 ${b}`);
+            } else {
+                steps.push(`步骤${stepCount++}：初始数值为 ${a} 和 ${b}`);
+            }
+            
+            // 辗转相减法
+            while (a !== b) {
+                if (a > b) {
+                    let diff = a - b;
+                    steps.push(`步骤${stepCount++}：${a} - ${b} = ${diff}`);
+                    a = diff;
+                } else {
+                    let diff = b - a;
+                    steps.push(`步骤${stepCount++}：${b} - ${a} = ${diff}`);
+                    b = diff;
+                }
+            }
+            
+            return { gcd: a, steps: steps };
+        }
+        
+        // 计算并显示步骤
+        function calculateAndShowSteps() {
+            // 获取输入值
+            const numerator = parseInt(document.getElementById('numerator').value);
+            const denominator = parseInt(document.getElementById('denominator').value);
+            
+            // 验证输入
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.textContent = '';
+            if (isNaN(numerator) || isNaN(denominator) || denominator <= 0 || numerator <= 0) {
+                errorDiv.textContent = "请输入有效的正整数";
+                return;
+            }
+            
+            // 更新显示的原始分数
+            document.getElementById('display-numerator').textContent = numerator;
+            document.getElementById('display-denominator').textContent = denominator;
+            
+            // 计算最大公约数和步骤
+            const result = gcdWithSteps(numerator, denominator);
+            const gcd = result.gcd;
+            const steps = result.steps;
+            
+            // 计算化简后的分数
+            const simplifiedNum = numerator / gcd;
+            const simplifiedDen = denominator / gcd;
+            
+            // 更新最简分数显示
+            document.getElementById('simplified-numerator').textContent = simplifiedNum;
+            document.getElementById('simplified-denominator').textContent = simplifiedDen;
+            
+            // 判断是否为整数结果（分子是分母的整数倍）
+            const isIntegerResult = simplifiedNum % simplifiedDen === 0;
+            const integerResult = isIntegerResult ? simplifiedNum / simplifiedDen : 0;
+            
+            // 计算带分数部分
+            let integerPart = 0;
+            let mixedNum = simplifiedNum;
+            let mixedDen = simplifiedDen;
+            
+            if (simplifiedNum > simplifiedDen) {
+                integerPart = Math.floor(simplifiedNum / simplifiedDen);
+                mixedNum = simplifiedNum % simplifiedDen;
+                mixedDen = simplifiedDen;
+            }
+            
+            // 获取DOM元素
+            const mixedContainer = document.getElementById('mixed-container');
+            const integerResultDisplay = document.getElementById('integer-result-display');
+            const mixedFractionPart = document.getElementById('mixed-fraction-part');
+            const integerElement = document.getElementById('integer-part');
+            
+            // 根据结果类型显示不同格式
+            if (isIntegerResult) {
+                // 整数结果：只显示整数
+                mixedContainer.style.display = 'none';
+                integerResultDisplay.style.display = 'block';
+                integerResultDisplay.textContent = integerResult;
+            } else {
+                // 非整数结果：显示带分数或纯分数
+                integerResultDisplay.style.display = 'none';
+                mixedContainer.style.display = 'flex';
+                
+                // 更新带分数显示
+                integerElement.textContent = integerPart;
+                document.getElementById('mixed-numerator').textContent = mixedNum;
+                document.getElementById('mixed-denominator').textContent = mixedDen;
+                
+                // 控制整数部分的显示
+                if (integerPart === 0) {
+                    integerElement.style.display = 'none';
+                } else {
+                    integerElement.style.display = 'inline';
+                }
+                
+                // 控制分数部分的显示（如果是0/1则隐藏）
+                if (mixedNum === 0 && mixedDen === 1) {
+                    mixedFractionPart.style.display = 'none';
+                } else {
+                    mixedFractionPart.style.display = 'flex';
+                    mixedFractionPart.style.flexDirection = 'column';
+                    mixedFractionPart.style.alignItems = 'center';
+                }
+            }
+            
+            // 更新步骤显示
+            document.getElementById('step-original').textContent = `需要化简的分数：${numerator}/${denominator}`;
+            document.getElementById('step-method').textContent = "求解过程：使用辗转相除法求最大公约数";
+            
+            // 清空并填充步骤列表
+            const stepsList = document.getElementById('steps-list');
+            stepsList.innerHTML = '';
+            steps.forEach(step => {
+                const p = document.createElement('p');
+                p.textContent = step;
+                stepsList.appendChild(p);
+            });
+            
+            // 填充其他步骤信息
+            document.getElementById('step-gcd').textContent = `步骤${steps.length + 1}：公约数为${gcd}`;
+            document.getElementById('step-simplify-title').textContent = "化简步骤：";
+            document.getElementById('step-simplify-desc').textContent = `将分子和分母同时除以最大公约数${gcd}`;
+            document.getElementById('step-simplified').textContent = 
+                `${numerator}/${denominator} = (${numerator} ÷ ${gcd}) / (${denominator} ÷ ${gcd}) = ${simplifiedNum}/${simplifiedDen}`;
+            
+            // 处理整数结果的步骤说明
+            const integerResultStep = document.getElementById('step-integer-result');
+            const mixedTitle = document.getElementById('step-mixed-title');
+            const mixedDesc = document.getElementById('step-mixed-desc');
+            
+            if (isIntegerResult) {
+                // 整数结果显示
+                integerResultStep.style.display = 'block';
+                integerResultStep.textContent = `${simplifiedNum}/${simplifiedDen} 是整数，结果为 ${integerResult}`;
+                mixedTitle.style.display = 'none';
+                mixedDesc.style.display = 'none';
+            } else if (simplifiedNum > simplifiedDen) {
+                // 假分数显示带分数转换步骤
+                integerResultStep.style.display = 'none';
+                mixedTitle.style.display = 'block';
+                mixedDesc.style.display = 'block';
+                mixedTitle.textContent = "转换为带分数：";
+                mixedDesc.textContent = 
+                    `${simplifiedNum}/${simplifiedDen} = ${integerPart} + ${mixedNum}/${mixedDen} = ${integerPart}${mixedNum}/${mixedDen}`;
+            } else {
+                // 真分数不显示带分数转换步骤
+                integerResultStep.style.display = 'none';
+                mixedTitle.style.display = 'none';
+                mixedDesc.style.display = 'none';
+            }
+            
+            // 显示步骤区域
+            document.getElementById('steps').style.display = 'block';
+        }
+        
+        // 清除所有输入和结果
+        function clearAll() {
+            // 重置输入框
+            document.getElementById('numerator').value = '';
+            document.getElementById('denominator').value = '';
+            
+            // 重置显示区域
+            document.getElementById('display-numerator').textContent = '';
+            document.getElementById('display-denominator').textContent = '';
+            document.getElementById('simplified-numerator').textContent = '';
+            document.getElementById('simplified-denominator').textContent = '';
+            document.getElementById('integer-part').textContent = '0';
+            document.getElementById('integer-part').style.display = 'inline';
+            document.getElementById('mixed-numerator').textContent = '';
+            document.getElementById('mixed-denominator').textContent = '';
+            document.getElementById('mixed-container').style.display = 'flex';
+            document.getElementById('mixed-fraction-part').style.display = 'flex';
+            document.getElementById('integer-result-display').style.display = 'none';
+            
+            // 隐藏步骤和错误信息
+            document.getElementById('steps').style.display = 'none';
+            document.getElementById('error-message').textContent = '';
+        }
+        
+        // 实时更新显示的分数
+        document.getElementById('numerator').addEventListener('input', function() {
+            document.getElementById('display-numerator').textContent = this.value || '';
+        });
+        document.getElementById('denominator').addEventListener('input', function() {
+            document.getElementById('display-denominator').textContent = this.value || '';
+        });
+        
+        // 页面加载时计算一次，展示正确状态
+        window.onload = function() {
+            calculateAndShowSteps();
+        };
+    </script>
+</body>
+</html>
+    
