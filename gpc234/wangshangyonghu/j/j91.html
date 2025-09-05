@@ -2,135 +2,153 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
- 
- <title>分数化小数计算器</title>
-<meta name="keywords" content="分数化小数计算器" /><!--关键词-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 关键：适配移动端视口 -->
 
+ <title>分数化小数计算器一搜索:网上用户</title>
+<meta name="keywords" content="分数化小数计算器,搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" /><!--关键词-->
+
+
+    <meta name="keywords" content="分数化小数计算器,手机分数计算器" />
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* 统一盒模型，避免宽度溢出 */
+        }
+        body {
+            padding: 15px;
+            background-color: #f5f5f5;
+        }
         .container {
-            width: 600px;
-            margin: 50px auto;
+            width: 100%; /* 手机端占满屏幕宽度 */
+            max-width: 500px; /* 限制最大宽度，避免平板上过宽 */
+            margin: 20px auto;
             font-family: Arial, sans-serif;
-            padding: 20px;
-            box-shadow: 0 0 10px #ccc;
+            padding: 20px 15px;
+            box-shadow: 0 0 8px #ddd;
             border-radius: 8px;
+            background-color: white;
         }
         h3 {
             text-align: center;
             color: #333;
-            margin-bottom: 30px;
-            font-size: 24px;
+            margin-bottom: 25px;
+            font-size: 22px; /* 适配手机字体大小 */
         }
         .input-section {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+            flex-wrap: wrap; /* 小屏幕自动换行 */
+            padding: 0 10px;
         }
         .input-group {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         .integer-input {
-            width: 60px;
-            padding: 10px;
-            font-size: 18px;
+            width: 50px;
+            padding: 12px 8px; /* 增加内边距，触摸更友好 */
+            font-size: 16px;
             text-align: center;
             border: 1px solid #ddd;
             border-radius: 4px;
+            outline: none; /* 去除默认外边框 */
         }
         .fraction-inputs {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
         }
         .numerator-input, .denominator-input {
-            width: 100px;
-            padding: 10px;
-            font-size: 18px;
+            width: 80px; /* 缩小输入框宽度，适配手机 */
+            padding: 12px 8px;
+            font-size: 16px;
             text-align: center;
             border: 1px solid #ddd;
             border-radius: 4px;
+            outline: none;
         }
         .fraction-line {
-            width: 100px;
+            width: 80px;
             height: 2px;
             background-color: #333;
         }
         .plus-sign {
-            font-size: 24px;
+            font-size: 22px;
             color: #666;
         }
         .result-display {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 20px 0;
-            min-height: 60px;
-            flex-wrap: wrap;
-            gap: 15px;
+            margin: 15px 0;
+            min-height: 50px;
+            flex-wrap: wrap; /* 结果区域小屏幕换行 */
+            gap: 12px;
+            padding: 0 10px;
         }
-        /* 修改分数显示样式为带分数形式 */
+        /* 带分数显示样式 - 适配手机紧凑布局 */
         .display-fraction {
             display: flex;
             align-items: flex-start;
             gap: 5px;
-            font-size: 24px;
+            font-size: 20px;
         }
         .mixed-integer {
-            margin-top: 8px;
+            margin-top: 6px;
         }
         .mixed-fraction {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .mixed-numerator {
-            font-size: 18px;
+        .mixed-numerator, .mixed-denominator {
+            font-size: 16px;
         }
         .mixed-line {
-            width: 40px;
+            width: 35px;
             height: 2px;
             background-color: #333;
-            margin: 2px 0;
-        }
-        .mixed-denominator {
-            font-size: 18px;
+            margin: 1px 0;
         }
         .equal-sign {
-            font-size: 24px;
-            margin: 0 5px;
+            font-size: 22px;
+            margin: 0 3px;
         }
         .decimal-result {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
-            min-width: 150px;
+            min-width: 120px; /* 缩小最小宽度 */
             text-align: center;
-            padding: 5px 10px;
+            padding: 8px 12px;
             border-radius: 4px;
             background-color: #f5f5f5;
             border: 1px solid #ddd;
+            word-break: break-all; /* 超长小数自动换行 */
         }
         .button-group {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             margin: 20px 0;
+            padding: 0 10px;
         }
         button {
-            padding: 10px 20px;
+            padding: 12px 25px; /* 增大按钮尺寸，触摸更易点击 */
             cursor: pointer;
             border: none;
             border-radius: 4px;
             font-size: 16px;
             font-weight: bold;
             color: white;
+            flex: 1; /* 按钮自适应宽度，充满容器 */
+            max-width: 200px; /* 限制按钮最大宽度 */
         }
-        /* 修改按钮样式 */
         .convert-btn {
             background-color: #00b300;
         }
@@ -144,35 +162,45 @@
             background-color: #e60000;
         }
         .steps {
-            margin-top: 20px;
-            padding: 15px;
+            margin-top: 15px;
+            padding: 12px;
             border: 1px solid #eee;
             border-radius: 4px;
             background-color: #f9f9f9;
             display: none;
-            max-height: 400px;
+            max-height: 300px; /* 缩小最大高度，适配手机屏幕 */
             overflow-y: auto;
+            font-size: 14px; /* 缩小步骤字体 */
         }
         .steps p {
-            margin: 8px 0;
+            margin: 6px 0;
             line-height: 1.5;
         }
         .steps-title {
             font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 18px;
+            margin-bottom: 8px;
+            font-size: 16px;
         }
         .error {
             color: #ff0000;
             text-align: center;
-            margin: 10px 0;
-            padding: 10px;
+            margin: 8px 0;
+            padding: 8px 10px;
+            font-size: 14px;
         }
         .example {
             text-align: center;
             color: #666;
-            margin-top: 10px;
+            margin-top: 8px;
             font-style: italic;
+            font-size: 14px;
+        }
+        /* 输入框聚焦样式 - 增强移动端交互反馈 */
+        .integer-input:focus,
+        .numerator-input:focus,
+        .denominator-input:focus {
+            border-color: #00b300;
+            box-shadow: 0 0 0 2px rgba(0, 179, 0, 0.2);
         }
     </style>
 </head>
@@ -180,9 +208,9 @@
     <div class="container">
         <h3>分数化小数计算器</h3>
         
-        <!-- 输入区域 -->
+        <!-- 输入区域：适配手机触摸输入 -->
         <div class="input-section">
-            <input type="number" id="integerPart" class="integer-input" placeholder="整数部分（可选）" step="any">
+            <input type="number" id="integerPart" class="integer-input" placeholder="整数（可选）" step="any">
             <span class="plus-sign">+</span>
             <div class="fraction-inputs">
                 <input type="number" id="numerator" class="numerator-input" placeholder="分子" step="any" required>
@@ -190,9 +218,9 @@
                 <input type="number" id="denominator" class="denominator-input" placeholder="分母" step="any" required>
             </div>
         </div>
-        <p class="example">例如: 1 + 3/5 将转换为 1.6</p>
+        <p class="example">例如: 1 + 3/5 → 1.6</p>
         
-        <!-- 结果显示 -->
+        <!-- 结果显示：紧凑布局，避免换行混乱 -->
         <div class="result-display">
             <div class="display-fraction" id="displayFraction">
                 <span class="mixed-integer">1</span>
@@ -206,6 +234,7 @@
             <div class="decimal-result" id="decimalResult">1.6</div>
         </div>
         
+        <!-- 按钮区域：触摸友好尺寸 -->
         <div class="button-group">
             <button onclick="toggleSteps()" class="convert-btn">显示/隐藏步骤</button>
             <button onclick="clearAll()" class="clear-btn">清除</button>
@@ -213,6 +242,7 @@
         
         <div id="error-message" class="error"></div>
         
+        <!-- 步骤区域：适配手机滚动 -->
         <div class="steps" id="steps">
             <p class="steps-title">转换步骤：</p>
             <div id="steps-content"></div>
@@ -220,10 +250,10 @@
     </div>
 
     <script>
-        // 延迟计算的计时器ID
+        // 延迟计算的计时器ID（避免输入时频繁计算）
         let calculationTimer = null;
-        // 延迟时间（毫秒）
-        const DEBOUNCE_DELAY = 500;
+        // 延迟时间（毫秒）：移动端输入更慢，适当缩短延迟
+        const DEBOUNCE_DELAY = 400;
         
         // 转换分数为小数
         function convertFractionToDecimal(showSteps = false) {
@@ -262,7 +292,7 @@
             let steps = [];
             let stepCount = 1;
             
-            // 构建原始分数表达式
+            // 构建原始分数表达式（简化显示，适配手机）
             let fractionExpr = `${numerator}/${denominator}`;
             if (integerPart !== 0) {
                 fractionExpr = `${integerPart} + ${fractionExpr}`;
@@ -271,19 +301,18 @@
             
             // 计算分数部分
             const fractionValue = numerator / denominator;
-            steps.push(`步骤${stepCount++}：计算分数部分 ${numerator}/${denominator} = ${fractionValue}`);
+            steps.push(`步骤${stepCount++}：计算分数部分 ${numerator}/${denominator} = ${fractionValue.toFixed(6)}`); // 限制小数位，避免步骤过长
             
             // 计算总结果
             const totalValue = integerPart + fractionValue;
-            steps.push(`步骤${stepCount++}：加上整数部分 ${integerPart} + ${fractionValue} = ${totalValue}`);
+            steps.push(`步骤${stepCount++}：加上整数部分 ${integerPart} + ${fractionValue.toFixed(6)} = ${totalValue.toFixed(6)}`);
             
-            // 处理循环小数的情况
+            // 处理循环小数的情况（手机端显示更简洁）
             let result = totalValue;
-            // 检查是否为循环小数（简化判断）
             const decimalStr = totalValue.toString();
-            if (decimalStr.length > 10) {
-                result = totalValue.toFixed(10);
-                steps.push(`步骤${stepCount++}：结果为循环小数，保留10位小数：${result}`);
+            if (decimalStr.length > 8) { // 手机端限制小数位长度
+                result = totalValue.toFixed(8);
+                steps.push(`步骤${stepCount++}：结果为循环小数，保留8位小数：${result}`);
             }
             
             // 更新结果显示
@@ -302,7 +331,7 @@
             const mixedNumerator = displayFraction.querySelector('.mixed-numerator');
             const mixedDenominator = displayFraction.querySelector('.mixed-denominator');
             
-            // 更新带分数各部分内容
+            // 更新带分数各部分内容（空值时隐藏）
             mixedInteger.textContent = integerPart !== 0 && !isNaN(integerPart) ? integerPart : '';
             mixedNumerator.textContent = numerator;
             mixedDenominator.textContent = denominator;
@@ -312,14 +341,13 @@
         function toggleSteps() {
             const stepsDiv = document.getElementById('steps');
             if (stepsDiv.style.display === 'none' || stepsDiv.style.display === '') {
-                // 显示步骤前先计算一次以确保步骤是最新的
-                convertFractionToDecimal(true);
+                convertFractionToDecimal(true); // 显示前更新最新步骤
             } else {
                 stepsDiv.style.display = 'none';
             }
         }
         
-        // 显示步骤
+        // 显示步骤（适配手机字体和行高）
         function displaySteps(steps) {
             const stepsContent = document.getElementById('steps-content');
             stepsContent.innerHTML = '';
@@ -342,13 +370,9 @@
             
             // 重置显示区域
             const displayFraction = document.getElementById('displayFraction');
-            const mixedInteger = displayFraction.querySelector('.mixed-integer');
-            const mixedNumerator = displayFraction.querySelector('.mixed-numerator');
-            const mixedDenominator = displayFraction.querySelector('.mixed-denominator');
-            
-            mixedInteger.textContent = '';
-            mixedNumerator.textContent = '';
-            mixedDenominator.textContent = '';
+            displayFraction.querySelector('.mixed-integer').textContent = '';
+            displayFraction.querySelector('.mixed-numerator').textContent = '';
+            displayFraction.querySelector('.mixed-denominator').textContent = '';
             document.getElementById('decimalResult').textContent = '';
             
             // 隐藏步骤和错误信息
@@ -356,7 +380,7 @@
             document.getElementById('error-message').textContent = '';
         }
         
-        // 输入事件处理 - 实现自动计算
+        // 输入事件处理 - 适配移动端输入（如软键盘）
         function setupInputListeners() {
             const inputs = [
                 document.getElementById('integerPart'),
@@ -365,19 +389,21 @@
             ];
             
             inputs.forEach(input => {
+                // 监听输入事件（包括软键盘输入）
                 input.addEventListener('input', function() {
-                    // 清除之前的计时器
                     if (calculationTimer) {
                         clearTimeout(calculationTimer);
                     }
-                    
-                    // 设置新的计时器
+                    // 延迟计算，避免软键盘输入时频繁触发
                     calculationTimer = setTimeout(() => {
-                        // 隐藏步骤，避免频繁更新
                         document.getElementById('steps').style.display = 'none';
-                        // 执行计算，但不显示步骤
                         convertFractionToDecimal(false);
                     }, DEBOUNCE_DELAY);
+                });
+                
+                // 移动端软键盘收起时触发一次计算（避免输入不完整）
+                input.addEventListener('blur', function() {
+                    convertFractionToDecimal(false);
                 });
             });
         }
@@ -385,7 +411,7 @@
         // 页面加载时初始化
         window.onload = function() {
             setupInputListeners();
-            // 设置默认值
+            // 设置默认值（适配手机显示）
             document.getElementById('numerator').value = '3';
             document.getElementById('denominator').value = '5';
             document.getElementById('integerPart').value = '1';
