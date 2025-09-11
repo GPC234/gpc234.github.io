@@ -42,7 +42,7 @@
       A {
         text-decoration: none; /* 去除a标签的下划线（建议使用小写属性名，符合CSS规范） */
         font-weight: bold; /* 为a标签设置粗体样式 */
-        font-size: 30px; /* 为a标签设置字体大小为32像素 */
+        font-size: 26px; /* 为a标签设置字体大小为32像素 */
       }
     </style>
     <!-- CSS样式定义部分结束 -->
@@ -73,117 +73,191 @@
 <div style="text-align: justify; max-width: 90%;">
 
 <hr color=0066FF>
-搜索:<a href="https://cn.bing.com/search?q=gpc234" target="_blank"style="font-size: 12px;">gpc234</a>
+<span style="font-size: 28px;">抖音搜索</span>:<span style="font-size: 28px;">网上用户</span>
 <hr color=0066FF>
-今日头条搜索:<a href="https://so.toutiao.com/search?keyword=%E7%BD%91%E4%B8%8A%E7%94%A8%E6%88%B7" target="_blank"style="font-size: 12px;">网上用户</a>
+        <a href="https://cn.bing.com/search?q=gpc234" target="_blank" class="link-item">搜索:gpc234</a>
+        <a href="https://so.toutiao.com/search?keyword=%E7%BD%91%E4%B8%8A%E7%94%A8%E6%88%B7" target="_blank" class="link-item">今日头条搜索:网上用户</a>
+
+
+
+    <!-- 内部样式表 -->
+    <style>
+        /* 1. 给所有链接统一基础样式 */
+        .link-item {
+            display: block; /* 让链接独占一行（为手机端准备） */
+            padding: 12px 16px; /* 内边距，增加点击区域 */
+            margin: 8px; /* 外边距，分隔每个链接 */
+            background-color: #f5f5f5; /* 背景色 */
+            color: #0000FF; /* 文字色 */
+            text-decoration: none; /* 去掉下划线 */
+            border-radius: 4px; /* 圆角 */
+            transition: background-color 0.3s; /*  hover 过渡效果 */
+        }
+
+        /* 2. 鼠标悬浮时的样式 */
+        .link-item:hover {
+            background-color: #e0e0e0; /*  hover 时背景变深 */
+        }
+
+        /* 3. 响应式：电脑端（屏幕宽度 ≥ 768px）显示多列 */
+        @media (min-width: 768px) {
+            .link-container {
+                display: grid; /* 使用 Grid 布局（灵活控制列数） */
+                grid-template-columns: repeat(3, 1fr); /* 平均分成 3 列 */
+                gap: 10px; /* 列与列之间的间距 */
+                max-width: 1200px; /* 电脑端最大宽度，避免太宽 */
+                margin: 0 auto; /* 水平居中 */
+            }
+        }
+
+        /* 4. 响应式：手机端（默认，屏幕宽度 < 768px）显示单列 */
+        /* 无需额外写代码，因为 .link-item 已经是 display: block，默认独占一行 */
+        .link-container {
+            padding: 0 1px; /* 手机端左右留边距，避免贴边 */
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- 链接容器：用类名关联 CSS 样式 -->
+    <div class="link-container">
+
+
+<a href="https://www.toutiao.com/article/7497936604868067890/"  target="_blank" class="link-item"style="font-size: 18px;">2025年岁属生肖对照表一网上用户</a>
+
+<a href="../kouling/kl1.html"  target="_blank" class="link-item">口令</a>
+
+<a href="../gongpingcunliulanqizhuye/zy1.html"  target="_blank" class="link-item">公平村浏览器主页</a>
+
+<a href="../dazitishurukuang/srk1.html"  target="_blank" class="link-item">大字输入框</a>
+
+<a href="../ds/ds2.html"  target="_blank" class="link-item">九九乘法表</a>
+
+<a href="../ds/ds3.html"  target="_blank" class="link-item">加法表</a>
+
+<a href="../ds/ds4.html"  target="_blank" class="link-item">笔画名称表</a>
+
+<a href="../ds/ds5.html"  target="_blank" class="link-item">常用偏旁名称表</a>
+
+<a href="../j/j13.html"  target="_blank" class="link-item">商品打折计算器</a>
+
+<a href="../j/j14.html"  target="_blank" class="link-item">含税计算器</a>
+
+<a href="../j/j52.html"  target="_blank" class="link-item">克换公斤</a>
+
+<a href="../jc/jc1.html"  target="_blank" class="link-item">屏幕检测</a>
+
+<a href="../sx/sx1.html"  target="_blank" class="link-item"style="font-size: 18px;">2025年岁属生肖对照表一网上用户</a>
+
+<a href="../mb/mb1.html"  target="_blank" class="link-item">秒表</a>
+
+<a href="../j/j54.html"  target="_blank" class="link-item">数字大写转换器</a>
+
+<a href="../j/j48.html"  target="_blank" class="link-item">时间相隔计算器</a>
+
+<a href="../j/j55.html"  target="_blank" class="link-item">工资计算器</a>
+
+<a href="../j/j56.html"  target="_blank" class="link-item">工资加班费计算器</a>
+
+<a href="../j/j57.html"  target="_blank" class="link-item">工资实时收入计算器</a>
+
+<a href="../j/j4.html"  target="_blank" class="link-item">铆钉帽子线长计算器</a>
+
+<a href="../tjdsgz/tjdsgz1.html"  target="_blank" class="link-item">统计多少个字</a>
+
+<a href="../j/j58.html"  target="_blank" class="link-item">存储单位自动换算</a>
+
+<a href="../j/j59.html"  target="_blank" class="link-item">重量单位自动换算</a>
+
+<a href="../j/j61.html"  target="_blank" class="link-item">长度单位自动换算</a>
+
+<a href="../j/j64.html"  target="_blank" class="link-item">时间单位自动换算</a>
+
+<a href="../j/j65.html"  target="_blank" class="link-item">面积单位自动换算</a>
+
+<a href="../j/j71.html"  target="_blank" class="link-item">定时器</a>
+
+<a href="../j/j72.html"  target="_blank" class="link-item">秒表</a>
+
+<a href="https://www.toutiao.com/article/7481563289332269604/"  target="_blank" class="link-item"style="font-size: 16px;">十二生肖的三合与六合内容</a>
+
+<a href="https://www.toutiao.com/w/7442965460175375673/"  target="_blank" class="link-item">加法心算口诀</a>
+
+<a href="https://www.toutiao.com/w/1809950507414720/"  target="_blank" class="link-item">九九乘法表</a>
+
+<a href="https://www.toutiao.com/w/7380293449112767779/"  target="_blank" class="link-item"style="font-size: 16px;">C1,C2,C3,C4,C5驾驶证可以开什么车</a>
+
+<a href="https://www.toutiao.com/article/7468955574810509887/"  target="_blank" class="link-item">可修改网站里面所有内容</a>
+
+<a href="../j/j78.html"  target="_blank" class="link-item">销轴单重计算器</a>
+
+<a href="../j/j79.html"  target="_blank" class="link-item">六角螺母单重计算器</a>
+
+<a href="../j/j82.html"  target="_blank" class="link-item">金币兑换计算器</a>
+
+<a href="../2/50.html"  target="_blank" class="link-item">打字练习</a>
+
+<a href="../chepai/cp1.html"  target="_blank" class="link-item"style="font-size: 20px;">全国各地车牌号首字及地名</a>
+
+<a href="/tupian/gpc234/wangshangyonghu/tu24/23.html"  target="_blank" class="link-item">欢迎光临淘宝领券网站</a>
+
+<a href="../qun/q1.html"  target="_blank" class="link-item">各行各业交流群</a>
+
+<a href="../j/j86.html"  target="_blank" class="link-item">公差计算器</a>
+
+<a href="../j/j88.html"  target="_blank" class="link-item">分数化简</a>
+
+<a href="../j/j89.html"  target="_blank" class="link-item">分数加减乘除计算器</a>
+
+<a href="../j/j90.html"  target="_blank" class="link-item">小数转分数计算器</a>
+
+<a href="../j/j91.html"  target="_blank" class="link-item">分数化小数计算器</a>
+
+<a href="../gongpingcunliulanqizhuye/zy27.html"  target="_blank" class="link-item">下载一公平村浏览器主页</a>
+
+<a href="../ds/ds1.html"  target="_blank" class="link-item">上学</a>
+
+
+<a href="http://du.hanyupinyin.cn/"  target="_blank" class="link-item">在线读拼音</a>
+
+
+
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+        <a href="/" target="_blank" class="link-item">.</a>
+ 
+<p class="link-item">网上用户</p>
+<p class="link-item">网上用户</p>
+<p class="link-item">gpc234</p>
+    </div>
+
 <hr color=0066FF>
-抖音搜索:网上用户
+(广告)<a href="../x/x1.html" target="_blank">淘宝优惠券</a>
+<hr color=0066FF>
+(广告)<a href="../x/x1.html" target="_blank">天猫优惠券</a>
+<hr color=0066FF>
+(广告)<a href="/gpc234/gpczxs/wangshangyonghu/a/a31.html" target="_blank">免费短剧</a>
+<hr color=0066FF>
+(广告)<a href="/tupian/gpc234/wangshangyonghu/tu7/jpg/hgdj13.html" target="_blank">免费短剧</a>
 <hr color=0066FF>
 
-<a href="https://www.toutiao.com/article/7497936604868067890/" target="_blank"style="font-size: 20px;">2025年岁属生肖对照表一网上用户</a>
-<hr color=0066FF>
-<a href="../kouling/kl1.html" target="_blank">口令</a>
-<hr color=0066FF>
-<a href="../gongpingcunliulanqizhuye/zy1.html" target="_blank">公平村浏览器主页</a>
-<hr color=0066FF>
-<a href="../dazitishurukuang/srk1.html" target="_blank">大字输入框</a>
-<hr color=0066FF>
-<a href="../j/j13.html" target="_blank">商品打折计算器</a>
-<hr color=0066FF>
-<a href="../j/j14.html" target="_blank">含税计算器</a>
-<hr color=0066FF>
-<a href="../j/j52.html" target="_blank">克换公斤</a>
-<hr color=0066FF>
-<a href="../jc/jc1.html" target="_blank">屏幕检测</a>
-<hr color=0066FF>
-<a href="../sx/sx1.html" target="_blank"style="font-size: 20px;">2025年岁属生肖对照表一网上用户</a>
-<hr color=0066FF>
-<a href="../mb/mb1.html" target="_blank">秒表</a>
-<hr color=0066FF>
-<a href="../j/j54.html" target="_blank">数字大写转换器</a>
-<hr color=0066FF>
-<a href="../j/j48.html" target="_blank">时间相隔计算器</a>
-<hr color=0066FF>
-<a href="../j/j55.html" target="_blank">工资计算器</a>
-<hr color=0066FF>
-<a href="../j/j56.html" target="_blank">工资加班费计算器</a>
-<hr color=0066FF>
-<a href="../j/j57.html" target="_blank">工资实时收入计算器</a>
-<hr color=0066FF>
-<a href="../j/j4.html" target="_blank">铆钉帽子线长计算器</a>
-<hr color=0066FF>
-<a href="../tjdsgz/tjdsgz1.html" target="_blank">统计多少个字</a>
-<hr color=0066FF>
-<a href="../j/j58.html" target="_blank">存储单位自动换算</a>
-<hr color=0066FF>
-<a href="../j/j59.html" target="_blank">重量单位自动换算</a>
-<hr color=0066FF>
-<a href="../j/j61.html" target="_blank">长度单位自动换算</a>
-<hr color=0066FF>
-<a href="../j/j64.html" target="_blank">时间单位自动换算</a>
-<hr color=0066FF>
-<a href="../j/j65.html" target="_blank">面积单位自动换算</a>
-<hr color=0066FF>
-<a href="../j/j71.html" target="_blank">定时器</a>
-<hr color=0066FF>
-<a href="../j/j72.html" target="_blank">秒表</a>
-<hr color=0066FF>
-<a href="https://www.toutiao.com/article/7481563289332269604/" target="_blank"style="font-size: 16px;">十二生肖的三合与六合内容</a>
-<hr color=0066FF>
-<a href="https://www.toutiao.com/w/7442965460175375673/" target="_blank">加法心算口诀</a>
-<hr color=0066FF>
-<a href="https://www.toutiao.com/w/1809950507414720/" target="_blank">九九乘法表</a>
-<hr color=0066FF>
-<a href="https://www.toutiao.com/w/7380293449112767779/" target="_blank"style="font-size: 18px;">C1,C2,C3,C4,C5驾驶证可以开什么车</a>
-<hr color=0066FF>
-<a href="https://www.toutiao.com/article/7468955574810509887/" target="_blank">可修改网站里面所有内容</a>
-<hr color=0066FF>
-<a href="../j/j78.html" target="_blank">销轴单重计算器</a>
-<hr color=0066FF>
-<a href="../j/j79.html" target="_blank">六角螺母单重计算器</a>
-<hr color=0066FF>
-<a href="../j/j82.html" target="_blank">金币兑换计算器</a>
-<hr color=0066FF>
-<a href="../2/50.html" target="_blank">打字练习</a>
-<hr color=0066FF>
-<a href="../chepai/cp1.html" target="_blank"style="font-size: 20px;">全国各地车牌号首字及地名</a>
-<hr color=0066FF>
-<a href="/tupian/gpc234/wangshangyonghu/tu24/23.html" target="_blank">欢迎光临淘宝领券网站</a>
-<hr color=0066FF>
-<a href="../qun/q1.html" target="_blank">各行各业交流群</a>
-<hr color=0066FF>
-<a href="../j/j86.html" target="_blank">公差计算器</a>
-<hr color=0066FF>
-<a href="../j/j88.html" target="_blank">分数化简</a>
-<hr color=0066FF>
-<a href="../j/j89.html" target="_blank">分数加减乘除计算器</a>
-<hr color=0066FF>
-<a href="../j/j90.html" target="_blank">小数转分数计算器</a>
-<hr color=0066FF>
-<a href="../j/j91.html" target="_blank">分数化小数计算器</a>
-<hr color=0066FF>
-<a href="../gongpingcunliulanqizhuye/zy27.html" target="_blank">下载一公平村浏览器主页</a>
-<hr color=0066FF>
-<a href="/" target="_blank"></a>
-<hr color=0066FF>
-<a href="/" target="_blank"></a>
-<hr color=0066FF>
-<a href="/" target="_blank"></a>
-<hr color=0066FF>
-<a href="/" target="_blank"></a>
-<hr color=0066FF>
-<a href="/" target="_blank"></a>
-<hr color=0066FF>
-<a href="/" target="_blank"></a>
-<hr color=0066FF>
-<a href="/" target="_blank"></a>
-<hr color=0066FF>
 
-<hr color=0066FF>
-<a href="../x/x1.html" target="_blank">(广告)淘宝优惠券</a>
-<hr color=0066FF>
-<a href="../x/x1.html" target="_blank">(广告)天猫优惠券</a>
-<hr color=0066FF>
 
 
 
