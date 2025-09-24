@@ -51,24 +51,172 @@ font-size: 32px;    /* 为 a 标签设置字体大小 */
 <a href="/tupian/gpc234/wangshangyonghu/tu7/tu/tu2.html" target="_blank">
 <h1>网上用户</h1>
 <hr color=0066FF>
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="https://gpc234.github.io/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://a.gpc234.wuaze.com/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpc234.wuaze.com/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://mdc.freevar.com/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpc234.freevar.com/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="https://je105kd940602.vicp.fun/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://je105kd940602.vicp.fun/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpc234.66ghz.com/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpc234.web1337.net/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpc234.kesug.com/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpc234.rf.gd/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpc234.wuaze.com/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpczxs.7749.org/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpczxs.web1337.net/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpczxs.66ghz.com/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
-<img src="http://gpc234.hostingem.ru/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" alt="搜索:网上用户,公平村," width="380 " height=" " title="" align="" />
+
+
+<!--自动随机图片-->
+<img id="randomJpg1" src="" alt="网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS" width="350" style="height: auto;" title="" align="" />
 </a>
+<script>
+// 1. 生成指定范围的随机数（工具函数）
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+// 2. 配置项：保留全部folderPaths目录，未做任何删减
+const config = {
+  imgId: 'randomJpg1',          // 图片元素ID
+  imageSources: [               // 基础域名/根目录（一级源）
+    '/',                         // 网站根目录（已修复，可正常使用）
+    'https://gpc234.github.io',  // 其他基础域名（已去除/tupian）
+    'http://a.gpc234.wuaze.com',
+    'http://n.gpc234.wuaze.com',
+    'http://m.gpc234.wuaze.com',
+    'http://gpc234.wuaze.com',
+    'http://mdc.freevar.com',
+    'http://gpc234.freevar.com',
+    'https://je105kd940602.vicp.fun',
+    'http://je105kd940602.vicp.fun',
+    'http://gpc234.66ghz.com',
+    'http://gpc234.web1337.net',
+    'http://gpc234.kesug.com',
+    'http://gpc234.rf.gd',
+    'http://gpczxs.7749.org',
+    'http://gpczxs.web1337.net',
+    'http://gpczxs.66ghz.com',
+    'http://gpc234.w1.luyouxia.net',
+    'http://t1.pgrm.top:16701',
+    'https://gpc234.pgrm.site',
+    'http://www.wendasz.com',
+    'http://www.mx33.com',
+    'http://www.mx33.cn',
+    'http://gpc234.hostingem.ru'
+  ],
+  // 👇 完整保留所有原始图片目录，无任何省略
+  folderPaths: [
+
+    '/tupian/gpc234/wangshangyonghu/tu1/jpg/',
+
+    '/tupian/gpc234/wangshangyonghu/tu7/jpg/'
+     
+  ],
+  numberRange: {                // 图片编号范围
+    original: [1, 1000],        // 主编号范围
+    fallback: [1, 13]           // 备用编号范围
+  },
+  maxRetry: 10,                 // 最大重试次数
+  retryDelay: 500               // 重试间隔（毫秒）
+};
+
+// 3. 核心逻辑：修复根目录路径 + 随机加载图片（功能不变）
+function setupMultiSourceRandomImage(config) {
+  const img = document.getElementById(config.imgId);
+  if (!img) {
+    console.error('未找到图片元素，ID:', config.imgId);
+    return;
+  }
+
+  let triedCombinations = new Set(); // 记录已尝试的（源+目录）组合
+  let usingFallbackNumber = false;   // 是否使用备用编号
+  let retryCount = 0;                // 当前重试次数
+
+  // 修复核心：正确拼接路径（处理根目录/域名场景，避免双斜杠）
+  function getRandomImageUrl() {
+    const totalCombinations = config.imageSources.length * config.folderPaths.length;
+    // 所有组合尝试完毕：重置状态，避免无法重试
+    if (triedCombinations.size >= totalCombinations) {
+      triedCombinations.clear();
+      usingFallbackNumber = false;
+      retryCount = 0;
+      return null;
+    }
+
+    // 找到未尝试过的（源+目录）组合
+    while (true) {
+      const randomSource = config.imageSources[getRandomNumber(0, config.imageSources.length - 1)];
+      const randomFolder = config.folderPaths[getRandomNumber(0, config.folderPaths.length - 1)];
+      const combinationKey = `${randomSource}|${randomFolder}`;
+
+      if (!triedCombinations.has(combinationKey)) {
+        triedCombinations.add(combinationKey);
+        // 选择编号范围（主/备用）
+        const [minNum, maxNum] = usingFallbackNumber 
+          ? config.numberRange.fallback 
+          : config.numberRange.original;
+        const randomNum = getRandomNumber(minNum, maxNum);
+
+        // 路径清洗：移除目录开头的斜杠，避免根目录拼接时出现双斜杠
+        const cleanedFolder = randomFolder.startsWith('/') ? randomFolder.slice(1) : randomFolder;
+        let imageUrl;
+
+        if (randomSource === '/') {
+          // 根目录场景：正确拼接为 "/目录/编号.jpg"
+          imageUrl = `${randomSource}${cleanedFolder}${randomNum}.jpg`;
+        } else {
+          // 域名场景：移除域名结尾斜杠（若有），拼接为 "域名/目录/编号.jpg"
+          imageUrl = `${randomSource.replace(/\/$/, '')}/${cleanedFolder}${randomNum}.jpg`;
+        }
+
+        return imageUrl;
+      }
+    }
+  }
+
+  // 加载图片（含失败重试逻辑）
+  function loadImage() {
+    if (retryCount >= config.maxRetry) {
+      img.src = '';
+      img.alt = '网上用户的图片（加载失败）';
+      console.warn('已达最大重试次数，停止加载');
+      return;
+    }
+
+    const imageUrl = getRandomImageUrl();
+    if (!imageUrl) {
+      retryCount++;
+      if (retryCount >= config.maxRetry) {
+        img.src = '';
+        img.alt = '网上用户的图片（加载失败）';
+        console.warn('无可用图片组合，停止加载');
+        return;
+      }
+      console.log(`无可用组合，重试中（${retryCount}/${config.maxRetry}）`);
+      setTimeout(loadImage, config.retryDelay);
+      return;
+    }
+
+    // 尝试加载图片
+    img.src = imageUrl;
+    console.log(`尝试加载（${retryCount + 1}/${config.maxRetry}）:`, imageUrl);
+  }
+
+  // 加载成功：重置状态
+  img.addEventListener('load', () => {
+    img.alt = '网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS';
+    console.log('图片加载成功:', img.src);
+    triedCombinations.clear();
+    usingFallbackNumber = false;
+    retryCount = 0;
+  });
+
+  // 加载失败：切换备用编号/组合重试
+  img.addEventListener('error', () => {
+    console.error('加载失败:', img.src);
+    retryCount++;
+
+    // 1次失败后切换备用编号范围
+    if (!usingFallbackNumber && retryCount >= 1) {
+      usingFallbackNumber = true;
+      console.log('切换到备用编号范围（1-13）重试');
+    }
+
+    setTimeout(loadImage, config.retryDelay);
+  });
+
+  // 初始加载图片
+  loadImage();
+}
+
+// 4. 执行初始化
+setupMultiSourceRandomImage(config);
+</script><!--自动随机图片-->
 
 
 
