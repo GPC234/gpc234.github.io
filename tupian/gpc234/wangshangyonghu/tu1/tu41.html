@@ -1,0 +1,356 @@
+<!doctype html> <!-- 声明文档类型为 HTML5 -->
+<html lang="zh-cn"> <!-- 定义 HTML 文档，语言设置为中文（中国大陆） -->
+<head> <!-- 文档头部开始，用于包含元数据等信息 -->
+    <!-- 设置视口，适用于手机等移动设备，允许用户缩放页面 -->
+    <meta name="viewport" content="width=device-width,  user-scalable=yes" />
+    <!-- 设置文档的语言为中文（中国大陆） -->
+    <meta http-equiv='content-language' content='zh-cn'>
+    <!-- 设置网站的图标，适用于普通浏览器 -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" alt="网上用户">
+    <!-- 设置支持任意尺寸的图标 -->
+    <link rel="icon" sizes="any" mask href="/favicon.ico" alt="网上用户" />
+    <!-- 设置网站的快捷图标 -->
+    <link rel="shortcut icon" href="/favicon.ico" alt="网上用户" type="image/x-icon">
+    <!-- 设置苹果设备主屏幕上的预合成图标 -->
+    <link rel="apple-touch-icon-precomposed" href="/favicon.ico" alt="网上用户">
+    <!-- 设置苹果设备主屏幕上的图标 -->
+    <link rel="apple-touch-icon" href="/favicon.ico" alt="网上用户">
+    <!-- 设置文档的字符编码为 UTF-8，防止网页出现乱码 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <!-- 设置所有链接无下划线样式，并添加粗体样式 -->
+<!-- css样式定义部分开始 -->
+<style type="text/css">A{text-decoration: none;}</style> <!-- 设置所有链接无下划线样式-->
+<style type="text/css">A{font-weight: bold; }</style> <!-- 设置所有链接为所有 a 标签添加粗体样式-->
+<!-- css样式定义部分结束 --> 
+
+<title>网上用户一图片一分享一照片一相册一jpg一png一搜索:网上用户</title>
+    
+<meta name="keywords" content="网上用户,上网用户,网名张先生,公平村张先生,搜索:网上用户,网上用户,公平村,张先生,公平村张先生,网上用户的图片,网上用户的个人主页,网上用户的个人首页,网上用户的个人中心,网上用户的档案,公平村张先生,艺名张先生,网民张先生,网号张先生,用户名张先生,账号张先生,客家人张先生,GPC234,GPCZXS" /><!--关键词-->
+<meta name="description" content="搜索:网上用户图片一分享一照片一相册一jpg一png一公平村一网上用户一网名张先生一公平村张先生,GPC234,GPCZXS" />
+</head> <!-- 文档头部结束 -->
+
+<span style="font-size: 18px;"><!--字体大小-->
+<strong><!--加粗-->
+
+
+<!--左上角-->&nbsp; &nbsp; <a href="../h/h1.jpg" target="_blank">
+<img src="../h/h1.jpg" alt="网上用户" width="" height="35" title="" align="" /></a>
+<a id="gpc234" href="../h/h1.html" target="_blank"><img src="../h/h2.jpg" alt="搜索:网上用户" width="" height="35" title="" align="" /></a><!--左上角-->
+
+<hr color=0066FF> <!--分界线-->
+
+<center><!--居中-->
+
+
+
+
+
+
+
+<p><a href="/ "target="_blank">搜索:网上用户图片</a></p>
+<hr color=0066ff>
+<center><!--居中-->
+<!--自动对应文件件随机图片-->
+<!-- 第1张随机图片 -->
+<img id="picRand1" src="" alt="网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS" width="350" style="height: auto; margin: 10px;" />
+
+<script>
+// 1. 生成指定范围的随机数（工具函数）
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+// 2. 获取当前文件名并提取数字（用于动态切换文件夹）
+const fileName = window.location.pathname.split('/').pop();
+const fileNumMatch = fileName.match(/tu(\d+)\.html/);
+const folderNumber = fileNumMatch ? fileNumMatch[1] : '1'; // 默认使用jpg1
+
+// 3. 完整配置项（根据文件名自动切换文件夹）
+const baseConfig = {
+  imageSources: [               // 基础域名/根目录（一级源）
+    '/',                         // 网站根目录（可根据需求添加其他域名，如'https://xxx.com'）
+  ],
+  folderPaths: [                // 根据当前文件名自动切换对应的图片目录
+    `/tupian/gpc234/wangshangyonghu/jpg${folderNumber}/`
+  ],
+  numberRange: {                // 图片编号范围
+    original: [1, 1000],        // 主编号范围（优先尝试）
+    fallback: [1, 13]           // 备用编号范围（主编号所有组合失败后才尝试）
+  },
+  maxRetry: 50,                 // 最大重试次数（整体上限）
+  retryDelay: 500               // 重试间隔（毫秒）
+};
+
+// 4. 核心逻辑：初始化单张图片的随机加载
+function initSingleRandomImage(imgId, baseConfig) {
+  const img = document.getElementById(imgId);
+  if (!img) {
+    console.error('未找到图片元素，ID:', imgId);
+    return;
+  }
+
+  let triedCombinations = new Set(); // 记录已尝试的（源+目录）组合
+  let usingFallbackNumber = false;   // 是否使用备用编号
+  let retryCount = 0;                // 当前重试次数
+  const totalCombinations = baseConfig.imageSources.length * baseConfig.folderPaths.length; // 总组合数
+
+  // 修复1：正确拼接路径（避免双斜杠）+ 按编号范围生成URL
+  function getRandomImageUrl() {
+    // 若所有组合已尝试：重置状态（包括重试次数），准备切换编号范围
+    if (triedCombinations.size >= totalCombinations) {
+      triedCombinations.clear(); // 清空已尝试组合
+      retryCount = 0;            // 重置重试次数（关键修复）
+      // 若当前是主编号，切换到备用编号；若已是备用编号，返回null（无更多范围）
+      if (!usingFallbackNumber) {
+        usingFallbackNumber = true;
+        console.log('主编号所有组合尝试完毕，切换到备用编号范围（1-13）');
+      } else {
+        return null; // 备用编号也耗尽，无可用URL
+      }
+    }
+
+    // 找到未尝试过的（源+目录）组合
+    while (true) {
+      const randomSource = baseConfig.imageSources[getRandomNumber(0, baseConfig.imageSources.length - 1)];
+      const randomFolder = baseConfig.folderPaths[getRandomNumber(0, baseConfig.folderPaths.length - 1)];
+      const combinationKey = `${randomSource}|${randomFolder}`;
+
+      if (!triedCombinations.has(combinationKey)) {
+        triedCombinations.add(combinationKey);
+        // 选择当前生效的编号范围（主/备用）
+        const [minNum, maxNum] = usingFallbackNumber 
+          ? baseConfig.numberRange.fallback 
+          : baseConfig.numberRange.original;
+        const randomNum = getRandomNumber(minNum, maxNum);
+
+        // 路径清洗：避免根目录拼接时出现双斜杠（如"//tupian/..."）
+        const cleanedFolder = randomFolder.startsWith('/') ? randomFolder.slice(1) : randomFolder;
+        let imageUrl;
+        if (randomSource === '/') {
+          imageUrl = `${randomSource}${cleanedFolder}${randomNum}.jpg`; // 根目录场景：/tupian/1.jpg
+        } else {
+          imageUrl = `${randomSource.replace(/\/$/, '')}/${cleanedFolder}${randomNum}.jpg`; // 域名场景：https://xxx.com/tupian/1.jpg
+        }
+        return imageUrl;
+      }
+    }
+  }
+
+  // 修复2：加载图片（按“主编号所有组合→备用编号”的顺序重试）
+  function loadImage() {
+    // 若达到最大重试次数，停止加载
+    if (retryCount >= baseConfig.maxRetry) {
+      img.src = '';
+      img.alt = '网上用户的图片（加载失败）';
+      console.warn(`已达最大重试次数（${baseConfig.maxRetry}次），停止加载`);
+      return;
+    }
+
+    const imageUrl = getRandomImageUrl();
+    if (!imageUrl) {
+      // 主+备用编号都耗尽，停止加载
+      img.src = '';
+      img.alt = '网上用户的图片（加载失败）';
+      console.warn('主编号和备用编号的所有组合均尝试完毕，无可用图片');
+      return;
+    }
+
+    // 尝试加载当前URL
+    img.src = imageUrl;
+    console.log(`尝试加载（${retryCount + 1}/${baseConfig.maxRetry}）:`, imageUrl);
+    retryCount++; // 仅在尝试加载后递增重试次数（避免空转计数）
+  }
+
+  // 加载成功：重置所有状态（便于后续若需重新加载）
+  img.addEventListener('load', () => {
+    img.alt = '网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS';
+    console.log('图片加载成功:', img.src);
+    triedCombinations.clear();
+    usingFallbackNumber = false;
+    retryCount = 0;
+  });
+
+  // 加载失败：继续重试（自动触发getRandomImageUrl的状态切换）
+  img.addEventListener('error', () => {
+    console.error('加载失败:', img.src);
+    setTimeout(loadImage, baseConfig.retryDelay); // 延迟后重试
+  });
+
+  // 初始加载图片
+  loadImage();
+}
+
+// 修复3：批量初始化（仅保留存在的图片ID，避免无效错误）
+const imageIds = ['picRand1']; // 仅初始化已定义的picRand1（删除多余的picRand2/picRand3）
+imageIds.forEach(imgId => {
+  initSingleRandomImage(imgId, baseConfig);
+});
+</script>
+<!--自动对应文件件随机图片-->
+
+
+
+
+
+
+<!--文档内容结束......-->
+<!--结尾-->
+
+
+<center> <!--居中-->
+<head>
+<style>textarea#gpc234{width: 100%;height: 2%;}</style>
+</head>
+<textarea cols="40%" rows="1%" id="gpc234">
+
+
+
+搜索:网上用户,
+上网用户,
+网上用户微信一网上用户优惠券一网上用户红包码一网上用户邀请码一网上用户铆钉厂一网上用户斗车厂一网上用户牙科一网上用户手机报价一网上用户图片一网上用户淘宝一网上用户天猫一网上用户浏览器主页一网上用户领红包一网上用户SMT贴片厂一网上用户公平村一网上用户视频一网名张先生一行善者一行道者一萍水相逢
+终结目击者.一Azue一梦想一ZYL一念一静夜一平安喜乐一锦绣山河一静夜香水一源喜欢你亚一铃声随风一张良GPC234一公平村
+头盔汤锅炒菜锅帐篷旋铆机全自动铆钉机休闲椅手机直播支架三脚架空调支架折叠床折叠椅躺椅沙滩床沙滩椅平垫片雪球夹smt贴片加工厂
+搜索:网上用户,网上用户,上网用户,公平村,张先生,网名张先生,公平村张先生,网上用户的图片,网上用户的个人主页,网上用户的个人首页,网上用户的个人中心,网上用户的档案,公平村张先生,艺名张先生,网民张先生,网号张先生,用户名张先生,账号张先生,客家人张先生,网名张先生,GPC234,GPCZXS,上网用户,wangshangyonghu,WSYH,wsyh
+网络用户
+WiFi用户
+无线用户
+WLAN用户
+上网用户
+网上用户
+手机用户
+电脑用户
+GPC234
+GPCZXS
+GPCZYL
+GPCYST
+GPCZHH
+GPCZHR
+gpczyt
+gpczhy
+gpczyq
+gpczdm
+GPCZZL
+GPCHQJ
+GPCZYX
+GPCSMT
+wangshangyonghu
+shangwangyonghu
+WSYH
+wsyh
+index
+
+</textarea>
+
+
+<!--内容结束-->
+<hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
+
+<!--分页-->
+<div id="linkContainer" class="flex flex-wrap gap-2"></div>
+<script>
+
+// 等待DOM加载完成
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取当前页面的文件名
+    const currentUrl = window.location.pathname;
+    const fileName = currentUrl.split('/').pop() || '';
+    
+    // 提取文件名中的前缀部分（字母部分）
+    const match = fileName.match(/^([a-zA-Z]*)\d+\.html$/);
+    
+    if (match) {
+        const prefix = match[1]; // 前缀部分，如"tu"、"ym"、"ys"或空
+        const linkContainer = document.getElementById('linkContainer');
+        
+        // 生成从1到23的链接（固定范围）
+        for (let i = 1; i <= 23; i++) {
+            const a = document.createElement('a');
+            a.href = `./${prefix}${i}.html`;
+            a.target = '_blank';
+            a.textContent = i;
+            a.className = 'link-number';
+            
+            // 添加链接到容器
+            linkContainer.appendChild(a);
+            
+            // 除了最后一个链接外，都添加空格分隔
+            if (i < 23) {
+                const space = document.createTextNode(' ');
+                linkContainer.appendChild(space);
+            }
+        }
+    } else {
+        // 如果文件名格式不符合预期，显示错误信息
+        document.getElementById('linkContainer').innerHTML = 
+            '<p class="text-red-500">文件名格式不符合要求，请检查文件名</p>';
+    }
+});</script><!--分页-->
+
+
+<!--上下页-->
+  <a href="/" target="_blank">返回</a>
+   <a href="javascript:void(0)" onclick="goToPreviousPage()">上一页</a>
+<a href="javascript:void(0)" onclick="goToNextPage()">下一页</a>
+
+<script>
+// 提取文件名中的数字部分
+function getPageNumber() {
+    var currentPage = window.location.pathname.split('/').pop();
+    // 从文件名中提取数字
+    var numbers = currentPage.match(/\d+/);
+    if (numbers && numbers.length > 0) {
+        return parseInt(numbers[0]);
+    }
+    return null;
+}
+
+// 获取文件名中的前缀部分（数字前的内容）
+function getPagePrefix() {
+    var currentPage = window.location.pathname.split('/').pop();
+    // 匹配数字前的所有字符
+    var prefixMatch = currentPage.match(/^(\D*)\d+/);
+    if (prefixMatch && prefixMatch.length > 1) {
+        return prefixMatch[1];
+    }
+    return '';
+}
+
+function goToNextPage() {
+    var pageNumber = getPageNumber();
+    if (pageNumber !== null) {
+        var prefix = getPagePrefix();
+        var nextPageNumber = pageNumber + 1;
+        var nextPage = './' + prefix + nextPageNumber + '.html';
+        window.open(nextPage, '_blank'); // 在新窗口打开下一页
+    } else {
+        alert('无法识别当前页码');
+    }
+}
+
+function goToPreviousPage() {
+    var pageNumber = getPageNumber();
+    if (pageNumber !== null && pageNumber > 1) {
+        var prefix = getPagePrefix();
+        var previousPageNumber = pageNumber - 1;
+        var previousPage = './' + prefix + previousPageNumber + '.html';
+        window.open(previousPage, '_blank'); // 在新窗口打开上一页
+    } else {
+        alert('已经是第一页或无法识别当前页码');
+    }
+}
+</script><!--上下页-->
+
+<!--内容结束-->
+</body><!--内容结束-->
+</center><!--居中-->
+</strong><!--加粗-->
+</span><!--字体大小-->
+</html><!--结束-->
+
+
+<!--底下显示-->
+<hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
+ <script src="/gpc234/wangshangyonghu/js/tua.js"></script>
+<div id="gpczxstua"></div>
+<hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
+<!--底下显示--></body>
+
+
