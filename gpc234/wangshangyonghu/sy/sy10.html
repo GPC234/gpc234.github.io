@@ -648,14 +648,20 @@ wsyh
 <br/>
 <br/>(广告)<br/>
 <!--自动随机图片-->
-<img id="randomJpg1" src="" alt="网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS" width="350" style="height: auto;" title="" align="" />
+<!-- 第1张随机图片 -->
+<img id="randomJpg1" src="" alt="网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS" width="350" style="height: auto; margin: 10px;" />
+<!-- 第2张随机图片 -->
+<img id="randomJpg2" src="" alt="网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS" width="350" style="height: auto; margin: 10px;" />
+<!-- 第3张随机图片 -->
+<img id="randomJpg3" src="" alt="网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS" width="350" style="height: auto; margin: 10px;" />
+<!-- 如需更多图片，复制上方<img>标签并修改id（如randomJpg4、randomJpg5） -->
+
 <script>
 // 1. 生成指定范围的随机数（工具函数）
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-// 2. 配置项：保留全部folderPaths目录，未做任何删减
-const config = {
-  imgId: 'randomJpg1',          // 图片元素ID
+// 2. 完整配置项（保留原代码所有目录、域名，无任何省略）
+const baseConfig = {
   imageSources: [               // 基础域名/根目录（一级源）
     '/',                         // 网站根目录（已修复，可正常使用）
     'https://je105kd940602.vicp.fun',
@@ -663,8 +669,7 @@ const config = {
     'http://gpc234.w1.luyouxia.net',
     'http://t1.pgrm.top:16701'
   ],
-  // 👇 完整保留所有原始图片目录，无任何省略
-  folderPaths: [
+  folderPaths: [                // 完整保留所有原始图片目录
     '/xiangce/gpc234/wangshangyonghu/tu1/jpg/',
     '/xiangce/gpc234/wangshangyonghu/tu2/jpg/',
     '/xiangce/gpc234/wangshangyonghu/tu3/jpg/',
@@ -733,15 +738,15 @@ const config = {
     original: [1, 1000],        // 主编号范围
     fallback: [1, 13]           // 备用编号范围
   },
-  maxRetry: 10,                 // 最大重试次数
+  maxRetry: 50,                 // 最大重试次数
   retryDelay: 500               // 重试间隔（毫秒）
 };
 
-// 3. 核心逻辑：修复根目录路径 + 随机加载图片（功能不变）
-function setupMultiSourceRandomImage(config) {
-  const img = document.getElementById(config.imgId);
+// 3. 核心逻辑：初始化单张图片的随机加载（保留原修复逻辑）
+function initSingleRandomImage(imgId, baseConfig) {
+  const img = document.getElementById(imgId);
   if (!img) {
-    console.error('未找到图片元素，ID:', config.imgId);
+    console.error('未找到图片元素，ID:', imgId);
     return;
   }
 
@@ -751,7 +756,7 @@ function setupMultiSourceRandomImage(config) {
 
   // 修复核心：正确拼接路径（处理根目录/域名场景，避免双斜杠）
   function getRandomImageUrl() {
-    const totalCombinations = config.imageSources.length * config.folderPaths.length;
+    const totalCombinations = baseConfig.imageSources.length * baseConfig.folderPaths.length;
     // 所有组合尝试完毕：重置状态，避免无法重试
     if (triedCombinations.size >= totalCombinations) {
       triedCombinations.clear();
@@ -762,16 +767,16 @@ function setupMultiSourceRandomImage(config) {
 
     // 找到未尝试过的（源+目录）组合
     while (true) {
-      const randomSource = config.imageSources[getRandomNumber(0, config.imageSources.length - 1)];
-      const randomFolder = config.folderPaths[getRandomNumber(0, config.folderPaths.length - 1)];
+      const randomSource = baseConfig.imageSources[getRandomNumber(0, baseConfig.imageSources.length - 1)];
+      const randomFolder = baseConfig.folderPaths[getRandomNumber(0, baseConfig.folderPaths.length - 1)];
       const combinationKey = `${randomSource}|${randomFolder}`;
 
       if (!triedCombinations.has(combinationKey)) {
         triedCombinations.add(combinationKey);
         // 选择编号范围（主/备用）
         const [minNum, maxNum] = usingFallbackNumber 
-          ? config.numberRange.fallback 
-          : config.numberRange.original;
+          ? baseConfig.numberRange.fallback 
+          : baseConfig.numberRange.original;
         const randomNum = getRandomNumber(minNum, maxNum);
 
         // 路径清洗：移除目录开头的斜杠，避免根目录拼接时出现双斜杠
@@ -793,7 +798,7 @@ function setupMultiSourceRandomImage(config) {
 
   // 加载图片（含失败重试逻辑）
   function loadImage() {
-    if (retryCount >= config.maxRetry) {
+    if (retryCount >= baseConfig.maxRetry) {
       img.src = '';
       img.alt = '网上用户的图片（加载失败）';
       console.warn('已达最大重试次数，停止加载');
@@ -803,20 +808,20 @@ function setupMultiSourceRandomImage(config) {
     const imageUrl = getRandomImageUrl();
     if (!imageUrl) {
       retryCount++;
-      if (retryCount >= config.maxRetry) {
+      if (retryCount >= baseConfig.maxRetry) {
         img.src = '';
         img.alt = '网上用户的图片（加载失败）';
         console.warn('无可用图片组合，停止加载');
         return;
       }
-      console.log(`无可用组合，重试中（${retryCount}/${config.maxRetry}）`);
-      setTimeout(loadImage, config.retryDelay);
+      console.log(`无可用组合，重试中（${retryCount}/${baseConfig.maxRetry}）`);
+      setTimeout(loadImage, baseConfig.retryDelay);
       return;
     }
 
     // 尝试加载图片
     img.src = imageUrl;
-    console.log(`尝试加载（${retryCount + 1}/${config.maxRetry}）:`, imageUrl);
+    console.log(`尝试加载（${retryCount + 1}/${baseConfig.maxRetry}）:`, imageUrl);
   }
 
   // 加载成功：重置状态
@@ -839,16 +844,20 @@ function setupMultiSourceRandomImage(config) {
       console.log('切换到备用编号范围（1-13）重试');
     }
 
-    setTimeout(loadImage, config.retryDelay);
+    setTimeout(loadImage, baseConfig.retryDelay);
   });
 
   // 初始加载图片
   loadImage();
 }
 
-// 4. 执行初始化
-setupMultiSourceRandomImage(config);
-</script><!--自动随机图片-->
+// 4. 批量初始化所有图片（需与上方<img>标签的id对应）
+const imageIds = ['randomJpg1', 'randomJpg2', 'randomJpg3']; // 如需更多图片，在此处添加id（如'randomJpg4'）
+imageIds.forEach(imgId => {
+  initSingleRandomImage(imgId, baseConfig);
+});
+</script>
+<!--自动随机图片-->
 
 
 
