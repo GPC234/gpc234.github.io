@@ -30,7 +30,7 @@ font-size: 32px;    /* 为 a 标签设置字体大小 */
 
 
  <title>网上用户的图片一1一搜索:网上用户</title>
-<meta name="keywords" content="网上用户的图片,搜索:网上用户,网上用户,上网用户,公平村,张先生,网名张先生,公平村张先生,网上用户的图片,网上用户的个人主页,网上用户的个人首页,网上用户的个人中心,网上用户的档案,公平村张先生,艺名张先生,网民张先生,网号张先生,用户名张先生,账号张先生,客家人张先生,网名张先生,GPC234,GPCZXS,上网用户,wangshangyonghu,WSYH,wsyh" /><!--关键词-->
+<meta name="keywords" content="网上用户的图片,搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS,wangshangyonghu,WSYH,wsyh" /><!--关键词-->
 <meta name="description" content="网上用户的图片:" />
 </head> <!-- 文档头部结束 -->
 
@@ -54,56 +54,191 @@ font-size: 32px;    /* 为 a 标签设置字体大小 */
 <p>	快手极速版邀请码:938410598	</p>
 <p>	抖音极速版邀请码:AF39733898	</p>
 <p>	快手邀请码:3940702415	</p>
-<p>	抖音邀请码:AF39733898	</p>
 <p>	头条搜索邀请码:Q7557471	</p>
+
 <hr color=0066FF>
+<!--自动随机图片-->
+<!-- 第1张随机图片 -->
+<img id="randomJpg1" src="" alt="网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS" width="350" style="height: auto; margin: 10px;" />
+<!-- 第2张随机图片 -->
+<img id="randomJpg2" src="" alt="网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS" width="350" style="height: auto; margin: 10px;" />
+<!-- 第3张随机图片 -->
+<img id="randomJpg3" src="" alt="网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS" width="350" style="height: auto; margin: 10px;" />
+<!-- 如需更多图片，复制上方<img>标签并修改id（如randomJpg4、randomJpg5） -->
 
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/1.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/2.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/3.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/4.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/5.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/6.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/7.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/8.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/9.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/10.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/11.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
-<img src="/tupian/gpc234/wangshangyonghu/tu7/jpg/12.jpg" 	alt="搜索:网上用户,公平村," width="350" height=" " title="" align="" />
+<script>
+// 1. 生成指定范围的随机数（工具函数）
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+// 2. 完整配置项（保留原代码所有目录、域名，无任何省略）
+const baseConfig = {
+  imageSources: [               // 基础域名/根目录（一级源）
+    '/',                         // 网站根目录（已修复，可正常使用）
+   'https://gpc234.github.io',  // 其他基础域名（已去除/tupian）
+    'http://a.gpc234.wuaze.com',
+    'http://n.gpc234.wuaze.com',
+    'http://m.gpc234.wuaze.com',
+    'http://gpc234.wuaze.com',
+    'http://mdc.freevar.com',
+    'http://gpc234.freevar.com',
+    'https://je105kd940602.vicp.fun',
+    'http://je105kd940602.vicp.fun',
+    'http://gpc234.66ghz.com',
+    'http://gpc234.web1337.net',
+    'http://gpc234.kesug.com',
+    'http://gpc234.rf.gd',
+    'http://gpczxs.7749.org',
+    'http://gpczxs.web1337.net',
+    'http://gpczxs.66ghz.com',
+    'http://gpc234.w1.luyouxia.net',
+    'http://t1.pgrm.top:16701',
+    'https://gpc234.pgrm.site',
+    'http://www.wendasz.com',
+    'http://www.mx33.com',
+    'http://www.mx33.cn',
+    'http://gpc234.hostingem.ru'
+  ],
+  folderPaths: [                // 完整保留所有原始图片目录
+      '/tupian/gpc234/wangshangyonghu/jpg1/',
 
+    '/tupian/gpc234/wangshangyonghu/jpg6/',
 
-   <img id="randomJpg1" src="" alt="搜索:网上用户,网上用户的图片,搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" width="380" height="" title="" align="" />
-<br/>
-      <img id="randomJpg2" src="" alt="搜索:网上用户" width="350" height="" title="" align="" />
-    <script>
-        // 生成指定范围的随机数
-        const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+    '/tupian/gpc234/wangshangyonghu/jpg9/',
 
-        // 随机显示第一张 JPG 图片（1 - 11.jpg）
-        const randomJpgNumber1 = getRandomNumber(1, 12);
-        document.getElementById('randomJpg1').src = `/tupian/gpc234/wangshangyonghu/tu7/jpg/${randomJpgNumber1}.jpg`;
+  ],
 
-              // 随机显示第一张 JPG 图片（1 - 11.jpg）
-        const randomJpgNumber2 = getRandomNumber(1, 20);
-        document.getElementById('randomJpg2').src = `http://gpc234.fh4u.org/tupian/gpc234/wangshangyonghu/tu12/jpg/${randomJpgNumber2}.jpg`;
-    </script>
-</body>
+ 
+  numberRange: {                // 图片编号范围
+    original: [1, 1000],        // 主编号范围
+    fallback: [1, 1]           // 备用编号范围
+  },
+  maxRetry: 50,                 // 最大重试次数
+  retryDelay: 500               // 重试间隔（毫秒）
+};
 
+// 3. 核心逻辑：初始化单张图片的随机加载（保留原修复逻辑）
+function initSingleRandomImage(imgId, baseConfig) {
+  const img = document.getElementById(imgId);
+  if (!img) {
+    console.error('未找到图片元素，ID:', imgId);
+    return;
+  }
 
+  let triedCombinations = new Set(); // 记录已尝试的（源+目录）组合
+  let usingFallbackNumber = false;   // 是否使用备用编号
+  let retryCount = 0;                // 当前重试次数
 
+  // 修复核心：正确拼接路径（处理根目录/域名场景，避免双斜杠）
+  function getRandomImageUrl() {
+    const totalCombinations = baseConfig.imageSources.length * baseConfig.folderPaths.length;
+    // 所有组合尝试完毕：重置状态，避免无法重试
+    if (triedCombinations.size >= totalCombinations) {
+      triedCombinations.clear();
+      usingFallbackNumber = false;
+      retryCount = 0;
+      return null;
+    }
 
+    // 找到未尝试过的（源+目录）组合
+    while (true) {
+      const randomSource = baseConfig.imageSources[getRandomNumber(0, baseConfig.imageSources.length - 1)];
+      const randomFolder = baseConfig.folderPaths[getRandomNumber(0, baseConfig.folderPaths.length - 1)];
+      const combinationKey = `${randomSource}|${randomFolder}`;
 
+      if (!triedCombinations.has(combinationKey)) {
+        triedCombinations.add(combinationKey);
+        // 选择编号范围（主/备用）
+        const [minNum, maxNum] = usingFallbackNumber 
+          ? baseConfig.numberRange.fallback 
+          : baseConfig.numberRange.original;
+        const randomNum = getRandomNumber(minNum, maxNum);
 
+        // 路径清洗：移除目录开头的斜杠，避免根目录拼接时出现双斜杠
+        const cleanedFolder = randomFolder.startsWith('/') ? randomFolder.slice(1) : randomFolder;
+        let imageUrl;
 
+        if (randomSource === '/') {
+          // 根目录场景：正确拼接为 "/目录/编号.jpg"
+          imageUrl = `${randomSource}${cleanedFolder}${randomNum}.jpg`;
+        } else {
+          // 域名场景：移除域名结尾斜杠（若有），拼接为 "域名/目录/编号.jpg"
+          imageUrl = `${randomSource.replace(/\/$/, '')}/${cleanedFolder}${randomNum}.jpg`;
+        }
+
+        return imageUrl;
+      }
+    }
+  }
+
+  // 加载图片（含失败重试逻辑）
+  function loadImage() {
+    if (retryCount >= baseConfig.maxRetry) {
+      img.src = '';
+      img.alt = '网上用户的图片（加载失败）';
+      console.warn('已达最大重试次数，停止加载');
+      return;
+    }
+
+    const imageUrl = getRandomImageUrl();
+    if (!imageUrl) {
+      retryCount++;
+      if (retryCount >= baseConfig.maxRetry) {
+        img.src = '';
+        img.alt = '网上用户的图片（加载失败）';
+        console.warn('无可用图片组合，停止加载');
+        return;
+      }
+      console.log(`无可用组合，重试中（${retryCount}/${baseConfig.maxRetry}）`);
+      setTimeout(loadImage, baseConfig.retryDelay);
+      return;
+    }
+
+    // 尝试加载图片
+    img.src = imageUrl;
+    console.log(`尝试加载（${retryCount + 1}/${baseConfig.maxRetry}）:`, imageUrl);
+  }
+
+  // 加载成功：重置状态
+  img.addEventListener('load', () => {
+    img.alt = '网上用户的图片,搜索:网上用户,公平村,GPC234,GPCZXS';
+    console.log('图片加载成功:', img.src);
+    triedCombinations.clear();
+    usingFallbackNumber = false;
+    retryCount = 0;
+  });
+
+  // 加载失败：切换备用编号/组合重试
+  img.addEventListener('error', () => {
+    console.error('加载失败:', img.src);
+    retryCount++;
+
+    // 1次失败后切换备用编号范围
+    if (!usingFallbackNumber && retryCount >= 1) {
+      usingFallbackNumber = true;
+      console.log('切换到备用编号范围（1-13）重试');
+    }
+
+    setTimeout(loadImage, baseConfig.retryDelay);
+  });
+
+  // 初始加载图片
+  loadImage();
+}
+
+// 4. 批量初始化所有图片（需与上方<img>标签的id对应）
+const imageIds = ['randomJpg1', 'randomJpg2', 'randomJpg3']; // 如需更多图片，在此处添加id（如'randomJpg4'）
+imageIds.forEach(imgId => {
+  initSingleRandomImage(imgId, baseConfig);
+});
+</script>
+<!--自动随机图片-->
 
 
 
 
 <!--文档内容结束......-->
 <!--结尾-->
-<hr color=0066FF>
-<a href="#top" target="_self">返回顶部</a>
+
 <hr color=0066FF>
 <p id="currentDateTime"></p>
     <script>
@@ -139,7 +274,6 @@ font-size: 32px;    /* 为 a 标签设置字体大小 */
 网上用户微信一网上用户优惠券一网上用户红包码一网上用户邀请码一网上用户铆钉厂一网上用户斗车厂一网上用户牙科一网上用户手机报价一网上用户图片一网上用户淘宝一网上用户天猫一网上用户浏览器主页一网上用户领红包一网上用户SMT贴片厂一网上用户公平村一网上用户视频一网名张先生一行善者一行道者一萍水相逢
 终结目击者.一Azue一梦想一ZYL一念一静夜一平安喜乐一锦绣山河一静夜香水一源喜欢你亚一铃声随风一张良GPC234一公平村
 头盔汤锅炒菜锅帐篷旋铆机全自动铆钉机休闲椅手机直播支架三脚架空调支架折叠床折叠椅躺椅沙滩床沙滩椅平垫片雪球夹smt贴片加工厂
-搜索:网上用户,网上用户,上网用户,公平村,张先生,网名张先生,公平村张先生,网上用户的图片,网上用户的个人主页,网上用户的个人首页,网上用户的个人中心,网上用户的档案,公平村张先生,艺名张先生,网民张先生,网号张先生,用户名张先生,账号张先生,客家人张先生,网名张先生,GPC234,GPCZXS,上网用户,wangshangyonghu,WSYH,wsyh
 网络用户
 WiFi用户
 无线用户
@@ -167,66 +301,122 @@ shangwangyonghu
 WSYH
 wsyh
 index
-
 </textarea>
 <!--内容结束-->
 <hr color=0000ff> <!--分界线-->
    <hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
 <a href="/">下一页</a>
-&nbsp; 	<a href="	./1.html	" target="_blank">1</a>	&nbsp; 
-	<a href="	./2.html	" target="_blank">2</a>	&nbsp; 
-	<a href="	./3.html	" target="_blank">3</a>	&nbsp; 
-	<a href="	./4.html	" target="_blank">4</a>	&nbsp; 
-	<a href="	./5.html	" target="_blank">5</a>	&nbsp; 
-	<a href="	./6.html	" target="_blank">6</a>	&nbsp; 
-	<a href="	./7.html	" target="_blank">7</a>	&nbsp; 
-	<a href="	./8.html	" target="_blank">8</a>	&nbsp; 
-	<a href="	./9.html	" target="_blank">9</a>	&nbsp; 
-	<a href="	./10.html	" target="_blank">10</a>	&nbsp; 
-	<a href="	./11.html	" target="_blank">11</a>	&nbsp; 
-	<a href="	./12.html	" target="_blank">12</a>	&nbsp; 
-	<a href="	./13.html	" target="_blank">13</a>	&nbsp; 
-	<a href="	./14.html	" target="_blank">14</a>	&nbsp; 
-	<a href="	./15.html	" target="_blank">15</a>	&nbsp; 
-	<a href="	./16.html	" target="_blank">16</a>	&nbsp; 
-	<a href="	./17.html	" target="_blank">17</a>	&nbsp; 
-	<a href="	./18.html	" target="_blank">18</a>	&nbsp; 
-	<a href="	./19.html	" target="_blank">19</a>	&nbsp; 
-	<a href="	./20.html	" target="_blank">20</a>	&nbsp; 
-	<a href="	./21.html	" target="_blank">21</a>	&nbsp; 
-	<a href="	./22.html	" target="_blank">22</a>	&nbsp; 
-	<a href="	./23.html	" target="_blank">23</a>	&nbsp; 
-    	<a href="	../y/9.html	" target="_blank">更多</a>	&nbsp; 
+<!--分页-->
+<div id="linkContainer" class="flex flex-wrap gap-2"></div>
+<script>
 
-<!--上下页-->
-<head>
-    <script>
-        function goToNextPage() {
-            var currentPage = window.location.pathname.split('/').pop();
-            var pageNumber = parseInt(currentPage.replace(/\D/g, ''));
-            var nextPageNumber = pageNumber + 1;
-            var nextPage = './' + nextPageNumber + '.html';
-            window.open(nextPage, '_blank'); // 在新窗口打开下一页
+// 等待DOM加载完成
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取当前页面的文件名
+    const currentUrl = window.location.pathname;
+    const fileName = currentUrl.split('/').pop() || '';
+    
+    // 提取文件名中的前缀部分（字母部分）
+    const match = fileName.match(/^([a-zA-Z]*)\d+\.html$/);
+    
+    if (match) {
+        const prefix = match[1]; // 前缀部分，如"tu"、"ym"、"ys"或空
+        const linkContainer = document.getElementById('linkContainer');
+        
+        // 生成从1到23的链接（固定范围）
+        for (let i = 1; i <= 23; i++) {
+            const a = document.createElement('a');
+            a.href = `./${prefix}${i}.html`;
+            a.target = '_blank';
+            a.textContent = i;
+            a.className = 'link-number';
+            
+            // 添加链接到容器
+            linkContainer.appendChild(a);
+            
+            // 除了最后一个链接外，都添加空格分隔
+            if (i < 23) {
+                const space = document.createTextNode(' ');
+                linkContainer.appendChild(space);
+            }
         }
-
-        function goToPreviousPage() {
-            var currentPage = window.location.pathname.split('/').pop();
-            var pageNumber = parseInt(currentPage.replace(/\D/g, ''));
-            var previousPageNumber = pageNumber - 1;
-            var previousPage = './' + previousPageNumber + '.html';
-            window.open(previousPage, '_blank'); // 在新窗口打开上一页
-        }
-    </script>
-</head>
-<body>
-    <a href="/" target="_blank">返回</a>
-    <a href="javascript:void(0)" onclick="goToPreviousPage()">上一页</a>
-    <a href="javascript:void(0)" onclick="goToNextPage()">下一页</a>
-</body>
+    } else {
+        // 如果文件名格式不符合预期，显示错误信息
+        document.getElementById('linkContainer').innerHTML = 
+            '<p class="text-red-500">文件名格式不符合要求，请检查文件名</p>';
+    }
+});</script><!--分页-->
 <!--上下页-->
+<!--上下页-->
+  <a href="/" target="_blank">返回</a>
+   <a href="javascript:void(0)" onclick="goToPreviousPage()">上一页</a>
+<a href="javascript:void(0)" onclick="goToNextPage()">下一页</a>
 
+<script>
+// 提取文件名中的数字部分
+function getPageNumber() {
+    var currentPage = window.location.pathname.split('/').pop();
+    // 从文件名中提取数字
+    var numbers = currentPage.match(/\d+/);
+    if (numbers && numbers.length > 0) {
+        return parseInt(numbers[0]);
+    }
+    return null;
+}
+
+// 获取文件名中的前缀部分（数字前的内容）
+function getPagePrefix() {
+    var currentPage = window.location.pathname.split('/').pop();
+    // 匹配数字前的所有字符
+    var prefixMatch = currentPage.match(/^(\D*)\d+/);
+    if (prefixMatch && prefixMatch.length > 1) {
+        return prefixMatch[1];
+    }
+    return '';
+}
+
+function goToNextPage() {
+    var pageNumber = getPageNumber();
+    if (pageNumber !== null) {
+        var prefix = getPagePrefix();
+        var nextPageNumber = pageNumber + 1;
+        var nextPage = './' + prefix + nextPageNumber + '.html';
+        window.open(nextPage, '_blank'); // 在新窗口打开下一页
+    } else {
+        alert('无法识别当前页码');
+    }
+}
+
+function goToPreviousPage() {
+    var pageNumber = getPageNumber();
+    if (pageNumber !== null && pageNumber > 1) {
+        var prefix = getPagePrefix();
+        var previousPageNumber = pageNumber - 1;
+        var previousPage = './' + prefix + previousPageNumber + '.html';
+        window.open(previousPage, '_blank'); // 在新窗口打开上一页
+    } else {
+        alert('已经是第一页或无法识别当前页码');
+    }
+}
+</script><!--上下页-->
+<hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
+
+
+<!--底下显示-->
+<hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
+丨
+<a href="/gpc234/wangshangyonghu/js/jsa1.html" target="_blank" style="color: #888; font-size: 12px;">@网上用户</a>
+丨
+<a href="/gpc234/wangshangyonghu/js/jsa2.html" target="_blank" style="color: #888; font-size: 12px;">gpc234</a>
+丨
+<a href="/gpc234/wangshangyonghu/js/jsa3.html" target="_blank" style="color: #888; font-size: 12px;">联系我们</a>
+丨
+<a href="#top" target="_blank" style="color: #888; font-size: 12px;">返回顶部</a>
+丨
 
 <hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
+<!--底下显示-->
+
 <!--内容结束-->
 </body><!--内容结束-->
 </center><!--居中-->
