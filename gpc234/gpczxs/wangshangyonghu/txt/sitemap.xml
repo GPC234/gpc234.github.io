@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 第一个子Sitemap -->
+  <sitemap>
+    <loc>http://gpc234.fh4u.org/gpc234/gpczxs/wangshangyonghu/txt/txt1.txt</loc>
+    <lastmod>2025-09-27</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+  
+  <!-- 第二个子Sitemap -->
+  <sitemap>
+    <loc>https://gpc234.github.io/gpc234/gpczxs/wangshangyonghu/txt/txt2.txt</loc>
+    <lastmod>2025-09-27</lastmod> <!-- 可根据实际修改时间调整 -->
+  </sitemap>
+  
+  <!-- 第三个子Sitemap -->
+  <sitemap>
+    <loc>http://gpc234.wuaze.com/gpc234/gpczxs/wangshangyonghu/txt/txt3.txt</loc>
+    <lastmod>2025-09-27</lastmod>
+  </sitemap>
+  
+  <!-- 以此类推，添加其他子Sitemap -->
+  <sitemap>
+    <loc>http://www.wendasz.com/gpc234/gpczxs/wangshangyonghu/txt/txt7.txt</loc>
+    <lastmod>2025-09-27</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://gpc234.w1.luyouxia.net/gpc234/gpczxs/wangshangyonghu/txt/txt8.txt</loc>
+    <lastmod>2025-09-27</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://www.mx33.com/gpc234/gpczxs/wangshangyonghu/txt/txt9.txt</loc>
+    <lastmod>2025-09-27</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://www.mx33.cn/gpc234/gpczxs/wangshangyonghu/txt/txt10.txt</loc>
+    <lastmod>2025-09-27</lastmod>
+  </sitemap>
+</sitemapindex>
