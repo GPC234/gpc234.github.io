@@ -3,6 +3,20 @@ User-Agent: *
 Disallow: /admin/
 
 #指定网站地图
+Sitemap: http://gpc234.66ghz.com/gpc234/wangshangyonghu/txt/txt.txt
+Sitemap: http://gpc234.66ghz.com/gpc234/wangshangyonghu/txt/txt10.txt
+Sitemap: http://gpc234.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/txt11.txt
+Sitemap: http://gpc234.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
+
+Sitemap: http://gpczxs.66ghz.com/gpc234/wangshangyonghu/txt/txt12.txt
+Sitemap: http://gpczxs.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
+Sitemap: https://gpczxs.66ghz.com/gpc234/wangshangyonghu/txt/txt12.txt
+Sitemap: https://gpczxs.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
+
+
+
+
+
 Sitemap: http://gpc234.fh4u.org/gpc234/wangshangyonghu/txt/sitemap.xml
 Sitemap: http://gpc234.fh4u.org/gpc234/wangshangyonghu/txt/txt1.txt
 Sitemap: http://gpc234.wuaze.com/gpc234/wangshangyonghu/txt/sitemap.xml
@@ -15,9 +29,11 @@ Sitemap: http://gpc234.wuaze.com/gpc234/wangshangyonghu/txt/txt3.txt
 Sitemap: http://gpc234.wuaze.com/gpc234/wangshangyonghu/txt/txt4.txt
 Sitemap: http://gpc234.wuaze.com/gpc234/wangshangyonghu/txt/txt5.txt
 Sitemap: http://gpc234.wuaze.com/gpc234/wangshangyonghu/txt/txt6.txt
-Sitemap: http://www.mx33.com/gpc234/wangshangyonghu/txt/txt9.txt
 Sitemap: http://gpc234.w1.luyouxia.net/gpc234/wangshangyonghu/txt/txt8.txt
+Sitemap: http://www.mx33.com/gpc234/wangshangyonghu/txt/txt9.txt
 
+
+Sitemap: http://gpc234.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/txt.txt
 Sitemap: http://gpc234.fh4u.org/gpc234/gpczxs/wangshangyonghu/txt/txt1.txt
 Sitemap: https://gpc234.github.io/gpc234/gpczxs/wangshangyonghu/txt/txt2.txt
 Sitemap: http://gpc234.wuaze.com/gpc234/gpczxs/wangshangyonghu/txt/txt3.txt
@@ -26,6 +42,7 @@ Sitemap: http://gpc234.w1.luyouxia.net/gpc234/gpczxs/wangshangyonghu/txt/txt8.tx
 Sitemap: http://www.mx33.com/gpc234/gpczxs/wangshangyonghu/txt/txt9.txt
 Sitemap: http://www.mx33.cn/gpc234/gpczxs/wangshangyonghu/txt/txt10.txt
 
+
 Sitemap: http://gpc234.fh4u.org/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
 Sitemap: https://gpc234.github.io/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
 Sitemap: http://gpc234.wuaze.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
@@ -33,5 +50,6 @@ Sitemap: http://www.wendasz.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
 Sitemap: http://gpc234.w1.luyouxia.net/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
 Sitemap: http://www.mx33.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
 Sitemap: http://www.mx33.cn/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml
+
 
 

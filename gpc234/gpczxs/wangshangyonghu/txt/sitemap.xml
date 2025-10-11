@@ -1,5 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+    <loc>http://gpczxs.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/txt12.txt</loc>
+    <lastmod>2025-10-08</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+<sitemap>
+    <loc>http://gpczxs.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml</loc>
+    <lastmod>2025-10-08</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+<sitemap>
+    <loc>https://gpczxs.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/txt12.txt</loc>
+    <lastmod>2025-10-08</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+<sitemap>
+    <loc>https://gpczxs.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml</loc>
+    <lastmod>2025-10-08</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+
+
+
+  <sitemap>
+    <loc>http://gpc234.66ghz.com/gpc234/wangshangyonghu/txt/txt.txt</loc>
+    <lastmod>2025-10-07</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+  <sitemap>
+    <loc>http://gpc234.66ghz.com/gpc234/wangshangyonghu/txt/txt10.txt</loc>
+    <lastmod>2025-10-07</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+<sitemap>
+    <loc>http://gpc234.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/txt11.txt</loc>
+    <lastmod>2025-10-07</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+<sitemap>
+    <loc>http://gpc234.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml</loc>
+    <lastmod>2025-10-07</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+
+
+  <sitemap>
+    <loc>https://gpc234.66ghz.com/gpc234/wangshangyonghu/txt/txt.txt</loc>
+    <lastmod>2025-10-07</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+  <sitemap>
+    <loc>https://gpc234.66ghz.com/gpc234/wangshangyonghu/txt/txt10.txt</loc>
+    <lastmod>2025-10-07</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+<sitemap>
+    <loc>https://gpc234.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/txt11.txt</loc>
+    <lastmod>2025-10-07</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+<sitemap>
+    <loc>https://gpc234.66ghz.com/gpc234/gpczxs/wangshangyonghu/txt/sitemap.xml</loc>
+    <lastmod>2025-10-07</lastmod> <!-- 该文件的修改时间 -->
+  </sitemap>
+
+
+
   <!-- 第一个子Sitemap -->
   <sitemap>
     <loc>http://gpc234.fh4u.org/gpc234/gpczxs/wangshangyonghu/txt/txt1.txt</loc>
@@ -38,4 +94,7 @@
     <loc>http://www.mx33.cn/gpc234/gpczxs/wangshangyonghu/txt/txt10.txt</loc>
     <lastmod>2025-09-27</lastmod>
   </sitemap>
+
+
+
 </sitemapindex>
