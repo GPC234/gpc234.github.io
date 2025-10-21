@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>商品搜索</title>
+    <meta name="keywords" content="搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, "Microsoft YaHei", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px 15px;
+            min-height: 100vh;
+        }
+        
+        .search-container {
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 20px 15px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .search-input {
+            flex: 1;
+            height: 50px;
+            padding: 0 15px;
+            border: 2px solid #ff4400;
+            border-right: none;
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .search-input:focus {
+            border-color: #ff6700;
+        }
+        
+        .search-button {
+            height: 54px;
+            padding: 0 25px;
+            background-color: #ff4400;
+            color: white;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            /* 增加点击区域 */
+            min-width: 80px;
+        }
+        
+        .search-button:hover,
+        .search-button:active {
+            background-color: #ff6700;
+        }
+        
+        .hot-words {
+            margin-top: 20px;
+            font-size: 15px;
+            color: #666;
+        }
+        
+        .hot-words .title {
+            color: #999;
+            margin-right: 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .hot-words a {
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            margin: 0 8px 10px 0;
+            font-size: 14px;
+        }
+        
+        .hot-words a:hover,
+        .hot-words a:active {
+            color: #ff4400;
+            background-color: #fff3e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="请输入搜索关键词" id="searchKey">
+            <button class="search-button" onclick="goToTaobaoSearch()">搜索</button>
+        </div>
+        <div class="hot-words">
+            <span class="title">热搜:</span>
+<a href="#" onclick="goToTaobaoSearch('秋冬外套')">秋冬外套</a>
+<a href="#" onclick="goToTaobaoSearch('智能手机')">智能手机</a>
+<a href="#" onclick="goToTaobaoSearch('运动鞋')">运动鞋</a>
+<a href="#" onclick="goToTaobaoSearch('连衣裙')">连衣裙</a>
+<a href="#" onclick="goToTaobaoSearch('笔记本电脑')">笔记本电脑</a>
+<a href="#" onclick="goToTaobaoSearch('零食大礼包')">零食大礼包</a>
+<a href="#" onclick="goToTaobaoSearch('监控摄像头')">监控摄像头</a>
+<a href="#" onclick="goToTaobaoSearch('洗衣粉')">洗衣粉</a>
+<a href="#" onclick="goToTaobaoSearch('封口机')">封口机</a>
+<a href="#" onclick="goToTaobaoSearch('内存卡')">内存卡</a>
+<a href="#" onclick="goToTaobaoSearch('沐浴露')">沐浴露</a>
+<a href="#" onclick="goToTaobaoSearch('内衣')">内衣</a>
+<a href="#" onclick="goToTaobaoSearch('内裤')">内裤</a>
+<a href="#" onclick="goToTaobaoSearch('避孕套')">避孕套</a>
+<a href="#" onclick="goToTaobaoSearch('止血贴')">止血贴</a>
+<a href="#" onclick="goToTaobaoSearch('卫生巾')">卫生巾</a>
+<a href="#" onclick="goToTaobaoSearch('文胸')">文胸</a>
+<a href="#" onclick="goToTaobaoSearch('螺丝')">螺丝</a>
+<a href="#" onclick="goToTaobaoSearch('铆钉')">铆钉</a>
+<a href="#" onclick="goToTaobaoSearch('垫片')">垫片</a>
+<a href="#" onclick="goToTaobaoSearch('拉钉')">拉钉</a>
+<a href="#" onclick="goToTaobaoSearch('抽纸')">抽纸</a>
+<a href="#" onclick="goToTaobaoSearch('中性笔')">中性笔</a>
+<a href="#" onclick="goToTaobaoSearch('洗面奶')">洗面奶</a>
+<a href="#" onclick="goToTaobaoSearch('补水面膜')">补水面膜</a>
+<a href="#" onclick="goToTaobaoSearch('马丁靴')">马丁靴</a>
+<a href="#" onclick="goToTaobaoSearch('牛仔裤')">牛仔裤</a>
+<a href="#" onclick="goToTaobaoSearch('棉袜子')">棉袜子</a>
+<a href="#" onclick="goToTaobaoSearch('创可贴')">创可贴</a>
+<a href="#" onclick="goToTaobaoSearch('斗车')">斗车</a>
+<a href="#" onclick="goToTaobaoSearch('女用品')">女用品</a>
+<a href="#" onclick="goToTaobaoSearch('新款连衣裙')">新款连衣裙</a>
+<a href="#" onclick="goToTaobaoSearch('四件套')">四件套</a>
+<a href="#" onclick="goToTaobaoSearch('潮流T恤')">潮流T恤</a>
+<a href="#" onclick="goToTaobaoSearch('时尚女鞋')">时尚女鞋</a>
+<a href="#" onclick="goToTaobaoSearch('短靴')">短靴</a>
+<a href="#" onclick="goToTaobaoSearch('运动短裤')">运动短裤</a>
+<a href="#" onclick="goToTaobaoSearch('半身裙')">半身裙</a>
+<a href="#" onclick="goToTaobaoSearch('男士外套')">男士外套</a>
+<a href="#" onclick="goToTaobaoSearch('冲锋衣')">冲锋衣</a>
+<a href="#" onclick="goToTaobaoSearch('自粘墙纸')">自粘墙纸</a>
+<a href="#" onclick="goToTaobaoSearch('行车记录仪')">行车记录仪</a>
+<a href="#" onclick="goToTaobaoSearch('鱼线')">鱼线</a>
+<a href="#" onclick="goToTaobaoSearch('美白牙膏')">美白牙膏</a>
+<a href="#" onclick="goToTaobaoSearch('电动牙刷')">电动牙刷</a>
+<a href="#" onclick="goToTaobaoSearch('竹牙签')">竹牙签</a>
+<a href="#" onclick="goToTaobaoSearch('蒙古包蚊帐')">蒙古包蚊帐</a>
+<a href="#" onclick="goToTaobaoSearch('电蚊香液')">电蚊香液</a>
+<a href="#" onclick="goToTaobaoSearch('电蚊拍')">电蚊拍</a>
+<a href="#" onclick="goToTaobaoSearch('纯棉打底衫')">纯棉打底衫</a>
+<a href="#" onclick="goToTaobaoSearch('磨刀石')">磨刀石</a>
+<a href="#" onclick="goToTaobaoSearch('厨房抹布')">厨房抹布</a>
+<a href="#" onclick="goToTaobaoSearch('洗碗布')">洗碗布</a>
+<a href="#" onclick="goToTaobaoSearch('洗碗海绵')">洗碗海绵</a>
+<a href="#" onclick="goToTaobaoSearch('纯棉毛巾')">纯棉毛巾</a>
+<a href="#" onclick="goToTaobaoSearch('浴巾')">浴巾</a>
+<a href="#" onclick="goToTaobaoSearch('水龙头过滤器')">水龙头过滤器</a>
+<a href="#" onclick="goToTaobaoSearch('洗衣液')">洗衣液</a>
+<a href="#" onclick="goToTaobaoSearch('加厚垃圾袋')">加厚垃圾袋</a>
+<a href="#" onclick="goToTaobaoSearch('名字贴')">名字贴</a>
+<a href="#" onclick="goToTaobaoSearch('双肩背包')">双肩背包</a>
+<!-- 新增热卖商品 -->
+<a href="#" onclick="goToTaobaoSearch('无线蓝牙耳机')">无线蓝牙耳机</a>
+<a href="#" onclick="goToTaobaoSearch('空气炸锅')">空气炸锅</a>
+<a href="#" onclick="goToTaobaoSearch('加绒牛仔裤')">加绒牛仔裤</a>
+<a href="#" onclick="goToTaobaoSearch('保暖内衣套装')">保暖内衣套装</a>
+<a href="#" onclick="goToTaobaoSearch('加湿器')">加湿器</a>
+<a href="#" onclick="goToTaobaoSearch('电热毯')">电热毯</a>
+<a href="#" onclick="goToTaobaoSearch('羽绒服')">羽绒服</a>
+<a href="#" onclick="goToTaobaoSearch('扫地机器人')">扫地机器人</a>
+<a href="#" onclick="goToTaobaoSearch('保温杯')">保温杯</a>
+<a href="#" onclick="goToTaobaoSearch('面膜补水保湿')">面膜补水保湿</a>
+<a href="#" onclick="goToTaobaoSearch('儿童羽绒服')">儿童羽绒服</a>
+<a href="#" onclick="goToTaobaoSearch('智能手表')">智能手表</a>
+<a href="#" onclick="goToTaobaoSearch('电暖器')">电暖器</a>
+<a href="#" onclick="goToTaobaoSearch('运动鞋男')">运动鞋男</a>
+<a href="#" onclick="goToTaobaoSearch('雪地靴')">雪地靴</a>
+<a href="#" onclick="goToTaobaoSearch('围巾')">围巾</a>
+<a href="#" onclick="goToTaobaoSearch('手套')">手套</a>
+<a href="#" onclick="goToTaobaoSearch('帽子')">帽子</a>
+<a href="#" onclick="goToTaobaoSearch('平板电脑')">平板电脑</a>
+<a href="#" onclick="goToTaobaoSearch('充电宝')">充电宝</a>
+<a href="#" onclick="goToTaobaoSearch('口红')">口红</a>
+<a href="#" onclick="goToTaobaoSearch('粉底液')">粉底液</a>
+<a href="#" onclick="goToTaobaoSearch('隔离霜')">隔离霜</a>
+<a href="#" onclick="goToTaobaoSearch('洗发水')">洗发水</a>
+<a href="#" onclick="goToTaobaoSearch('护发素')">护发素</a>
+<a href="#" onclick="goToTaobaoSearch('沐浴球')">沐浴球</a>
+<a href="#" onclick="goToTaobaoSearch('拖鞋')">拖鞋</a>
+<a href="#" onclick="goToTaobaoSearch('睡衣')">睡衣</a>
+<a href="#" onclick="goToTaobaoSearch('被套')">被套</a>
+<a href="#" onclick="goToTaobaoSearch('枕套')">枕套</a>
+<a href="#" onclick="goToTaobaoSearch('床单')">床单</a>
+<a href="#" onclick="goToTaobaoSearch('炒菜锅')">炒菜锅</a>
+<a href="#" onclick="goToTaobaoSearch('电饭煲')">电饭煲</a>
+<a href="#" onclick="goToTaobaoSearch('微波炉')">微波炉</a>
+<a href="#" onclick="goToTaobaoSearch('烤箱')">烤箱</a>
+<a href="#" onclick="goToTaobaoSearch('电水壶')">电水壶</a>
+<a href="#" onclick="goToTaobaoSearch('保温杯')">保温杯</a>
+<a href="#" onclick="goToTaobaoSearch('雨伞')">雨伞</a>
+<a href="#" onclick="goToTaobaoSearch('太阳镜')">太阳镜</a>
+<a href="#" onclick="goToTaobaoSearch('墨镜')">墨镜</a>
+<a href="#" onclick="goToTaobaoSearch('手机壳')">手机壳</a>
+<a href="#" onclick="goToTaobaoSearch('钢化膜')">钢化膜</a>
+<a href="#" onclick="goToTaobaoSearch('数据线')">数据线</a>
+<a href="#" onclick="goToTaobaoSearch('充电器')">充电器</a>
+<a href="#" onclick="goToTaobaoSearch('插座')">插座</a>
+<a href="#" onclick="goToTaobaoSearch('手电筒')">手电筒</a>
+<a href="#" onclick="goToTaobaoSearch('打火机')">打火机</a>
+<a href="#" onclick="goToTaobaoSearch('香烟')">香烟</a>
+<a href="#" onclick="goToTaobaoSearch('茶叶')">茶叶</a>
+<a href="#" onclick="goToTaobaoSearch('咖啡')">咖啡</a>
+<a href="#" onclick="goToTaobaoSearch('奶粉')">奶粉</a>
+<a href="#" onclick="goToTaobaoSearch('尿不湿')">尿不湿</a>
+<a href="#" onclick="goToTaobaoSearch('婴儿车')">婴儿车</a>
+<a href="#" onclick="goToTaobaoSearch('玩具')">玩具</a>
+<a href="#" onclick="goToTaobaoSearch('绘本')">绘本</a>
+<a href="#" onclick="goToTaobaoSearch('书包')">书包</a>
+<a href="#" onclick="goToTaobaoSearch('文具套装')">文具套装</a>
+<a href="#" onclick="goToTaobaoSearch('打印机')">打印机</a>
+<a href="#" onclick="goToTaobaoSearch('打印纸')">打印纸</a>
+<a href="#" onclick="goToTaobaoSearch('墨盒')">墨盒</a>
+<a href="#" onclick="goToTaobaoSearch('鼠标')">鼠标</a>
+<a href="#" onclick="goToTaobaoSearch('键盘')">键盘</a>
+<a href="#" onclick="goToTaobaoSearch('耳机')">耳机</a>
+<a href="#" onclick="goToTaobaoSearch('音响')">音响</a>
+<a href="#" onclick="goToTaobaoSearch('摄像头')">摄像头</a>
+<a href="#" onclick="goToTaobaoSearch('麦克风')">麦克风</a>
+<a href="#" onclick="goToTaobaoSearch('投影仪')">投影仪</a>
+<a href="#" onclick="goToTaobaoSearch('幕布')">幕布</a>
+<a href="#" onclick="goToTaobaoSearch('电视机')">电视机</a>
+<a href="#" onclick="goToTaobaoSearch('冰箱')">冰箱</a>
+<a href="#" onclick="goToTaobaoSearch('洗衣机')">洗衣机</a>
+<a href="#" onclick="goToTaobaoSearch('空调')">空调</a>
+<a href="#" onclick="goToTaobaoSearch('热水器')">热水器</a>
+<a href="#" onclick="goToTaobaoSearch('燃气灶')">燃气灶</a>
+<a href="#" onclick="goToTaobaoSearch('抽油烟机')">抽油烟机</a>
+
+        </div>
+    </div>
+
+   <script>
+    // 判断是否为移动设备
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    // 跳转淘宝搜索（根据设备类型自动选择方式）
+    function goToTaobaoSearch(fixedKey) {
+        let keyword = fixedKey || document.getElementById('searchKey').value.trim();
+        if (!keyword) return;
+
+        const encodedKeyword = encodeURIComponent(keyword);
+        // 移动端APP链接（taobao协议）
+        const appUrl = `taobao://ai.m.taobao.com/search.html?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401760923952%4021074e38_1304_199ff3f26cc_0586%4001&q=${encodedKeyword}`;
+        // 移动端网页链接
+        const mobileWebUrl = `https://ai.m.taobao.com/search.html?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401760923952%4021074e38_1304_199ff3f26cc_0586%4001&q=${encodedKeyword}`;
+        // 电脑端网页链接
+        const pcWebUrl = `https://ai.taobao.com/search/index.htm?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401761007929%402166ba00_1330_19a044087ff_056b%4001&key=${encodedKeyword}`;
+
+        if (isMobileDevice()) {
+            // 移动端优先尝试打开淘宝APP
+            try {
+                // 创建隐藏iframe触发APP跳转
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = appUrl;
+                document.body.appendChild(iframe);
+
+                // 300ms后检查是否跳转成功，失败则打开网页版
+                setTimeout(() => {
+                    document.body.removeChild(iframe);
+                    window.open(mobileWebUrl, '_blank');
+                }, 300);
+            } catch (e) {
+                // 异常情况下直接打开网页版
+                window.open(mobileWebUrl, '_blank');
+            }
+        } else {
+            // 电脑端直接打开网页版
+            window.open(pcWebUrl, '_blank');
+        }
+    }
+
+    // 支持回车键触发搜索
+    document.getElementById('searchKey').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            goToTaobaoSearch();
+        }
+    });
+
+    // 输入框获取焦点时调整页面
+    document.getElementById('searchKey').addEventListener('focus', function() {
+        // 在移动端输入时可能需要调整滚动位置
+        window.scrollTo(0, 0);
+    });
+</script>
+</body>
+</html>
