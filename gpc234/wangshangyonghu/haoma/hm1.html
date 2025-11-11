@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字上下标转换器</title>
+<meta name="keywords" content="搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" /><!--关键词-->
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 自定义工具类 */
+        .content-auto {
+            content-visibility: auto;
+        }
+
+        .transition-all-300 {
+            transition: all 300ms ease-in-out;
+        }
+
+        /* 字体和基础样式 */
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #f9fafb;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* 主容器样式 */
+        .container {
+            width: 100%;
+            max-width: 28rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transform: hover;
+            transition: all 300ms ease-in-out;
+        }
+
+        .container:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        /* 输入区域样式 */
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 0.75rem;
+            color: #6b7280;
+        }
+
+        .number-input {
+            display: block;
+            width: 100%;
+            padding-left: 2.5rem;
+            padding-right: 0.75rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            transition: all 300ms ease-in-out;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .number-input:focus {
+            ring: 2px;
+            ring-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+
+        /* 结果区域样式 */
+        .results-area {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-card {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .superscript-card {
+            background-color: #eff6ff;
+            border: 1px solid #dbeafe;
+        }
+
+        .subscript-card {
+            background-color: #f0fdf4;
+            border: 1px solid #dcfce7;
+        }
+
+        .result-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .superscript-title {
+            color: #1e40af;
+        }
+
+        .subscript-title {
+            color: #065f46;
+        }
+
+        .result-content {
+            font-size: 1.125rem;
+            min-height: 2.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .superscript-content {
+            color: #1e3a8a;
+        }
+
+        .subscript-content {
+            color: #059669;
+        }
+
+        /* 分隔线和说明文字 */
+        .divider {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .info-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+            text-align: center;
+        }
+
+        /* 页脚样式 */
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* 动画效果 */
+        .scale-105 {
+            transform: scale(1.05);
+            transition: transform 200ms ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span class="icon">⇄</span> 数字上下标转换器
+        </h1>
+        
+        <div class="input-group">
+            <label for="numberInput" class="input-label">输入数字：</label>
+            <div class="input-wrapper">
+                <span class="input-icon">⌨</span>
+                <input 
+                    type="text" 
+                    id="numberInput" 
+                    class="number-input"
+                    placeholder="在这里输入数字，将自动转换..."
+                    autocomplete="off"
+                >
+            </div>
+        </div>
+        
+        <div class="results-area">
+            <div class="result-card superscript-card">
+                <h2 class="result-title superscript-title">
+                    <span class="icon">ˣ</span> 上标结果:¹²³
+                </h2>
+                <div id="superscriptResult" class="result-content superscript-content">
+                    等待输入...
+                </div>
+            </div>
+            
+            <div class="result-card subscript-card">
+                <h2 class="result-title subscript-title">
+                    <span class="icon">ₓ</span> 下标结果:₁₂₃
+                </h2>
+                <div id="subscriptResult" class="result-content subscript-content">
+                    等待输入...
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider">
+            <p class="info-text">
+                支持数字 0-9 的自动转换，输入其他字符将保持不变
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>@gpc234</p>
+<!--底部显示-->
+ <script src="/gpc234/wangshangyonghu/js/tua.js"></script>
+<div id="gpczxstua"></div>
+<!--底下显示-->
+    </footer>
+
+    <script>
+        // 上标数字映射表
+        const superscriptMap = {
+            '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
+            '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'
+        };
+        
+        // 下标数字映射表
+        const subscriptMap = {
+            '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄',
+            '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉'
+        };
+        
+        // 获取DOM元素
+        const numberInput = document.getElementById('numberInput');
+        const superscriptResult = document.getElementById('superscriptResult');
+        const subscriptResult = document.getElementById('subscriptResult');
+        
+        // 转换函数：将输入的字符串转换为上标
+        function convertToSuperscript(text) {
+            return text.split('').map(char => superscriptMap[char] || char).join('');
+        }
+        
+        // 转换函数：将输入的字符串转换为下标
+        function convertToSubscript(text) {
+            return text.split('').map(char => subscriptMap[char] || char).join('');
+        }
+        
+        // 处理输入事件
+        function handleInput() {
+            const inputValue = numberInput.value;
+            
+            if (inputValue.trim() === '') {
+                superscriptResult.textContent = '等待输入...';
+                subscriptResult.textContent = '等待输入...';
+                return;
+            }
+            
+            // 转换并显示结果
+            superscriptResult.textContent = convertToSuperscript(inputValue);
+            subscriptResult.textContent = convertToSubscript(inputValue);
+            
+            // 添加动画效果
+            [superscriptResult, subscriptResult].forEach(el => {
+                el.classList.add('scale-105');
+                setTimeout(() => el.classList.remove('scale-105'), 200);
+            });
+        }
+        
+        // 绑定输入事件
+        numberInput.addEventListener('input', handleInput);
+        
+        // 初始聚焦输入框
+        numberInput.focus();
+    </script>
+</body>
+</html>
