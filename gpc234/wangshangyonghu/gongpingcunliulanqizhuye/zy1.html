@@ -76,6 +76,60 @@ mobile_device_detect("zy2.html");
 <!--移动端调转代码-->
 
 
+<!-- 返回顶部 -->
+<button id="gpcfhdb">↑</button>
+
+<!-- CSS部分 (可放在style标签或CSS文件中) -->
+<style>
+#gpcfhdb {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #0066FF; /* 主色调 */
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+    display: none; /* 默认隐藏 */
+    z-index: 9999; /* 确保在最上层 */
+}
+
+#gpcfhdb:hover {
+    background-color: #0055DD; /* hover时颜色 */
+}
+</style>
+
+<!-- JavaScript部分 (可放在script标签或JS文件中) -->
+<script>
+// 获取按钮元素
+const gpcfhdbBtn = document.getElementById('gpcfhdb');
+
+// 监听页面滚动事件
+window.addEventListener('scroll', () => {
+    // 当滚动距离超过300px时显示按钮，否则隐藏
+    if (window.pageYOffset > 300) {
+        gpcfhdbBtn.style.display = 'block';
+    } else {
+        gpcfhdbBtn.style.display = 'none';
+    }
+});
+
+// 点击按钮返回顶部
+gpcfhdbBtn.addEventListener('click', () => {
+    // 平滑滚动到顶部
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
+<!-- 返回顶部 -->
+
 
 
  <title>浏浏览器主页一公平村浏览器主页电脑版一网上用户</title><!--标题-->
@@ -546,7 +600,7 @@ footer {
                 <button class="link-btn" data-engine="baidu-mp3">音乐</button>
                 <button class="link-btn" data-engine="baidu-video">视频</button>
                 <button class="link-btn" data-engine="baidu-news">百度新闻</button>
-                <button class="link-btn" data-engine="164580">GB.铆钉,螺丝,垫片...标准信息_易紧通紧固件网</button>
+           
                 <button class="link-btn" data-engine="taobao">爱淘宝</button>
             </div>
 
@@ -652,7 +706,7 @@ footer {
             "youdao-trans": "https://fanyi.youdao.com/?keyfrom=dict2.top&q=",
             "caiyun-trans": "https://fanyi.caiyunapp.com/#/translator?source=",
             "taobao": "https://ai.taobao.com/search/index.htm?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401760747866%4021048906_131d_199f4c04abe_0551%4001&key=",
-            "164580": "https://www.164580.com/biaozhun/?&sy=1&tsc=41961&keyword=",
+
             "deepl-trans": "https://www.deepl.com/translator#auto/zh/"
         };
 
@@ -754,10 +808,10 @@ footer {
 <a href="https://fanyi.youdao.com/?keyfrom=dict2.top&q=" target="_blank" class="link-btn">有道翻译</a>
 <a href="https://fanyi.caiyunapp.com/#/translator?source=" target="_blank" class="link-btn">彩云翻译</a>
 <a href="https://ai.taobao.com/search/index.htm?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401760747866%4021048906_131d_199f4c04abe_0551%4001&key=" target="_blank" class="link-btn">淘宝搜索</a>
-<a href="https://www.164580.com/biaozhun/?&sy=1&tsc=41961&keyword=" target="_blank" class="link-btn">164580搜索</a>
-<a href="https://www.164580.com/biaozhun/?&sy=1&tsc=41961&keyword=" target="_blank" class="link-btn">GB铆钉搜索</a>
-<a href="https://www.164580.com/biaozhun/?&sy=1&tsc=41961&keyword=" target="_blank" class="link-btn">GB螺丝搜索</a>
-<a href="https://www.164580.com/biaozhun/?&sy=1&tsc=41961&keyword=" target="_blank" class="link-btn">紧固件标准搜索</a>
+<a href="https://www.164580.com" target="_blank" class="link-btn">164580搜索</a>
+<a href="https://www.164580.com" target="_blank" class="link-btn">GB铆钉搜索</a>
+<a href="https://www.164580.com" target="_blank" class="link-btn">GB螺丝搜索</a>
+<a href="https://www.164580.com" target="_blank" class="link-btn">紧固件标准搜索</a>
 <a href="https://www.deepl.com/translator#auto/zh/" target="_blank" class="link-btn">DeepL翻译</a>
 <a href="https://ai.taobao.com?pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401760667563%400b10dcc6_12ad_199eff6f722_055f%4001" target="_blank" class="link-btn">爱淘宝(电脑版)</a>
 <a href="https://s.click.1688.com/t?e=E8FA7FF2F7DF95454E1F4FDB40EFBC240CAA80D1CD478E29D920A558D1D5758C796E05FBA2F4EF2AB4495A67B5147075F72F2793620489D8E03BCF364CDA73EF1455176268C6A00FBEFBDA96A9B252F6C3F99DF019CD6D6D11E350B207C9D88D208AEA6665A9BADC3EE72C6E754956EC23DE95978F62EE1856CCA7B9C617E913A2F09545400D1C6D6A30A3B5370BDF77746B5E7B45863B217021FE817B2B3E85" target="_blank" class="link-btn">1688精选货源</a>     
@@ -783,7 +837,7 @@ footer {
                 <a href="https://www.sou.com/?src=360so_index" target="_blank" class="link-btn">360AI搜索</a>
                 <a href="https://so.csdn.net/chat" target="_blank" class="link-btn">C知道</a>
                 <a href="https://yiyan.baidu.com/" target="_blank" class="link-btn">文心一言</a>
-                <a href="https://tongyi.aliyun.com" target="_blank" class="link-btn">通义千问</a>
+                <a href="https://www.tongyi.com/" target="_blank" class="link-btn">千问</a>
                 <a href="https://kimi.moonshot.cn/" target="_blank" class="link-btn">Kimi</a>
                 <a href="https://chat.deepseek.com/sign_in" target="_blank" class="link-btn">DeepSeek</a>
                 <a href="https://zhida.zhihu.com/" target="_blank" class="link-btn">知乎直答</a>
@@ -1426,7 +1480,11 @@ footer {
  	<a href="https://www.boc.cn/fimarkets/lilv/fd32/201310/t20131031_2591219.html"target="_blank" class="link-btn">贷款市场报价利率（LPR）</a>
  	<a href="../zj/zj1.html"target="_blank" class="link-btn">主机</a>
  	<a href="../sy/sy1.html" target="_blank" class="link-btn">网上用户</a>
- 	<a href=""target="_blank" class="link-btn"></a>
+ 	<a href="http://12321.cn/"target="_blank" class="link-btn">12321网络不良与垃圾信息举报受理中心</a>
+ 	<a href="https://www.12377.cn/" target="_blank" class="link-btn">违法和不良信息举报中心</a>
+ 	<a href="http://www.piyao.org.cn/yybgt/index.htm" target="_blank" class="link-btn">网络谣言曝光台</a>
+ 	<a href="https://www.shdf.gov.cn/" target="_blank" class="link-btn">中国扫黄打非网</a>
+ 	<a href="https://cyberpolice.mps.gov.cn/" target="_blank" class="link-btn">网络违法犯罪信息举报网站</a>
  	<a href=""target="_blank" class="link-btn"></a>
  	<a href=""target="_blank" class="link-btn"></a>
  	<a href=""target="_blank" class="link-btn"></a>
