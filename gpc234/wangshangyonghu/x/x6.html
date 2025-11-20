@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘工厂 - 源头好货直供</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ff4400 0%, #ff6600 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .promo-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .promo-section h2 {
+            color: #ff6600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffeeee;
+        }
+        
+        .promo-points {
+            margin-bottom: 30px;
+        }
+        
+        .promo-point {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        
+        .promo-point .icon {
+            background-color: #ff6600;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .口令-section {
+            background-color: #fff8f0;
+            border: 1px dashed #ff9966;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        #codeText {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid #ffddcc;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #e65c00;
+            resize: none;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e65c00;
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .shop-link {
+            display: block;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .highlight {
+            color: #ff4400;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>淘工厂 - 天天特卖</h1>
+            <p>源头工厂直供，没有中间商赚差价</p>
+        </header>
+        
+        <section class="promo-section">
+            <h2>为什么选择淘工厂？</h2>
+            
+            <div class="promo-points">
+                <div class="promo-point">
+                    <div class="icon">1</div>
+                    <div class="text">
+                        <strong>价格优势看得见</strong> - 直接对接源头工厂，省去所有中间环节，同样的品质，价格低到尖叫！
+                    </div>
+                </div>
+                
+                <div class="promo-point">
+                    <div class="icon">2</div>
+                    <div class="text">
+                        <strong>品质有保障</strong> - 严格筛选优质工厂，所有商品经过多重质检，放心购买无顾虑。
+                    </div>
+                </div>
+                
+                <div class="promo-point">
+                    <div class="icon">3</div>
+                    <div class="text">
+                        <strong>每日特价不停歇</strong> - 天天有特卖，日日有惊喜，超值好物等你来抢，手慢无！
+                    </div>
+                </div>
+                
+                <div class="promo-point">
+                    <div class="icon">4</div>
+                    <div class="text">
+                        <strong>品类丰富全覆盖</strong> - 从家居百货到服饰鞋包，从零食小吃到数码配件，满足你的一站式购物需求。
+                    </div>
+                </div>
+            </div>
+            
+            <p>现在通过专属口令进入，还能领取<span class="highlight">额外新人福利</span>，首单立减更划算，赶紧行动吧！</p>
+        </section>
+        
+        <section class="promo-section">
+            <h2>一键获取淘工厂优惠</h2>
+            
+            <div class="口令-section">
+                <textarea id="codeText" rows="2" readonly>18￥ CZ225 T2Gpf02dJHb￥ https://m.tb.cn/h.ShnHGXO  天天特卖工厂</textarea>
+                
+                <div class="btn-container">
+                    <button class="btn" onclick="copyCode()">点击复制口令</button>
+                </div>
+                
+                <p style="text-align: center; color: #666; font-size: 0.9rem;">复制后打开淘宝APP，自动跳转福利页面</p>
+            </div>
+            
+            <div class="btn-container">
+            <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DwhOjNMBxQpQcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMQ7l0PvEJbJnJ1gyddu7kN%2FEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6NTSyiYJPde8%2FlTNlJVgXlzGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401760085790%402103e876_21cf_199cd49cfdb_0565%4001" class="btn shop-link" target="_blank">电脑用户: 直接进入淘工厂店铺</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>本页面推广内容仅供参考，具体活动以淘工厂实际页面为准</p>
+        <p>© 2025 淘工厂推广页面</p>
+    </footer>
+
+    <script>
+        // 复制口令功能
+        function copyCode() {
+            const codeElement = document.getElementById('codeText');
+            codeElement.select();
+            document.execCommand('copy');
+            
+            // 显示复制成功提示
+            const originalText = document.querySelector('.btn').innerText;
+            document.querySelector('.btn').innerText = '复制成功！快去打开淘宝吧';
+            
+            // 2秒后恢复原文本
+            setTimeout(() => {
+                document.querySelector('.btn').innerText = originalText;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

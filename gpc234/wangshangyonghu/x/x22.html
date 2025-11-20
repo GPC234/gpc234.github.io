@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝特卖搜索框</title>
+    <style>
+        body {
+            font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .search-wrapper {
+            max-width: 700px;
+            margin: 20px auto;
+        }
+        .search-form {
+            display: flex;
+            height: 44px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .search-input {
+            flex: 1;
+            padding: 0 15px;
+            border: 1px solid #ff4400;
+            border-right: none;
+            outline: none;
+            font-size: 14px;
+            border-radius: 4px 0 0 4px;
+            box-sizing: border-box;
+        }
+        .search-btn {
+            min-width: 80px;
+            background-color: #ff4400;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .search-btn:hover {
+            background-color: #f53f00;
+        }
+        .search-tip {
+            max-width: 700px;
+            margin: 10px auto;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-wrapper">
+        <form class="search-form" id="searchForm">
+            <input type="search" 
+                   class="search-input" 
+                   name="q" 
+                   placeholder="请输入搜索关键词（如：连衣裙）" 
+                   required>
+            <button type="submit" class="search-btn">搜索</button>
+        </form>
+        <p class="search-tip">提示：若已安装手机淘宝，将自动跳转APP；否则跳转到网页版</p>
+    </div>
+
+    <script>
+        // 淘宝APP的基础URL Scheme（用于跳转APP）
+        const taobaoAppBaseUrl = "taobao://temai.m.taobao.com/search.htm?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401761006221%40213d936c_1332_19a04267773_0572%4001&q=";
+        
+        // 网页版基础URL（备用方案）
+        const webBaseUrl = "https://temai.m.taobao.com/search.htm?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401761006221%40213d936c_1332_19a04267773_0572%4001&q=";
+        
+        window.addEventListener('load', function() {
+            const searchInput = document.querySelector('.search-input');
+            searchInput.focus();
+            
+            const searchForm = document.getElementById('searchForm');
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const inputValue = searchInput.value.trim();
+                
+                if (!inputValue) {
+                    alert('请输入搜索关键词');
+                    return;
+                }
+                
+                const encodedKeyword = encodeURIComponent(inputValue);
+                const appUrl = taobaoAppBaseUrl + encodedKeyword; // APP跳转链接
+                const webUrl = webBaseUrl + encodedKeyword; // 网页版链接
+                
+                // 尝试跳转手机淘宝APP，失败则自动打开网页版
+                if (typeof window !== 'undefined') {
+                    // 创建隐藏的iframe触发APP跳转（部分浏览器支持）
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = appUrl;
+                    document.body.appendChild(iframe);
+                    
+                    // 300毫秒后检测是否跳转成功，失败则打开网页版
+                    setTimeout(() => {
+                        document.body.removeChild(iframe);
+                        // 自动跳转网页版（如果APP未打开）
+                        window.location.href = webUrl;
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

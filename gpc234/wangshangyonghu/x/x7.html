@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝搜索</title>
+<meta name="keywords" content="搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" /><!--关键词-->
+</head> <!-- 文档头部结束 -->
+
+
+    <style>
+        /* 基础样式，可根据需求修改 */
+        .search-box {
+            width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .search-input {
+            width: 400px;
+            height: 40px;
+            padding: 0 15px;
+            border: 2px solid #ff4400;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-btn {
+            height: 44px;
+            width: 120px;
+            background-color: #ff4400;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .search-btn:hover {
+            background-color: #ff5500;
+        }
+    </style>
+</head>
+<body>
+    <!-- 搜索表单：action为淘宝AI搜索接口，method为GET -->
+    <form class="search-box" 
+          action="https://ai.taobao.com/search/index.htm" 
+          method="GET" 
+          target="_blank">
+        
+        <!-- 隐藏域：保留所有推广ID（原链接中的参数） -->
+        <input type="hidden" name="_v" value="d">
+        <input type="hidden" name="spm" value="a2e1u.27659560.search.1">
+        <input type="hidden" name="pid" value="mm_5518923388_3058500304_115896750188">
+        <input type="hidden" name="union_lens" value="recoveryid%3A553954605_0%401760663942913%3Bprepvid%3A201_33.102.69.86_10864578_1760663943101">
+        <input type="hidden" name="rootPageId" value="20150318020018244">
+        <input type="hidden" name="tkSid" value="1760663358023_201032257_0.0">
+        
+        <!-- 搜索输入框：name="key"对应淘宝搜索的关键词参数 -->
+        <input type="text" 
+               class="search-input" 
+               name="key" 
+               placeholder="请输入搜索关键词（例如：铁锤）" 
+               required>
+        
+        <!-- 搜索按钮 -->
+        <button type="submit" class="search-btn">淘宝搜索</button>
+    </form>
+</body>
+</html>
