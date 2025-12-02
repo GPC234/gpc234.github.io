@@ -26,28 +26,9 @@ document.write(unescape("%3C%21--%u5C45%u4E2D--%3E%3Ccenter%3E%3C%21--%u5C45%u4E
 
 <!--文档内容结束......-->
 <!--结尾-->
-<hr color=0066FF>
-<a href="#top" target="_self">返回顶部</a>
-<hr color=0066FF>
-<p id="currentDateTime"></p>
-    <script>
-        const currentDateTimeElement = document.getElementById('currentDateTime');
-        const now = new Date();
-
-        const year = now.getFullYear();
-        const month = now.getMonth() + 1;
-        const day = now.getDate();
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const seconds = now.getSeconds();
-
-        const formattedDateTime = `日期:${year}年${month}月${day}日${hours}:${minutes}:${seconds}`;
-
-        currentDateTimeElement.textContent = formattedDateTime;
-    </script>
-
 
 <hr color=0066FF>
+
 <center> <!--居中-->
 <head>
 <style>textarea#gpc234{width: 100%;height: 2%;}</style>
@@ -64,32 +45,47 @@ document.write(unescape("%3C%21--%u5C45%u4E2D--%3E%3Ccenter%3E%3C%21--%u5C45%u4E
 </textarea>
 <!--内容结束-->
 <hr color=0000ff> <!--分界线-->
-   <hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
-<a href="/">下一页</a>
-&nbsp; 	<a href="	./1.html	" target="_blank">1</a>	&nbsp; 
-	<a href="	./2.html	" target="_blank">2</a>	&nbsp; 
-	<a href="	./3.html	" target="_blank">3</a>	&nbsp; 
-	<a href="	./4.html	" target="_blank">4</a>	&nbsp; 
-	<a href="	./5.html	" target="_blank">5</a>	&nbsp; 
-	<a href="	./6.html	" target="_blank">6</a>	&nbsp; 
-	<a href="	./7.html	" target="_blank">7</a>	&nbsp; 
-	<a href="	./8.html	" target="_blank">8</a>	&nbsp; 
-	<a href="	./9.html	" target="_blank">9</a>	&nbsp; 
-	<a href="	./10.html	" target="_blank">10</a>	&nbsp; 
-	<a href="	./11.html	" target="_blank">11</a>	&nbsp; 
-	<a href="	./12.html	" target="_blank">12</a>	&nbsp; 
-	<a href="	./13.html	" target="_blank">13</a>	&nbsp; 
-	<a href="	./14.html	" target="_blank">14</a>	&nbsp; 
-	<a href="	./15.html	" target="_blank">15</a>	&nbsp; 
-	<a href="	./16.html	" target="_blank">16</a>	&nbsp; 
-	<a href="	./17.html	" target="_blank">17</a>	&nbsp; 
-	<a href="	./18.html	" target="_blank">18</a>	&nbsp; 
-	<a href="	./19.html	" target="_blank">19</a>	&nbsp; 
-	<a href="	./20.html	" target="_blank">20</a>	&nbsp; 
-	<a href="	./21.html	" target="_blank">21</a>	&nbsp; 
-	<a href="	./22.html	" target="_blank">22</a>	&nbsp; 
-	<a href="	./23.html	" target="_blank">23</a>	&nbsp; 
-    	<a href="	../y/9.html	" target="_blank">更多</a>	&nbsp; 
+  <!--分页-->
+<div id="linkContainer" class="flex flex-wrap gap-2"></div>
+<script>
+
+// 等待DOM加载完成
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取当前页面的文件名
+    const currentUrl = window.location.pathname;
+    const fileName = currentUrl.split('/').pop() || '';
+    
+    // 提取文件名中的前缀部分（字母部分）
+    const match = fileName.match(/^([a-zA-Z]*)\d+\.html$/);
+    
+    if (match) {
+        const prefix = match[1]; // 前缀部分，如"tu"、"ym"、"ys"或空
+        const linkContainer = document.getElementById('linkContainer');
+        
+        // 生成从1到23的链接（固定范围）
+        for (let i = 1; i <= 23; i++) {
+            const a = document.createElement('a');
+            a.href = `./${prefix}${i}.html`;
+            a.target = '_blank';
+            a.textContent = i;
+            a.className = 'link-number';
+            
+            // 添加链接到容器
+            linkContainer.appendChild(a);
+            
+            // 除了最后一个链接外，都添加空格分隔
+            if (i < 23) {
+                const space = document.createTextNode(' ');
+                linkContainer.appendChild(space);
+            }
+        }
+    } else {
+        // 如果文件名格式不符合预期，显示错误信息
+        document.getElementById('linkContainer').innerHTML = 
+            '<p class="text-red-500">文件名格式不符合要求，请检查文件名</p>';
+    }
+});</script><!--分页-->
+
 <!--上下页-->
 <script>
         function goToNextPage() {

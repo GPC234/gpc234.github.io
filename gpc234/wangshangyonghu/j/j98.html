@@ -130,9 +130,11 @@
         
         <div class="result" id="result">
             <h2>时间差结果</h2>
-            <p>相差 <span id="days"></span> 天</p>
-            <p>相差 <span id="hours"></span> 小时</p>
-            <p>相差 <span id="total-hours"></span> 小时（总计）</p>
+            <p>相差 <span id="days"></span> 天 <span id="hours"></span> 小时 <span id="minutes"></span> 分钟 <span id="seconds"></span> 秒</p>
+            <p>总计：<span id="total-days"></span> 天（含小数）</p>
+            <p>总计：<span id="total-hours"></span> 小时（含小数）</p>
+            <p>总计：<span id="total-minutes"></span> 分钟（含小数）</p>
+            <p>总计：<span id="total-seconds"></span> 秒</p>
         </div>
     </div>
 
@@ -150,7 +152,12 @@
             const errorDiv = document.getElementById('error-message');
             const daysSpan = document.getElementById('days');
             const hoursSpan = document.getElementById('hours');
+            const minutesSpan = document.getElementById('minutes');
+            const secondsSpan = document.getElementById('seconds');
+            const totalDaysSpan = document.getElementById('total-days');
             const totalHoursSpan = document.getElementById('total-hours');
+            const totalMinutesSpan = document.getElementById('total-minutes');
+            const totalSecondsSpan = document.getElementById('total-seconds');
             
             // 验证时间有效性
             if (isNaN(startTime.getTime()) || isNaN(endTime.getTime()) || endTime <= startTime) {
@@ -165,15 +172,32 @@
             // 计算时间差（毫秒）
             const timeDiff = endTime - startTime;
             
-            // 转换为小时和天
-            const totalHours = Math.round(timeDiff / (1000 * 60 * 60));
-            const days = Math.floor(totalHours / 24);
-            const hours = totalHours % 24;
+            // 转换为各种单位
+            const totalSeconds = Math.round(timeDiff / 1000);
+            const totalMinutes = (totalSeconds / 60).toFixed(2);
+            const totalHours = (totalSeconds / 3600).toFixed(2);
+            const totalDays = (totalSeconds / 86400).toFixed(2);
+            
+            // 分解为天、时、分、秒
+            const days = Math.floor(totalSeconds / 86400);
+            const remainingSecondsAfterDays = totalSeconds % 86400;
+            
+            const hours = Math.floor(remainingSecondsAfterDays / 3600);
+            const remainingSecondsAfterHours = remainingSecondsAfterDays % 3600;
+            
+            const minutes = Math.floor(remainingSecondsAfterHours / 60);
+            const seconds = remainingSecondsAfterHours % 60;
             
             // 显示结果
             daysSpan.textContent = days;
             hoursSpan.textContent = hours;
+            minutesSpan.textContent = minutes;
+            secondsSpan.textContent = seconds;
+            totalDaysSpan.textContent = totalDays;
             totalHoursSpan.textContent = totalHours;
+            totalMinutesSpan.textContent = totalMinutes;
+            totalSecondsSpan.textContent = totalSeconds;
+            
             resultDiv.style.display = 'block';
         }
         
