@@ -44,7 +44,6 @@
             }
     </style>
     <!-- CSS样式定义部分结束 -->
-
 <!--移动端调转代码-->
 <SCRIPT LANGUAGE = "JavaScript" >
 function mobile_device_detect(url) {
@@ -133,11 +132,9 @@ gpcfhdbBtn.addEventListener('click', () => {
 
 
 
-
-
  <title>浏浏览器主页</title><!--标题-->
-<!--关键词--> <meta name="keywords" content="网上用户,客家人浏览器主页,公平村浏览器主页电脑版,浏览器主页,网上用户浏览器主页,公平村浏览器主页,公平村网址导航,平村网站导航,gpc234浏览器首页,网上用户浏览器首页,公平村,GPC234,GPCZXS,公平村浏览器首页,浏览器首页" /><!--关键词-->
-<!--描述--><meta name="description" content="客家人浏览器主页,公平村浏览器主页电脑版，这是一个提供各种网站链接和搜索引擎的浏览器主页，包括百度、必应、搜狗、360、抖音等热门平台。你可以快速访问你想要的网站，也可以使用不同的搜索工具找到...网上用户,浏览器主页,网上用户浏览器主页,公平村浏览器主页,gpc234浏览器首页,网上用户浏览器首页,公平村,公平村浏览器首页,浏览器首页" />
+<!--关键词--> <meta name="keywords" content="网上用户,公平村浏览器主页电脑版,浏览器主页,网上用户浏览器主页,公平村浏览器主页,公平村网址导航,平村网站导航,gpc234浏览器首页,网上用户浏览器首页,公平村,GPC234,GPCZXS,公平村浏览器首页,浏览器首页" /><!--关键词-->
+<!--描述--><meta name="description" content="公平村浏览器主页电脑版，这是一个提供各种网站链接和搜索引擎的浏览器主页，包括百度、必应、搜狗、360、抖音等热门平台。你可以快速访问你想要的网站，也可以使用不同的搜索工具找到...网上用户,浏览器主页,网上用户浏览器主页,公平村浏览器主页,gpc234浏览器首页,网上用户浏览器首页,公平村,公平村浏览器首页,浏览器首页" />
 </head>
 
    <style>
@@ -153,30 +150,12 @@ gpcfhdbBtn.addEventListener('click', () => {
 }
 
 /* 全局样式重置：清除默认内外边距，设置盒模型为 border-box，统一字体 */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* 盒模型：宽度包含边框和内边距 */
- 
-   }
-
-/* 补充：表单元素强制继承全局字体（避免默认UI字体不一致） */
-button, input, select, textarea {
-    font-family: inherit;
-    outline: none; /* 清除聚焦默认外边框（按需保留） */
-    border: none; /* 清除默认边框（后续可自定义） */
+    font-family: "Microsoft YaHei", Arial, sans-serif; /* 优先使用微软雅黑字体 */
 }
-
-/* 可选：清除列表默认样式和a标签下划线（按需启用） */
-ul, ol {
-    list-style: none;
-}
-a {
-    text-decoration: none;
-    color: inherit; /* 继承父元素颜色，避免默认蓝色 */
-}
-
 
 /* 页面主体样式：设置文本颜色、行高、内边距（左侧预留导航宽度） */
 body {
@@ -323,7 +302,7 @@ header h1 {
     border-radius: 6px; /* 圆角6px */
     color: var(--primary-color); /* 文本颜色使用主色调 */
     text-decoration: none; /* 去除下划线 */
-    font-size: 32px; /* 字体大小15px */
+    font-size: 15px; /* 字体大小15px */
     font-weight: 500; /* 字体中等加粗 */
     transition: all 0.3s; /* 所有属性过渡效果0.3s */
     cursor: pointer; /* 鼠标指针变为手型 */
@@ -593,32 +572,9 @@ footer {
 }
 
 #searchInput, .search-btn {
-  font-size: 26px; /* 恢复字体大小 */
+  font-size: 22px; /* 恢复字体大小 */
 }
     </style>
-
-<style>
-/* 针对所有浏览器的 placeholder 样式设置 */
-#searchInput::placeholder {
-    font-size: 16px; /* 调整为你需要的小字体大小 */
-}
-
-/* 针对不同浏览器的兼容性处理（可选） */
-#searchInput::-webkit-input-placeholder { /* Chrome, Safari, Edge */
-    font-size: 16px;
-}
-#searchInput:-moz-placeholder { /* Firefox 4-18 */
-    font-size: 16px;
-}
-#searchInput::-moz-placeholder { /* Firefox 19+ */
-    font-size: 16px;
-}
-#searchInput:-ms-input-placeholder { /* IE 10+ */
-    font-size: 16px;
-}
-
-    </style>
-
 
 
 
@@ -632,9 +588,16 @@ footer {
     >
     <button class="search-btn" id="mainSearchBtn">搜索</button>
 
-    <p style="font-size: 12px;">🔎 输入关键词搜索(点击下方按钮搜索)（支持数字转中文大写）(输入数字带+-*/%自动计算)</p>
+
+
+<p style="font-size: 12px;">🔎 输入关键词搜索(点击下方按钮搜索)（支持数字转中文大写）(输入数字带+-*/%自动计算)</p>
+
 
     <div id="result"></div>
+
+
+
+
 
     <!-- 多搜索引擎 -->
     <div class="link-container" style="margin-top: 15px;">
@@ -664,23 +627,6 @@ footer {
         <button class="link-btn" data-engine="taobao-image">淘宝图片</button>
     </div>
 
-    <!-- 购物搜索 -->
-    <div class="link-container">
-图片搜索:
-        <button class="link-btn" data-engine="atb">爱淘宝</button>
-        <button class="link-btn" data-engine="tb">淘宝</button>
-        <button class="link-btn" data-engine="yp">小米有品</button>
-        <button class="link-btn" data-engine="dd">当当</button>
-
-        <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3D%2B1xvab%2BWJVgcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMejTarIx5m0g5x%2BIUlGKNpXEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6NTSyiYJPde8%2FlTNlJVgXlzGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401766803415%400bbb5ce5_21f4_19b5db0a2b5_0691%4001" target="_blank" class="link-btn">淘工厂</a>
-        <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3D%2B1xvab%2BWJVgcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMejTarIx5m0g5x%2BIUlGKNpXEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6NTSyiYJPde8%2FlTNlJVgXlzGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401766803415%400bbb5ce5_21f4_19b5db0a2b5_0691%4001" target="_blank" class="link-btn">天天特卖工厂</a>
-        <a href="#购物"" target="_blank" class="link-btn">购物</a>
-        <a href="https://gpc234.66ghz.com/gpc234/wangshangyonghu/x/x21.html"" target="_blank" class="link-btn">商品搜索</a>
-        <button class="link-btn" data-engine=""></button>
-    
-
-    </div>
-
     <!-- 翻译工具 -->
     <div class="link-container">
 翻译工具:
@@ -702,80 +648,30 @@ footer {
         const seconds = now.getSeconds().toString().padStart(2, '0');
         const days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
         const dayOfWeek = days[now.getDay()];
-        // 增加存在性检查避免报错
-        if (document.getElementById('dateTime')) {
-            document.getElementById('dateTime').innerHTML = 
-                `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds} ${dayOfWeek}`;
-        }
+        document.getElementById('dateTime').innerHTML = 
+            `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds} ${dayOfWeek}`;
     }
     updateDateTime();
     setInterval(updateDateTime, 1000);
 
-    // 数字转中文大写 - 支持元角分
+    // 数字转中文大写
     const chineseNumber = ["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
     const chineseUnit = ["", "拾", "佰", "仟", "万", "拾", "佰", "仟", "亿", "拾", "佰", "仟"];
 
     function convertToChinese(num) {
-        // 处理空值和非数字
-        if (!num || isNaN(num)) return "零元整";
-        
-        // 转换为数字并处理
-        let number = parseFloat(num);
-        if (number === 0) return "零元整";
-        
-        // 分离整数和小数部分
-        let integerPart = Math.floor(number);
-        let decimalPart = Math.round((number - integerPart) * 100);
-        let jiao = Math.floor(decimalPart / 10);
-        let fen = decimalPart % 10;
-        
-        // 处理整数部分转中文
-        let integerStr = integerPart.toString();
+        let numStr = num.toString();
         let result = "";
-        let zeroFlag = false;
-        let unitIndex = integerStr.length - 1;
-        
-        for (let i = 0; i < integerStr.length; i++) {
-            let digit = parseInt(integerStr[i]);
-            if (digit === 0) {
-                zeroFlag = true;
+        for (let i = 0; i < numStr.length; i++) {
+            let digit = parseInt(numStr[i]);
+            if (digit!== 0) {
+                result += chineseNumber[digit] + chineseUnit[numStr.length - 1 - i];
             } else {
-                if (zeroFlag) {
-                    result += "零";
-                    zeroFlag = false;
+                if (i > 0 && parseInt(numStr[i - 1])!== 0) {
+                    result += chineseNumber[digit];
                 }
-                result += chineseNumber[digit] + chineseUnit[unitIndex - i];
             }
         }
-        
-        // 处理元角分
-        if (result) {
-            result += "元";
-        } else {
-            // 整数部分为0
-            result = "零元";
-        }
-        
-        // 处理角
-        if (jiao > 0) {
-            result += chineseNumber[jiao] + "角";
-        } else if (jiao === 0 && fen > 0 && integerPart > 0) {
-            result += "零";
-        }
-        
-        // 处理分
-        if (fen > 0) {
-            result += chineseNumber[fen] + "分";
-        } else if (jiao === 0 && fen === 0) {
-            // 无角分则加整
-            result += "整";
-        }
-        
-        // 处理特殊情况
-        result = result.replace(/^零元零/, '零');
-        result = result.replace(/^零元/, '');
-        
-        return result || "零元整";
+        return result || "零";
     }
 
     // 处理百分号并转换为小数
@@ -825,18 +721,19 @@ footer {
         if (calculationResult!== null && !isNaN(calculationResult)) {
             // 格式化表达式（去除多余空格）
             const formattedExpr = inputValue.replace(/\s+/g, '');
-            // 处理计算结果的显示格式
-            const displayResult = Number.isInteger(calculationResult) 
+            // 显示完整公式和结果（保留两位小数，避免浮点精度问题）
+            const fixedResult = Number.isInteger(calculationResult) 
                 ? calculationResult 
-                 : parseFloat(calculationResult.toFixed(6));
+                 : calculationResult.toFixed(2);
+            let resultText = `${formattedExpr} = ${fixedResult}`;
             
-            // 显示计算结果
-            let resultHtml = `<div style="color: #0066cc; font-weight: bold;">${formattedExpr} = ${displayResult}</div>`;
-            // 换行显示中文大写
-            const chineseResult = convertToChinese(displayResult);
-            resultHtml += `<div style="color: #e67e22; margin-top: 5px;">${displayResult} = ${chineseResult}</div>`;
+            // 如果计算结果是整数，补充显示中文大写
+            if (Number.isInteger(calculationResult)) {
+                const convertedValue = convertToChinese(Math.abs(calculationResult));
+                resultText += ` (中文大写: ${convertedValue}元整)`;
+            }
             
-            resultElement.innerHTML = resultHtml;
+            resultElement.innerHTML = resultText;
         } 
         // 第二步：如果不是表达式，尝试纯数字转中文大写
         else if (!isNaN(inputValue.replace(/%/g, '')) && inputValue!== "") {
@@ -845,16 +742,12 @@ footer {
             if (numValue.includes('%')) {
                 numValue = processPercentage(numValue);
             }
-            const num = parseFloat(numValue);
-            if (!isNaN(num)) {
-                // 显示数字和对应的中文大写
-                const chineseResult = convertToChinese(num);
-                resultElement.innerHTML = `<div style="color: #e67e22; font-weight: bold;">${inputValue} = ${chineseResult}</div>`;
-            }
+            const convertedValue = convertToChinese(Math.abs(parseInt(numValue)));
+            resultElement.innerHTML = `${inputValue} = ${convertedValue}元整`;
         }
 
         // 回车键触发搜索
-        if (event.keyCode === 13 || event.key === 'Enter') {
+        if (event.keyCode === 13) {
             document.getElementById("mainSearchBtn").click();
         }
     }
@@ -886,26 +779,7 @@ footer {
         "youdao-trans": "https://fanyi.youdao.com/?keyfrom=dict2.top&q=",
         "caiyun-trans": "https://fanyi.caiyunapp.com/#/translator?source=",
         "taobao": "https://ai.taobao.com/search/index.htm?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401760747866%4021048906_131d_199f4c04abe_0551%4001&key=",
-        "deepl-trans": "https://www.deepl.com/translator#auto/zh/",
-//购物
-
-   "atb": "https://ai.taobao.com/search/index.htm?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401760747866%4021048906_131d_199f4c04abe_0551%4001&key=",
-   "tb": "https://s.taobao.com/search?page=1&pvid=d0f2ec2810bcec0d5a16d5283ce59f67&q=",
-   "yp": "https://www.xiaomiyoupin.com/search?keyword=",
-   "dd": "https://search.dangdang.com/?key=",
-   "": "",
-   "": "",
-   "": "",
-   "": "",
-   "": "",
-   "": "",
-   "": "",
-   "": "",
-   "": "",
-   "": "",
-
-
-
+        "deepl-trans": "https://www.deepl.com/translator#auto/zh/"
     };
 
     // 搜索按钮点击事件
@@ -926,43 +800,37 @@ footer {
         });
     });
 
-    // 返回顶部按钮 - 增加存在性检查
+    // 返回顶部按钮
     const backToTopBtn = document.getElementById("backToTop");
-    if (backToTopBtn) {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
-        });
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    });
 
-        backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
         });
-    }
+    });
 
-    // 显示当前URL - 增加存在性检查
-    if (document.getElementById("currentUrl")) {
-        document.getElementById("currentUrl").textContent = window.location.href;
-    }
+    // 显示当前URL
+    document.getElementById("currentUrl").textContent = window.location.href;
 
     // 平滑滚动
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 </script>
+
 
 
 
@@ -1476,8 +1344,6 @@ footer {
                 <a href="https://cn.bing.com/search?q=%E5%9B%BE%E5%BA%8A&form=QBLH&sp=-1&lq=0&pq=%E5%9B%BE%E5%BA%8A&sc=12-2&qs=n&sk=&cvid=BA8E6CE4F218410A8F8753DFF232DEA7" target="_blank" class="link-btn">图床</a>
                 <a href="https://www.imageoss.com/gpc234" target="_blank" class="link-btn">imageoss</a>
                 <a href="https://www.imagehub.cc/" target="_blank" class="link-btn">imagehub</a>
-                <a href="https://imglink.org/" target="_blank" class="link-btn">imglink.org</a>
-
             </div>
         </section>
 
@@ -1491,11 +1357,7 @@ footer {
                 <a href="https://www.weiyun.com/" target="_blank" class="link-btn">腾讯微云</a>
                 <a href="https://pan.quark.cn/list#/list/all" target="_blank" class="link-btn">夸克网盘</a>
                 <a href="https://yun.139.com/w/#/" target="_blank" class="link-btn">中国移动云盘</a>
-                <a href="https://share.feijipan.com/s/12ZQjRvH" target="_blank" class="link-btn">小飞机网盘盘</a>
                 <a href="https://cn.bing.com/search?q=%E7%BD%91%E7%9B%98" target="_blank" class="link-btn">更多网盘</a>
-
-
-
             </div>
         </section>
 
@@ -1616,7 +1478,7 @@ footer {
                 <summary class="upgrade-summary">升级详情</summary>
                 <div class="upgrade-content">
                     <p>本页网址: <span id="currentUrl"></span></p>
-                    <p>版本号: 2025年12月5日</p>
+                    <p>版本号: 2025年10月10日补充完整版</p>
                     <p>更新内容：完整保留所有网页链接，新增音乐、教育、新闻等分类，补充更多实用工具</p>
                 </div>
             </details>
@@ -1715,8 +1577,8 @@ footer {
  	<a href="https://www.shdf.gov.cn/" target="_blank" class="link-btn">中国扫黄打非网</a>
  	<a href="https://cyberpolice.mps.gov.cn/" target="_blank" class="link-btn">网络违法犯罪信息举报网站</a>
  	<a href="https://getsimnum.caict.ac.cn/#/"target="_blank" class="link-btn">全国移动电话卡“一证通查”</a>
- 	<a href="../x/x21.html"target="_blank" class="link-btn">商品搜索</a>
- 	<a href="zy.html"target="_blank" class="link-btn">客家人浏览器主页</a>
+ 	<a href=""target="_blank" class="link-btn"></a>
+ 	<a href=""target="_blank" class="link-btn"></a>
  	<a href=""target="_blank" class="link-btn"></a>
  	<a href=""target="_blank" class="link-btn"></a>
  	<a href=""target="_blank" class="link-btn"></a>
