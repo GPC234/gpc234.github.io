@@ -27,8 +27,6 @@
 
 
 
-
-
 <style>
         /* 全局样式：紧凑布局，适配手机屏幕 */
         body {
@@ -76,7 +74,7 @@
             border: 1px solid #ccc;
             overflow: hidden; /* 防止内容溢出 */
             text-overflow: ellipsis; /* 内容过长时省略 */
-            white-space: nowrap; /* 禁止换行 */
+            /* 注意：这里注释掉原有white-space: nowrap; 不影响其他单元格，仅让目标单元格可换行 */
         }
         th {
             background-color: #f0f0f0;
@@ -84,6 +82,7 @@
         }
         td {
             font-size: 22px; /* 单元格字体更小 */
+            white-space: nowrap; /* 其他单元格仍禁止换行，保持原有样式 */
         }
         /* 关键列（目标生肖、当前年份）样式保留 */
         .target-zodiac {
@@ -96,6 +95,16 @@
         }
         .age-cell {
             color: #0000ff;
+        }
+        /* 控制第一列“出生年份”文字的样式 - 字体12px + 最小宽度 + 允许换行 */
+        .birth-year-title {
+            font-size: 12px !important; /* 强制设置字体大小为12px，确保生效 */
+            width: min-content !important; /* 宽度设为最小，仅适配文字宽度 */
+            min-width: unset !important; /* 清除继承的最小宽度，极致紧凑 */
+            max-width: unset !important; /* 取消最大宽度限制 */
+            white-space: normal !important; /* 允许文字换行（关键属性） */
+            line-height: 1.2; /* 调整行高，让两行文字更紧凑 */
+            padding: 2px 4px !important; /* 轻微内边距，避免文字贴边框 */
         }
     </style>
 </head>
@@ -186,11 +195,14 @@
             
             // 生成10组数据（覆盖虚岁1-120岁，每12年一组，符合生肖周期）
             for (let cycle = 0; cycle < 10; cycle++) {
-                // 出生年份行（每行头部显示“出生年份”）
+                // 出生年份行（每行头部显示“出生年份”，实现2字一行换行）
                 const birthYearRow = document.createElement('tr');
                 const birthYearHeader = document.createElement('td');
-                birthYearHeader.textContent = '出生年份';
+                // 关键修改：手动拆分文字，用<br>标签实现强制换行（出生<br>年份，正好2字一行）
+                birthYearHeader.innerHTML = '出生<br>年份'; 
                 birthYearHeader.style.backgroundColor = '#f0f0f0';
+                // 绑定样式类，确保字体12px和最小宽度
+                birthYearHeader.classList.add('birth-year-title');
                 birthYearRow.appendChild(birthYearHeader);
                 
                 // 虚岁行（每行头部显示“虚岁”）
