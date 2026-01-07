@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gpc234商品</title>
+<meta name="keywords" content="gpc234商品,搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" /><!--关键词-->
+<center><!--居中-->
+
+
+<!-- 搜索区域 -->
+
+<style>
+    body {
+        font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    .search-wrapper {
+        max-width: 700px;
+        margin: 20px auto;
+    }
+    .search-form {
+        display: flex;
+        height: 44px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .search-input {
+        flex: 1;
+        padding: 0 15px;
+        border: 1px solid #ff4400;
+        border-right: none;
+        outline: none;
+        font-size: 14px;
+        border-radius: 4px 0 0 4px;
+        box-sizing: border-box;
+    }
+    .search-btn {
+        min-width: 80px;
+        background-color: #ff4400;
+        color: white;
+        border: none;
+        font-size: 16px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    .search-btn:hover {
+        background-color: #f53f00;
+    }
+    .search-tip {
+        max-width: 700px;
+        margin: 10px auto;
+        font-size: 12px;
+        color: #666;
+    }
+    /* 关键词分类样式 */
+    .keyword-category {
+        margin: 25px 0;
+    }
+    .category-title {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 12px;
+        font-weight: 600;
+        border-left: 3px solid #ff4400;
+        padding-left: 8px;
+    }
+    .keyword-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .keyword-btn {
+        padding: 6px 14px;
+        background-color: #fff;
+        border: 1px solid #ff4400;
+        color: #ff4400;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .keyword-btn:hover {
+        background-color: #ff4400;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+    <div class="search-wrapper">
+        <form class="search-form" id="searchForm">
+            <input type="search" 
+                   class="search-input" 
+                   name="q" 
+                   placeholder="请输入搜索关键词（如：铆钉）" 
+                   required>
+            <button type="submit" class="search-btn">搜索</button>
+        </form>
+    </div>
+
+    <script>
+        // 1. 判断设备类型（手机或电脑）
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // 2. 定义各端链接（手机端含APP Scheme和网页链接，电脑端用PC网页链接）
+        const urls = {
+            mobileApp: "taobao://ai.m.taobao.com/search.html?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401761006738%400b8f386d_1236_19a042e5ba0_058e%4001&q=",
+            mobileWeb: "https://ai.m.taobao.com/search.html?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401761006738%400b8f386d_1236_19a042e5ba0_058e%4001&q=",
+            pcWeb: "https://ai.taobao.com/search/index.htm?&pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401761007367%400bbb5ce5_21f4_19a0437f5b8_0586%4001&key="
+        };
+
+        window.addEventListener('load', function() {
+            const searchInput = document.querySelector('.search-input');
+            searchInput.focus();
+
+            const searchForm = document.getElementById('searchForm');
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const inputValue = searchInput.value.trim();
+
+                if (!inputValue) {
+                    alert('请输入搜索关键词');
+                    return;
+                }
+
+                const encodedKeyword = encodeURIComponent(inputValue);
+                const isMobile = isMobileDevice();
+
+                // 3. 设备区分处理：手机端优先跳APP，电脑端直接跳PC网页
+                if (isMobile) {
+                    // 尝试通过iframe触发手机淘宝APP跳转
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = urls.mobileApp + encodedKeyword;
+                    document.body.appendChild(iframe);
+
+                    // 300毫秒后检测，若APP未打开则跳转移动端网页
+                    setTimeout(() => {
+                        document.body.removeChild(iframe);
+                        window.location.href = urls.mobileWeb + encodedKeyword;
+                    }, 300);
+                } else {
+                    // 电脑端直接跳转PC网页链接
+                    window.location.href = urls.pcWeb + encodedKeyword;
+                }
+            });
+        });
+    </script>
+
+
+<!-- 第一步：先定义统一的CSS样式类 -->
+<style>
+/* 按钮容器：实现自动换行，适配屏幕宽度 */
+.btn-container {
+  width: 100%;          /* 占满父容器宽度 */
+  display: flex;        /* 弹性布局 */
+  flex-wrap: wrap;      /* 核心：宽度不足时自动换行 */
+  gap: 10px 12px;       /* 按钮间距：上下10px，左右12px（比margin更易控） */
+  padding: 10px;        /* 容器内边距，避免贴边 */
+  box-sizing: border-box; /* 防止padding撑大宽度 */
+}
+
+/* 统一的按钮样式 */
+.app-btn {
+  display: inline-block;
+  background-color: #e6f7ff;
+  color: #1890ff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;  /* 按钮文字不换行 */
+}
+
+.app-btn:hover {
+  background-color: #bae7ff;
+  color: #096dd9;
+}
+</style>
+
+<!-- 按钮容器：所有按钮放在这里，自动换行 -->
+<div class="btn-container">
+
+<a href="https://s.click.taobao.com/t?union_lens=lensId%3AOPT%401767775705%400b51f7ce_1c57_19b97a49b30_4da6%4001%40eyJmbG9vcklkIjozODg1Mn0ie%3BeventPageId%3A20150318020016228&e=m%3D2%26s%3DPViSTzNuTPhw4vFB6t2Z2iperVdZeJviasFb3jPCdt85Rogii3YtH%2BhCZFSw9yq2W6A4gld5w29OS4pX4DGe7vnZ%2F2kQiHcP%2BXUMxN7TwYE4v9CZRT%2FQ1BL%2FmX7ARx4Sjnpta0X%2FYCKwYaRhatdffLrv%2Fl1gyhMGy0DxCSzwFgFd1le1%2FF%2FLHXyKwiqD2WK0Bmf7LSR66ahxYDtpEyeThuOxR437AHLZclNz5Cx6hNjfZwATwZMpRSfpIcsP14wkwkn3%2FLhIOAwLbn%2BIZeMoD2gFiCQX1HX6EtPT2Q5RdpwlP6ftLrc51DD8CNGWv4q%2BpwTjuhxcUsV1VXZzfN1D9OuODWg6ASP%2FI1IUNtlhrp1yhdOdHVge4E4yfRLrLbAs022l81NB8xkNxtKElQIb6vHSeuOjffnzFec0%2FQMNoKkPd2eJx%2F482MZXcK8uVm7IorPxRUMryhzKQO%2Bl%2BHVAuRCC%2FmbLytEIcX3LUTyUy3vCx6y8ZSZeonEqY%2Bakgpmw" target="_blank" class="app-btn">淘宝签到</a>
+
+<a href="https://ai.m.taobao.com/index.html?pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401767775015%4021668730_1fe0_19b979a10ae_0418%4001" target="_blank" class="app-btn">爱淘宝</a>
+
+<a href="https://s.click.taobao.com/t?e=m%3D2%26s%3De%2F9HzeVHffscQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMdbnw2sMu0rxlovu%2FCElQOvEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6NTSyiYJPde8%2FlTNlJVgXlzGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767775097%402166ba00_1330_19b979b530f_06a2%4001" target="_blank" class="app-btn">天天特卖工厂</a>
+
+<a href="https://s.click.taobao.com/t?e=m%3D2%26s%3De%2F9HzeVHffscQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMdbnw2sMu0rxlovu%2FCElQOvEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6NTSyiYJPde8%2FlTNlJVgXlzGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767775097%402166ba00_1330_19b979b530f_06a2%4001" target="_blank"class="app-btn">淘工厂</a>
+
+<a href="https://temai.m.taobao.com/index.htm?pid=mm_5518923388_3058500304_116069600003&union_lens=lensId%3APUB%401767775584%400bbb5ce5_21f4_19b97a2c114_06af%4001" target="_blank" class="app-btn">淘宝特卖</a>
+
+<a href="https://s.click.taobao.com/t?union_lens=lensId%3AOPT%401767775633%4021079213_1d41_19b97a3814b_ccbb%4001%40eyJmbG9vcklkIjozODg1Mn0ie%3BeventPageId%3A20150318020023239&e=m%3D2%26s%3Dw5WeUrKHD4hw4vFB6t2Z2iperVdZeJviPI5Rhak06vZnX1vWUft3ZUzk9pluMWZtBjEN6XmLEkk4AjtXkkws4STOkhrVjKCELLm9OimQK9CcMMWeW%2FsfwTgKASTLVPdoqwgOWsQKa%2FiBN3iHUGXXBpZGXrmd%2F20Q8DNcowo52TG0GzdAMqThcEZtDKPoHWr7QBRB1XJCO2%2FV0qUZWiWhJWiXtl3eKZAZcnjQKEJbkmoyv5qZyLTEdNNdX01MWToKjTlY41AdkejC13C4s4MKnasauD0yTXqwEdnGwy5LTy4iDnp2JBSF2k7UfAW0lB164bKyvl7CjQhq26ZcGp6RfeaCcwD1bDzX2wDd2E1yL391riOb3X%2F7UQTH9Tx%2FGXSToHm%2BI5vA1d2qRh0SIKmlOQ%2Fc8HPcdYM0NrEn1%2F6rG7SYTOboyY2miwe%2BxqL%2B5Tyy1O61y7n29Bu8uC06DtIb6IYAo2804kO%2FzDnQrtZ4T%2BG63AJkdJzXDxSzhWNLp0upis6YN8jBpvhVkUgYyGprX%2B6G4I0Zm%2BCvcfNGFne1C%2BJNHCNRigHmcHDREqnifG%2BNtX%2FrKNc39MNa55fucyyW0XnWwnbNEyQPAABaKNByzXG%2BIx2ZipG7ZiyGy1xe%2B0Go6J2%2B891DIF5o%2F4xjgbf6KGetHtsdLpMtanFFTvmp7anpkWehXzidPcZJbUFPj84gIYULNg46oBA%3D" target="_blank" class="app-btn">3元3件</a>
+
+<a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DmLwBVqokivYcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMbFya8w%2BLqG0lovu%2FCElQOvEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6AJjNZvpnUkNZXXQPnMEVgRxKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767775777%402166ba00_1330_19b97a5b410_06a3%4001" target="_blank" class="app-btn">天猫超市</a>
+
+<a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DpLYNGRcvgGAcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMT%2BToMWAuACE79%2FTFaMDK6TEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6GTh9G%2FvhWTBHPHZ2OZt67vGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767775849%402166f819_2237_19b97a6cd0b_0420%4001" target="_blank" class="app-btn">阿里健康大药房</a>
+
+<a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DKdXhsJXQm%2BUcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMT0NOtySYhZ4xq3IhSJN6GTEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6GTh9G%2FvhWTBzMNPueRDzgzGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767775924%400b52261a_2250_19b97a7f056_0684%4001" target="_blank" class="app-btn">漫花旗舰店</a>
+
+<a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DueiOQ%2FSl2i8cQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMebtPiOcJ5JA1aH1Hk3GeOjEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6GdknvjIaNwd9YIAF44dvW9xKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767776056%40212c2dfc_1539_19b97a9f461_0417%4001" target="_blank" class="app-btn">鸿星尔克官方旗舰店</a>
+
+<a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DD2Dm3w7fwUkcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMQiRLcc1Ql%2FFlovu%2FCElQOvEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6FfaqcG9q%2B4GbNDbny3SEc1pfNSH0D8VIKJn5AyUbPoV&union_lens=lensId%3APUB%401767776177%40212c2dfc_1539_19b97abccce_0418%4001" target="_blank" class="app-btn">官方国货甄选</a>
+
+<a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DuSuHoTAVdvscQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMQudEXOQidg5MMgx22UI05bEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6FfaqcG9q%2B4G4dqKBA6M07%2FGYRFbh6GWsqJn5AyUbPoV&union_lens=lensId%3APUB%401767776298%4021074e38_1304_19b97ada5d2_0704%4001" target="_blank" class="app-btn">回力旗舰店</a>
+
+<a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DwzcdMvPGRREcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMbLw7BTxBs3%2FMMgx22UI05bEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6LvvOOTeNMGCnYpagv0H61NxKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767776378%402166ba00_1330_19b97aedcd0_06a4%4001" target="_blank" class="app-btn">特步官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DKYB9raJluKwcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMcnMTBTx%2FIxUMMgx22UI05bEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6JUehQ6eays5xPbTW5iQTy5xKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767776498%400bbb5ce5_21f4_19b97b0b1af_06b0%4001" target="_blank" class="app-btn">361度官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DPcem8%2FcniDwcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMR274KGBgSBk1aH1Hk3GeOjEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6DRNyzxv4M5JDjRa%2FEVK23RxKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767776606%4021668730_1fe0_19b97b25a83_0419%4001" target="_blank" class="app-btn">乔丹官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3D9s2cNNyFhe8cQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMYdhEqI6wawa79%2FTFaMDK6TEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6K%2Fln%2FB45Ub8zh1hx8SvMmIhhQs2DjqgEA%3D%3D&union_lens=lensId%3APUB%401767776709%40212ca094_13bc_19b97b3ea2d_0696%4001" target="_blank" class="app-btn">李宁官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3Dlsz5kcUE2p8cQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMdwPA4tStoRVt4hWD5k2kjPEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6PAht1r9%2BABSFUvJFbzaesBxKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767776803%40210749e5_131f_19b97b55920_06b1%4001" target="_blank" class="app-btn">安踏官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3Drn7ukEA9Y%2B0cQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMaETeFDLr0iN79%2FTFaMDK6TEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6NJYqLoQKdi1cQYGW0WuwiNxKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767776919%402132dcb4_12d3_19b97b71f43_06bc%4001" target="_blank" class="app-btn">adidas官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DsZSAbRJty10cQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMfyKMd2wsu2vJ1gyddu7kN%2FEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6CzbGxnpaT5sQTNHfUYCT8txKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767777020%402166ba00_1330_19b97b8a9e2_06a6%4001" target="_blank" class="app-btn">澳雪旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DL5HWoQpgTDccQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMd45QW%2B2UbyTxq3IhSJN6GTEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6FfaqcG9q%2B4GLpsYIdWbr9oXEvote36jkaJn5AyUbPoV&union_lens=lensId%3APUB%401767777124%40210752c5_12da_19b97ba413a_069c%4001" target="_blank" class="app-btn">舒肤佳官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DA%2BnikIGNELEcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMdjkPZo4Lrkn79%2FTFaMDK6TEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6FfaqcG9q%2B4GwlTsBgcOzNQVJzxdrJd%2BAKJn5AyUbPoV&union_lens=lensId%3APUB%401767777229%402166f819_2237_19b97bbd910_0421%4001" target="_blank" class="app-btn">滋采旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3D75DyYjmF13wcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMSeRUv0mfLAExq3IhSJN6GTEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6JSVpuaMMITxI2wILiL4MKDGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767777374%40212ca094_13bc_19b97be0f9a_0697%4001" target="_blank" class="app-btn">小米官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DguQjBCXIsYccQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMeBvy2FQW28U79%2FTFaMDK6TEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6NbzarztnrlFdQIuH9Iwc0zGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767777469%40210752c5_12da_19b97bf8311_069d%4001" target="_blank" class="app-btn">华为官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DimSHe%2Bt%2BfuQcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMQJ2TEVFeKel79%2FTFaMDK6TEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6JIROA3QKotFycvaIQQGHDtxKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767777529%40213cade3_207a_19b97c07087_05dc%4001" target="_blank" class="app-btn">OPPO官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3Di32pe8cbn%2BgcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMYajSLQxsxy7RitN3%2FurF3zEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6FfaqcG9q%2B4GgMaQ92rwN84Wl9ma9ImPZKJn5AyUbPoV&union_lens=lensId%3APUB%401767777611%402166f819_2237_19b97c1ada5_0422%4001" target="_blank" class="app-btn">vivo手机官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3Dbmi7jlzfipocQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMdP1ytLLZfCk5x%2BIUlGKNpXEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6FfaqcG9q%2B4GPtOcl1shmIfot0nscZXe%2FKJn5AyUbPoV&union_lens=lensId%3APUB%401767777775%402104e9b5_1fab_19b97c42e36_0488%4001" target="_blank" class="app-btn">Herlab她研社旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DY1Uj0C6GVC4cQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMceZos0fRS%2FP5x%2BIUlGKNpXEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6PBdIpOgLlRy1URX1%2BNL8A3GDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767777805%400b11d4cc_12e0_19b97c4a36a_0681%4001" target="_blank" class="app-btn">七度空间官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3Dukul2ezTIQgcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMXGouKvQObhhJ1gyddu7kN%2FEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6JSVpuaMMITxzRbxnXo7vQLGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767777860%4021048902_12eb_19b97c57b2d_0675%4001" target="_blank" class="app-btn">自由点官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DtGAktfK%2FThkcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMf1vjRivaJoK79%2FTFaMDK6TEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6MljSnQQzyZF30bPLQCNakpxKmPmpIKZsA%3D%3D&union_lens=lensId%3APUB%401767777889%4021048908_229d_19b97c5eceb_06a0%4001" target="_blank" class="app-btn">花王官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DtOH%2FooPo9YgcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMZHoV%2FW%2BYMu679%2FTFaMDK6TEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6PBdIpOgLlRyugbUfsbkT2zGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767777929%40213d936c_1332_19b97c68989_06a6%4001" target="_blank" class="app-btn">淘淘氧棉官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DXlXdeDe4XqgcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMUlfPzUMux1Clovu%2FCElQOvEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6FfaqcG9q%2B4GPlVhtWTwjxbGDF1NzTQoPw%3D%3D&union_lens=lensId%3APUB%401767777977%402127b2bb_1b7e_19b97c74540_041a%4001" target="_blank" class="app-btn">高洁丝官方旗舰店</a>
+
+  <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3D9FE%2FlSnT4j0cQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMVWwqRB%2BSsv5lovu%2FCElQOvEqtgWIPmU2gJ3zi7%2FqTJhfZG3diF7L%2BskExoEMjye6FfaqcG9q%2B4GpbAS%2FZM6WAqn5g3lb8qzqaJn5AyUbPoV&union_lens=lensId%3APUB%401767778007%400b11d4cc_12e0_19b97c7bba2_0682%4001" target="_blank" class="app-btn">凸凸棉旗舰店</a>
+
+  <a href="" target="_blank" class="app-btn"></a>
+
+  <a href="" target="_blank" class="app-btn"></a>
+
+  <a href="" target="_blank" class="app-btn"></a>
+
+  <a href="" target="_blank" class="app-btn"></a>
+
+  <a href="" target="_blank" class="app-btn"></a>
+
+  <a href="" target="_blank" class="app-btn"></a>
+
+  <a href="" target="_blank" class="app-btn"></a>
+
+  <a href="" target="_blank" class="app-btn"></a>
+
+  <a href="" target="_blank" class="app-btn"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/" target="_blank" class="app-btn"></a>
+</div>
+
+<!-- 设备判断脚本（手机端切换为taobao://协议） -->
+<script>
+// 判断是否为移动设备
+function isMobile() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return /iphone|ipad|ipod|android|ios|windows phone/.test(userAgent);
+}
+
+// 批量修改链接协议
+document.querySelectorAll('.app-btn').forEach(link => {
+  if (isMobile()) {
+    link.href = link.href.replace('https://', 'taobao://');
+  }
+});
+</script>
+
+
+</body>
+</html>
