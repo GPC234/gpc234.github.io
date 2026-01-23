@@ -1,180 +1,388 @@
 <!DOCTYPE html>
-<html>
-
-
+<html lang="zh-CN">
 <head>
-<meta name="viewport" content="width=device-width,  user-scalable=yes" /><!--手机版本代码-->
-<meta charset="utf-8"><!--网页乱码修复-->
-<meta http-equiv='content-language' content='zh-cn'><!--国家地区-->
- <link  href="./favicon.ico" alt="网上用户"  rel="shortcut icon" type="image/x-icon" /><!--图标-->
-
-<title>输入计算题一计算器一网上用户</title>
-<meta name="keywords" content="输入计算题一计算器,网上用户,网上用户的个人主页,网上用户的个人首页,网上用户的个人空间,网上用户的个人中心,网上用户的个人档案,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,网号张先生" /><!--关键词-->
-<meta name="description" content="输入计算题一计算器一网上用户,网上用户的个人主页,网上用户的个人首页,网上用户的个人空间,网上用户的个人中心,网上用户的个人档案,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,网号张先生" />
-</head>
-
-<html lang="en">
-<style type="text/css">A{TEXT-DECORATION: none}</style><!--无下划线开始-->
-<span style="font-size: 18px;"><!--字体大小-->
-<strong><!--加粗-->
-
-
-<style>
-h1{ background-color: #0066FF; /*蓝色 */
-    border: none;
-    color: white;
-    padding: 8px 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 1px 1px;
-    cursor: pointer;
-box-shadow: 10px 10px 5px #888888;/*灰色 */
-}
-</style><!--css标题2024年7月16日-->
-
-
-<h1>输入计算题一计算器</h1>
-
-<hr color=0066FF> <!--分界线-->
-
-<center><!--居中-->
-<body><!--内容开始body-->
-
-
-
-
-    
-
-
- <style>
-      
-        input,textarea[type="text"] {
-            width: 340px;
-            height: 60px;
-         font-size: 12px;
-font-weight: 900;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能自动计算与大写转换工具</title>
+<meta name="keywords" content="搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" /><!--关键词-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* 仅使用系统默认无版权字体，按优先级排序 */
+            font-family: sans-serif, serif;
         }
-
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        #inputValue {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        #inputValue:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+        
+        .button-group {
+            margin-bottom: 25px;
+        }
+        
         button {
-            width: 340px;
-            height: 60px;
-         font-size: 12px;
-font-weight: 900;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f7fafc;
+            color: #4a5568;
+            border: 1px solid #e2e8f0;
         }
- 
-
+        
+        button:hover {
+            background: #edf2f7;
+            transform: translateY(-2px);
+        }
+        
+        .result-group {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4299e1;
+        }
+        
+        #resultTitle {
+            color: #2d3748;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        #resultContent {
+            color: #4a5568;
+            font-size: 18px;
+            line-height: 1.6;
+            word-break: break-all;
+        }
+        
+        .tip {
+            margin-top: 15px;
+            color: #718096;
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            #resultContent {
+                font-size: 16px;
+            }
+        }
     </style>
-
-
-<input type="text" id="expressionInput"  placeholder="请输入表达式:例如:2+3+5*2按回车"><br/>
-    <button id="calculateButton">=</button>
-    <div id="displayContent"></div>
+</head>
+<body>
+    <div class="container">
+        <h1>智能自动计算与大写转换工具</h1>
+        
+        <div class="input-group">
+            <label for="inputValue">请输入内容（支持数学运算或纯数字，实时自动处理）：</label>
+            <input type="text" id="inputValue" placeholder="例如：3.14*2+5 或 12345.67" autocomplete="off">
+        </div>
+        
+        <div class="button-group">
+            <button id="resetBtn">清空内容</button>
+        </div>
+        
+        <div class="result-group">
+            <div id="resultTitle">结果：</div>
+            <div id="resultContent">请输入数学表达式或纯数字</div>
+        </div>
+        
+        <div class="tip">
+            支持运算：+、-、*、/、()（实时自动计算）<br>
+            支持纯数字：整数、小数（实时自动转换为中文大写）<br>
+            输入过程中实时响应，无需额外操作
+        </div>
+    </div>
 
     <script>
-        document.getElementById('calculateButton').addEventListener('click', function () {
-            var expression = document.getElementById('expressionInput').value;
-            try {
-                var result = eval(expression);
-                document.getElementById('displayContent').textContent = '计算结果: ' + expression + '=' + result;
-            } catch (error) {
-                document.getElementById('displayContent').textContent = '表达式错误';
-            }
-        });
+        // 获取DOM元素
+        const inputValue = document.getElementById('inputValue');
+        const resetBtn = document.getElementById('resetBtn');
+        const resultContent = document.getElementById('resultContent');
+        const resultTitle = document.getElementById('resultTitle');
 
-        document.getElementById('expressionInput').addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                var expression = document.getElementById('expressionInput').value;
-                try {
-                    var result = eval(expression);
-                    document.getElementById('displayContent').textContent = '计算结果: ' + expression + '=' + result;
-                } catch (error) {
-                    document.getElementById('displayContent').textContent = '表达式错误';
+        // 运算符号正则表达式
+        const operatorReg = /[+\-*/()]/;
+        // 纯数字正则表达式（支持整数、小数）
+        const numberReg = /^-?\d+(\.\d+)?$/;
+        // 有效数学表达式的基础正则（用于过滤明显无效的输入）
+        const validExprReg = /^[0-9+\-*/().\s]*$/;
+
+        // 中文大写转换核心函数
+        function numberToChinese(num) {
+            // 处理0的情况
+            if (num === 0) return '零';
+            
+            // 中文数字映射
+            const digitMap = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
+            const unitMap = ['', '拾', '佰', '仟', '万', '拾', '佰', '仟', '亿', '拾', '佰', '仟'];
+            const decimalUnit = ['角', '分', '厘', '毫'];
+            
+            // 分割整数和小数部分
+            const [integerPart, decimalPart] = num.toString().split('.');
+            let result = '';
+            
+            // 处理负数
+            let isNegative = false;
+            let intNum = integerPart;
+            if (intNum.startsWith('-')) {
+                isNegative = true;
+                intNum = intNum.slice(1);
+            }
+            
+            // 处理整数部分
+            if (intNum.length > 0) {
+                // 补零到合适的长度（4的倍数）
+                const padLength = Math.ceil(intNum.length / 4) * 4;
+                const paddedInt = intNum.padStart(padLength, '0');
+                
+                // 按万、亿分组处理
+                for (let i = 0; i < paddedInt.length; i += 4) {
+                    const group = paddedInt.slice(i, i + 4);
+                    const groupValue = parseInt(group, 10);
+                    const groupUnit = unitMap[paddedInt.length - i - 1];
+                    
+                    if (groupValue === 0) {
+                        // 连续的零只保留一个
+                        if (result.slice(-1) !== '零') {
+                            result += '零';
+                        }
+                        continue;
+                    }
+                    
+                    // 处理每一位数字
+                    let groupStr = '';
+                    for (let j = 0; j < 4; j++) {
+                        const digit = parseInt(group[j], 10);
+                        const unit = unitMap[3 - j];
+                        
+                        if (digit === 0) {
+                            // 中间的零保留一个
+                            if (groupStr.slice(-1) !== '零') {
+                                groupStr += '零';
+                            }
+                        } else {
+                            groupStr += digitMap[digit] + unit;
+                        }
+                    }
+                    
+                    // 去除末尾的零
+                    groupStr = groupStr.replace(/零$/, '');
+                    if (groupStr) {
+                        result += groupStr + groupUnit;
+                    }
+                }
+                
+                // 去除末尾的零
+                result = result.replace(/零$/, '');
+                // 添加单位
+                result += '元';
+                
+                // 处理负数
+                if (isNegative) {
+                    result = '负' + result;
                 }
             }
-        });
-    </script>
-
-
-
-
-
-
-
-<script>
-        // 获取输入框元素
-        const input = document.getElementById('expressionInput');
-
-        function adjustWidth() {
-            // 创建一个临时元素来计算宽度
-            const tempDiv = document.createElement('div');
-            tempDiv.style.position = 'absolute';
-            tempDiv.style.visibility = 'hidden';
-            tempDiv.style.whiteSpace = 'nowrap';
-            tempDiv.textContent = input.value;
-
-            document.body.appendChild(tempDiv);
-
-            // 设置输入框宽度为临时元素宽度
-            input.style.width = tempDiv.offsetWidth + 'px';
-
-            // 移除临时元素
-            document.body.removeChild(tempDiv);
+            
+            // 处理小数部分（最多保留4位）
+            if (decimalPart && decimalPart.length > 0) {
+                let decimalStr = '';
+                const maxDecimalLength = 4;
+                const validDecimal = decimalPart.slice(0, maxDecimalLength);
+                
+                for (let i = 0; i < validDecimal.length; i++) {
+                    const digit = parseInt(validDecimal[i], 10);
+                    if (digit === 0) {
+                        // 末尾的零不显示
+                        if (i < validDecimal.length - 1 && parseInt(validDecimal[i + 1], 10) !== 0) {
+                            decimalStr += '零';
+                        }
+                        continue;
+                    }
+                    decimalStr += digitMap[digit] + decimalUnit[i];
+                }
+                
+                // 去除末尾的零
+                decimalStr = decimalStr.replace(/零$/, '');
+                
+                if (decimalStr) {
+                    result += decimalStr;
+                } else {
+                    // 小数部分全为零，添加"整"
+                    result += '整';
+                }
+            } else {
+                // 无小数部分，添加"整"
+                result += '整';
+            }
+            
+            return result;
         }
 
-        // 输入框内容改变时调整宽度
-        input.addEventListener('input', adjustWidth);
+        // 执行计算或转换（核心逻辑）
+        function executeOperation() {
+            const input = inputValue.value.trim();
+            
+            if (!input) {
+                resultTitle.textContent = '结果：';
+                resultContent.textContent = '请输入数学表达式或纯数字';
+                resultContent.style.color = '#4a5568';
+                return;
+            }
+            
+            try {
+                // 先过滤非法字符
+                if (!validExprReg.test(input)) {
+                    throw new Error('包含非法字符，仅支持数字和运算符号(+、-、*、/、())');
+                }
+                
+                // 检查是否包含运算符号
+                if (operatorReg.test(input)) {
+                    // 数学计算处理
+                    const sanitizedInput = input.replace(/\s+/g, ''); // 去除空格
+                    
+                    // 检查括号匹配
+                    const bracketCount = (sanitizedInput.match(/\(/g) || []).length - 
+                                       (sanitizedInput.match(/\)/g) || []).length;
+                    if (bracketCount !== 0) {
+                        throw new Error('括号不匹配，请检查输入');
+                    }
+                    
+                    // 简单检查表达式有效性（避免直接执行不完整的表达式）
+                    const invalidEndReg = /[+\-*/().]$/;
+                    const invalidStartReg = /^[+\-*/]/;
+                    if (invalidEndReg.test(sanitizedInput) || invalidStartReg.test(sanitizedInput)) {
+                        throw new Error('表达式不完整，请补充完整');
+                    }
+                    
+                    // 执行计算（使用Function替代eval，相对更安全）
+                    const calculate = new Function(`return ${sanitizedInput}`);
+                    const result = calculate();
+                    
+                    // 处理特殊结果
+                    if (isNaN(result) || !isFinite(result)) {
+                        throw new Error('计算结果无效，请检查表达式');
+                    }
+                    
+                    // 格式化结果（去除末尾多余的零和小数点）
+                    const formattedResult = result.toFixed(10).replace(/\.?0*$/, '');
+                    
+                    resultTitle.textContent = '计算结果：';
+                    resultContent.textContent = `${sanitizedInput} = ${formattedResult}`;
+                    resultContent.style.color = '#2d3748';
+                } 
+                // 检查是否为纯数字
+                else if (numberReg.test(input)) {
+                    const num = parseFloat(input);
+                    // 检查数值范围
+                    if (num < -999999999999.9999 || num > 999999999999.9999) {
+                        throw new Error('数值超出范围（支持-999999999999.9999 到 999999999999.9999）');
+                    }
+                    
+                    const chinese = numberToChinese(num);
+                    resultTitle.textContent = '中文大写：';
+                    resultContent.textContent = chinese;
+                    resultContent.style.color = '#2d3748';
+                } else {
+                    throw new Error('输入格式无效，请输入有效的数学表达式或纯数字');
+                }
+            } catch (error) {
+                resultTitle.textContent = '提示：';
+                resultContent.textContent = error.message;
+                resultContent.style.color = '#e53e3e';
+            }
+        }
+
+        // 清空内容
+        function resetContent() {
+            inputValue.value = '';
+            resultTitle.textContent = '结果：';
+            resultContent.textContent = '请输入数学表达式或纯数字';
+            resultContent.style.color = '#4a5568';
+            inputValue.focus();
+        }
+
+        // 实时监听输入变化（实现自动处理）
+        inputValue.addEventListener('input', executeOperation);
+        
+        // 回车触发清空（可选，提升体验）
+        inputValue.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                resetContent();
+            }
+        });
+
+        // 清空按钮事件
+        resetBtn.addEventListener('click', resetContent);
+
+        // 页面加载时聚焦输入框
+        window.addEventListener('load', () => {
+            inputValue.focus();
+        });
     </script>
-
-
-<hr color=0066FF>
-日期:2023年5月7日
-
-<hr color=0066FF>
-<center> <!--居中-->
-
-<textarea cols="40%" rows="1%" id="biao1">网上用户,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,张先生,123,234,0123456789网上用户,网上用户的个人主页,网上用户的个人首页,网上用户的个人空间,网上用户的个人中心,网上用户的个人档案,公平村张先生,铆钉厂张先生,客家人张先生,艺名张先生,账号张先生,铆钉厂,网号张先生生产铆钉不锈钢铆钉铁铆钉铝铆钉黄铜铆钉紫铜铆钉实心铆钉半空心铆钉斗车厂张先生</textarea>
-<!--内容结束-->
-<hr color=0000ff> <!--分界线-->
-   <hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
-
-<a href="/">下一页</a>
-&nbsp; 	<a href="	./1.html	" target="_blank">1</a>	&nbsp; 
-	<a href="	./2.html	" target="_blank">2</a>	&nbsp; 
-	<a href="	./3.html	" target="_blank">3</a>	&nbsp; 
-	<a href="	./4.html	" target="_blank">4</a>	&nbsp; 
-	<a href="	./5.html	" target="_blank">5</a>	&nbsp; 
-	<a href="	./6.html	" target="_blank">6</a>	&nbsp; 
-	<a href="	./7.html	" target="_blank">7</a>	&nbsp; 
-	<a href="	./8.html	" target="_blank">8</a>	&nbsp; 
-	<a href="	./9.html	" target="_blank">9</a>	&nbsp; 
-	<a href="	./10.html	" target="_blank">10</a>	&nbsp; 
-	<a href="	./11.html	" target="_blank">11</a>	&nbsp; 
-	<a href="	./12.html	" target="_blank">12</a>	&nbsp; 
-	<a href="	./13.html	" target="_blank">13</a>	&nbsp; 
-	<a href="	./14.html	" target="_blank">14</a>	&nbsp; 
-	<a href="	./15.html	" target="_blank">15</a>	&nbsp; 
-	<a href="	./16.html	" target="_blank">16</a>	&nbsp; 
-	<a href="	./17.html	" target="_blank">17</a>	&nbsp; 
-	<a href="	./18.html	" target="_blank">18</a>	&nbsp; 
-	<a href="	./19.html	" target="_blank">19</a>	&nbsp; 
-	<a href="	./20.html	" target="_blank">20</a>	&nbsp; 
-	<a href="	./21.html	" target="_blank">21</a>	&nbsp; 
-	<a href="	./22.html	" target="_blank">22</a>	&nbsp; 
-	<a href="	./23.html	" target="_blank">23</a>	&nbsp; 
-        <a href="	./1.html	" target="_blank">→</a>	&nbsp; 
-
-<hr style=" height:5px;border:none;border-top:2px dotted #ff3844;" />
-
-
-
-
-<!--内容结束-->
-
-</body><!--内容结束-->
-</center><!--居中-->
-<head><!--无下划线-->
-</strong><!--加粗-->
-</span><!--字体大小-->
-</html><!--结束-->
+</body>
+</html>

@@ -17,71 +17,82 @@
     <link rel="apple-touch-icon" href="/favicon.ico" alt="网上用户">
     <!-- 设置文档的字符编码为 UTF-8，防止网页出现乱码 -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-           <!-- 设置所有链接无下划线样式，并添加粗体样式 -->
-<!-- css样式定义部分开始 --><style type="text/css">
-  /* 为所有的 a 标签设置样式 */
-  A {
-    /* 去除 a 标签的下划线 */
-    TEXT-DECORATION: none;
-    /* 为 a 标签设置粗体样式 */
-    font-weight: bold;
-font-size: 32px;    /* 为 a 标签设置字体大小 */
-  }</style><!-- css样式定义部分结束 --> 
+    <!-- css样式定义部分开始 -->
+    <style type="text/css">
+        /* 为所有的 a 标签设置样式 */
+        A {
+            /* 去除 a 标签的下划线 */
+            TEXT-DECORATION: none;
+            /* 为 a 标签设置粗体样式 */
+            font-weight: bold;
+            font-size: 32px;    /* 为 a 标签设置字体大小 */
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 300px;
+        }
 
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+        }
 
- <title>包数计算一搜索:网上用户</title>
-<meta name="keywords" content="搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" /><!--关键词-->
-<meta name="description" content="" />
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+        
+        input[type="number"] {
+            width: 100px;
+            text-align: center;
+        }
+        
+        input[type="text"] {
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+    <!-- css样式定义部分结束 --> 
+    <title>包数计算一搜索:网上用户</title>
+    <meta name="keywords" content="搜索:网上用户,网上用户,上网用户,用户,公平村,GPC234,GPCZXS" /><!--关键词-->
+    <meta name="description" content="" />
 </head> <!-- 文档头部结束 -->
-
-<center><!--居中-->
-
-    <style>
-    table {
-        border-collapse: collapse;
-        width: 300px;
-    }
-
-    table,
-    th,
-    td {
-        border: 1px solid #000;
-    }
-
-    th,
-    td {
-        padding: 8px;
-        text-align: center;
-    }
-</style>
-</head>
 <body>
-    <table>
-        <tr>
-            <th>打包数量</th>
-            <td><input type="number" id="perPackage"></td>
-        </tr>
-        <tr>
-            <th>订单数量</th>
-            <td><input type="number" id="orderQty"></td>
-        </tr>
-        <tr>
-            <th>总包数</th>
-            <td><input type="text" id="totalPackages" readonly></td>
-        </tr>
-        <tr>
-            <th>尾包数</th>
-            <td><input type="text" id="remainderPackages" readonly></td>
-        </tr>
-        <tr>
-            <th>每包数量</th>
-            <td><input type="text" readonly></td>
-        </tr>
-        <tr>
-            <th>尾包数</th>
-            <td><input type="text" readonly></td>
-        </tr>
-    </table>
+    <center><!--居中-->
+        <table>
+            <tr>
+                <th>打包数量</th>
+                <td><input type="number" id="perPackage" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <th>订单数量</th>
+                <td><input type="number" id="orderQty" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <th>总包数</th>
+                <td><input type="text" id="totalPackages" readonly></td>
+            </tr>
+            <tr>
+                <th>尾包数</th>
+                <td><input type="text" id="remainderPackages" readonly></td>
+            </tr>
+            <tr>
+                <th>每包数量</th>
+                <td><input type="text" readonly></td>
+            </tr>
+            <tr>
+                <th>尾包数</th>
+                <td><input type="text" readonly></td>
+            </tr>
+
+        </table>
+<p>按回车键切换输入</p>
+    </center>
+
+
     <script>
         // 获取输入框和结果框元素
         const perPackageInput = document.getElementById('perPackage');
@@ -121,8 +132,29 @@ font-size: 32px;    /* 为 a 标签设置字体大小 */
         perPackageInput.addEventListener('input', calculate);
         orderQtyInput.addEventListener('input', calculate);
 
+        // 回车键切换输入框焦点的逻辑
+        perPackageInput.addEventListener('keydown', function(e) {
+            // 监听回车键（keyCode 13）
+            if (e.keyCode === 13) {
+                e.preventDefault(); // 阻止默认的回车提交行为
+                orderQtyInput.focus(); // 将焦点切换到订单数量输入框
+                orderQtyInput.select(); // 选中输入框内容，方便直接输入
+            }
+        });
+
+        orderQtyInput.addEventListener('keydown', function(e) {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                calculate(); // 按回车时主动触发计算
+                perPackageInput.focus(); // 可以切换回打包数量，也可以注释掉这行让焦点留在当前位置
+                perPackageInput.select();
+            }
+        });
+
         // 页面加载时先计算一次初始值
         calculate();
+        // 页面加载后默认聚焦到打包数量输入框
+        perPackageInput.focus();
     </script>
 </body>
 </html>
