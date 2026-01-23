@@ -12,12 +12,30 @@ document.addEventListener('DOMContentLoaded', function() {
     startSeparator.style.color = '#888888'; // 统一灰色
     gpczxstua.appendChild(startSeparator);
     
-    // 创建第一个链接
+    // 创建第三个链接（联系我们）- 调整为第一个显示
+    const link3 = document.createElement('a');
+    link3.href = '/gpc234/wangshangyonghu/js/jsa3.html';
+    link3.target = '_blank';
+    link3.textContent = '联系我们';
+    link3.className = 'hover:text-gray-700 ml-1'; // 调整ml-1到这里
+    link3.style.textDecoration = 'none';
+    link3.style.fontSize = '12px';
+    link3.style.color = '#888888'; // 统一灰色
+    link3.style.transition = 'color 0.2s';
+    
+    // 联系我们后的竖线
+    const separator3 = document.createElement('span');
+    separator3.textContent = '丨';
+    separator3.className = 'mx-2';
+    separator3.style.fontSize = '12px';
+    separator3.style.color = '#888888'; // 统一灰色
+    
+    // 创建第一个链接（原第一个）
     const link1 = document.createElement('a');
     link1.href = '/gpc234/wangshangyonghu/js/jsa1.html';
     link1.target = '_blank';
     link1.textContent = '@网上用户';
-    link1.className = 'hover:text-gray-700 ml-1';
+    link1.className = 'hover:text-gray-700'; // 移除ml-1
     link1.style.textDecoration = 'none';
     link1.style.fontSize = '12px';
     link1.style.color = '#888888'; // 统一灰色
@@ -30,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     separator1.style.fontSize = '12px';
     separator1.style.color = '#888888'; // 统一灰色
     
-    // 创建第二个链接
+    // 创建第二个链接（原第二个）
     const link2 = document.createElement('a');
     link2.href = '/gpc234/wangshangyonghu/js/jsa2.html';
     link2.target = '_blank';
@@ -47,24 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     separator2.className = 'mx-2';
     separator2.style.fontSize = '12px';
     separator2.style.color = '#888888'; // 统一灰色
-    
-    // 创建第三个链接
-    const link3 = document.createElement('a');
-    link3.href = '/gpc234/wangshangyonghu/js/jsa3.html';
-    link3.target = '_blank';
-    link3.textContent = '联系我们';
-    link3.className = 'hover:text-gray-700';
-    link3.style.textDecoration = 'none';
-    link3.style.fontSize = '12px';
-    link3.style.color = '#888888'; // 统一灰色
-    link3.style.transition = 'color 0.2s';
-    
-    // 链接3后的竖线
-    const separator3 = document.createElement('span');
-    separator3.textContent = '丨';
-    separator3.className = 'mx-2';
-    separator3.style.fontSize = '12px';
-    separator3.style.color = '#888888'; // 统一灰色
     
     // 创建首页链接
     const homeLink = document.createElement('a');
@@ -102,16 +102,15 @@ document.addEventListener('DOMContentLoaded', function() {
     separator4.style.fontSize = '12px';
     separator4.style.color = '#888888'; // 统一灰色
     
-    // 添加元素到容器
-    gpczxstua.appendChild(link1);
-    gpczxstua.appendChild(separator1);
-    gpczxstua.appendChild(link2);
-    gpczxstua.appendChild(separator2);
-    gpczxstua.appendChild(link3);
-    gpczxstua.appendChild(separator3);
-    gpczxstua.appendChild(homeLink);
-    gpczxstua.appendChild(separatorHome);
-    gpczxstua.appendChild(backToTop);
-    gpczxstua.appendChild(separator4);
+    // 重新调整添加顺序，让联系我们在第一个位置
+    gpczxstua.appendChild(link3);       // 联系我们（第一个）
+    gpczxstua.appendChild(separator3);  // 联系我们后的竖线
+    gpczxstua.appendChild(link1);       // @网上用户（第二个）
+    gpczxstua.appendChild(separator1);  // @网上用户后的竖线
+    gpczxstua.appendChild(link2);       // gpc234（第三个）
+    gpczxstua.appendChild(separator2);  // gpc234后的竖线
+    gpczxstua.appendChild(homeLink);    // 友情链接（第四个）
+    gpczxstua.appendChild(separatorHome);// 友情链接后的竖线
+    gpczxstua.appendChild(backToTop);   // 返回顶部（第五个）
+    gpczxstua.appendChild(separator4);  // 返回顶部后的竖线
 });
-    
